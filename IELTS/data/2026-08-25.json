@@ -1,0 +1,263 @@
+{
+  "date": "2026-08-20",
+  "duration_minutes": 12,
+  "metrics": {
+    "overall_score": 7.5,
+    "fluency_coherence": 8.0,
+    "grammar_accuracy": 7.0,
+    "lexical_resource": 7.5,
+    "idiomaticity": 7.5
+  },
+  "summary": {
+    "evaluation": "整体表现已经具备稳定的 Part 1 交流能力，能够自然展开回答，并且使用了 magical ability、low-key、oversharing、freaks me out、rant about life、bouncing between 等较地道的口语表达，词汇资源明显高于基础水平。主要失分点不是“没话说”，而是口语输出中的小语法错误、搭配不精准和 self-correction 较多，例如 people who don't、control myself for not scrolling、social medias、mostly are vlogs 等；如果能把这些高频小错压下去，整体表现有潜力稳定进入 7 分区间。",
+    "key_improvements": [
+      "重点消灭高频“小语法错误”，尤其是主谓一致、冠词、可数名词复数和介词搭配；这些错误单独看不严重，但连续出现会限制 Grammar Accuracy。",
+      "减少句子中途的重复和重启，例如 scroll scroll、we talked ab- we use、shorts con- shorts，以及 you can just share you can't just；可以用短暂停顿替代重新启动句子。",
+      "继续保持现在这种自然的口语词汇风格，但进一步升级固定搭配，例如 spend too much time on、stay connected、a go-to spot、be a fan of，而不是单纯堆高级单词。"
+    ]
+  },
+  "quick_version": [
+    {
+      "id": "err_1",
+      "original": "So, yeah, I remembered I liked her a lot back then",
+      "corrected": "So, yeah, I remember I liked her a lot back then.",
+      "native_upgrade": "I still remember how much I liked her back then.",
+      "explanation": "这里是在回忆过去的经历，remember 后面直接接过去事实即可；I remembered 容易变成“我当时想起来了”。I still remember how much I liked her 更自然，也更有口语感。"
+    },
+    {
+      "id": "err_2",
+      "original": "She made me not hate math which is the most important thing for me back then",
+      "corrected": "She made me not hate math, which was the most important thing for me back then.",
+      "native_upgrade": "She actually made me stop hating math, which was probably the biggest impact she had on me.",
+      "explanation": "主句发生在过去，因此 which 后面用 was。make somebody not hate 虽然可以理解，但 stop hating math 更自然；biggest impact she had on me 还能增加表达层次。"
+    },
+    {
+      "id": "err_3",
+      "original": "It would be fun to see if they remember me or not, but definitely I hope it's for good reason.",
+      "corrected": "It would be fun to see if they remember me or not, and I definitely hope it's for a good reason.",
+      "native_upgrade": "It'd be fun to find out whether they still remember me, hopefully for all the right reasons.",
+      "explanation": "for good reason 不是这里最自然的搭配；for a good reason 表示“出于一个好的理由”。不过如果想表达“希望他们记得我是因为好的事情”，all the right reasons 更地道。"
+    },
+    {
+      "id": "err_4",
+      "original": "So I mostly just scroll scroll around but not post",
+      "corrected": "So I mostly just scroll around but don't post anything.",
+      "native_upgrade": "I'm mostly a passive user, so I tend to scroll through my feed rather than post anything myself.",
+      "explanation": "but 后面需要与前面的结构保持平行，don't post anything 比 but not post 更完整。scroll through my feed 是更自然的社交媒体搭配。"
+    },
+    {
+      "id": "err_5",
+      "original": "But I do need to control myself a little bit for not scrolling too much",
+      "corrected": "But I do need to control myself a little bit so that I don't scroll too much.",
+      "native_upgrade": "I do have to exercise a bit of self-control to stop myself from endlessly scrolling.",
+      "explanation": "control myself for not doing 是不自然的介词结构。可以使用 so that I don't... 或 stop myself from doing...；exercise self-control 和 endlessly scrolling 属于更高级的自然搭配。"
+    },
+    {
+      "id": "err_6",
+      "original": "I don't think I know anyone who don't use it.",
+      "corrected": "I don't think I know anyone who doesn't use it.",
+      "native_upgrade": "I honestly can't think of anyone I know who doesn't use social media.",
+      "explanation": "who 指代 anyone，视为第三人称单数，因此应该使用 doesn't。can't think of anyone who... 是非常自然的口语结构。"
+    },
+    {
+      "id": "err_7",
+      "original": "We, um, I feel like we, talked ab- we, we use social media for everything",
+      "corrected": "I feel like we use social media for everything.",
+      "native_upgrade": "I feel like social media has become part of almost every aspect of our daily lives.",
+      "explanation": "原句存在明显 self-correction 和重复。最终想表达的意思很清楚，但可以直接用一个完整句子输出；upgrade 使用 has become part of... 能显著提高句式和词汇质量。"
+    },
+    {
+      "id": "err_8",
+      "original": "they post pictures, stock their favorite celebrities",
+      "corrected": "they post pictures, stalk their favorite celebrities",
+      "native_upgrade": "They post pictures, keep up with their favorite celebrities, rant about their lives, and watch funny videos.",
+      "explanation": "如果这里的原始发音确实是 stock，那么正确单词应为 stalk；stalk 表示持续关注甚至跟踪某人。若实际想表达普通的“关注明星”，keep up with their favorite celebrities 更自然，也更符合社交媒体语境。"
+    },
+    {
+      "id": "err_9",
+      "original": "I usually just visit website just for fun",
+      "corrected": "I usually just visit websites for fun.",
+      "native_upgrade": "I mostly browse websites for entertainment, especially when I want to unwind.",
+      "explanation": "website 是可数名词，泛指时应使用复数 websites；同时 just visit... just... 形成重复。browse websites for entertainment 和 unwind 更自然。"
+    },
+    {
+      "id": "err_10",
+      "original": "tutorials on makeup and skincare routines. Yeah, mostly are vlogs",
+      "corrected": "tutorials on makeup and skincare routines. Yeah, they're mostly vlogs.",
+      "native_upgrade": "I mainly watch vlogs, along with the occasional makeup or skincare tutorial.",
+      "explanation": "mostly are vlogs 缺少主语；应该是 they're mostly vlogs。mainly watch vlogs, along with... 是更简洁、更自然的表达。"
+    },
+    {
+      "id": "err_11",
+      "original": "I can spend hours on there just bouncing between coding tutorials, vlogs, and travel contents.",
+      "corrected": "I can spend hours on there just bouncing between coding tutorials, vlogs, and travel content.",
+      "native_upgrade": "I can easily lose track of time jumping between coding tutorials, travel vlogs, and other content.",
+      "explanation": "content 通常作为不可数名词使用，因此这里不需要 contents。lose track of time 是非常高频且自然的 IELTS 口语搭配。"
+    },
+    {
+      "id": "err_12",
+      "original": "I've noticed more shorts videos popping up.",
+      "corrected": "I've noticed more short videos popping up.",
+      "native_upgrade": "I've noticed a growing number of short-form videos popping up on the platform.",
+      "explanation": "如果表达普通的“短视频”，应该使用 short videos；short-form videos 是更精准、更高级的表达。原句中的 shorts 更像是特指 YouTube Shorts 这一产品名称。"
+    },
+    {
+      "id": "err_13",
+      "original": "It feels like they're really pushing that TikTok vibes",
+      "corrected": "It feels like they're really pushing those TikTok vibes.",
+      "native_upgrade": "It feels like they're increasingly trying to emulate TikTok's style.",
+      "explanation": "vibes 是复数，因此不能使用 that。push TikTok vibes 属于口语化表达，而 emulate TikTok's style 更精准、更适合 7 分以上表达。"
+    },
+    {
+      "id": "err_14",
+      "original": "which I'm not a really a fan of",
+      "corrected": "which I'm not really a fan of.",
+      "native_upgrade": "I'm not particularly a fan of that trend, to be honest.",
+      "explanation": "a really a fan 是冠词和副词位置重复。正确结构是 not really a fan of；not particularly a fan of 是更自然的正式口语表达。"
+    },
+    {
+      "id": "err_15",
+      "original": "social medias like WeChat and RedNote are huge",
+      "corrected": "social media platforms like WeChat and RedNote are huge.",
+      "native_upgrade": "Social media platforms like WeChat and RedNote are hugely popular.",
+      "explanation": "social media 通常作为不可数名词使用，不说 social medias。这里实际上想表达的是“社交媒体平台”，因此 social media platforms 更精准；hugely popular 也比 huge 更完整。"
+    },
+    {
+      "id": "err_16",
+      "original": "because you can just share you can't just, you know, stare at your phone all day without your boss noticing",
+      "corrected": "because you can use the web version without having to stare at your phone all day, so your boss won't notice.",
+      "native_upgrade": "People can use the web version at work without constantly looking down at their phones, so it's a discreet way to take a quick break without drawing attention from their bosses.",
+      "explanation": "原句存在明显的 self-correction，can just share 与后面的 can't just 构成语义冲突，导致句子没有完成。discreet way to take a quick break 和 without drawing attention 是更地道的表达。"
+    }
+  ],
+  "full_transcript": [
+    {
+      "role": "AI",
+      "text": "Good morning. My name is Laura, and I will be your examiner today. Let's start with a few questions about teachers. Do you have a favorite teacher?"
+    },
+    {
+      "role": "User",
+      "text": "Oh, yes, I do. I remember my high school math teacher, I think she was the best because she had this magical ability to make even the most confusing formulas make sense. So, yeah, [[err_1|I remembered I liked her a lot back then]]"
+    },
+    {
+      "role": "AI",
+      "text": "Mm-hmm. In what way has your favourite teacher helped you?"
+    },
+    {
+      "role": "User",
+      "text": "Mm, I think she never made anyone feel dumb for asking questions and, um, you know um, specifically asking questions in front of other people. She made me not hate math [[err_2|which is the most important thing for me back then]]"
+    },
+    {
+      "role": "AI",
+      "text": "Mmm. Mm. Right. Do you want to be a teacher in the future?"
+    },
+    {
+      "role": "User",
+      "text": "Not really, to be honest. I respect teachers a lot, of course, but I don't think teaching full-time is something I would want to do. It doesn't quit- [[err_3|it doesn't quite fit my personality or long-term goals]]"
+    },
+    {
+      "role": "AI",
+      "text": "And are you still in touch with your primary school teachers?"
+    },
+    {
+      "role": "User",
+      "text": "Not really, but I kind of wish I was. It would be fun to see if they remember me or not, but definitely I hope [[err_4|it's for good reason]]."
+    },
+    {
+      "role": "AI",
+      "text": "Mm-hmm"
+    },
+    {
+      "role": "AI",
+      "text": "Thank you. Now let's talk about social media. Have you ever posted anything on social media?"
+    },
+    {
+      "role": "User",
+      "text": "Mm, no, honestly, I'm pretty low-key online. Um, and I feel like oversharing just freaks me out a little bit. Regarding, you know, personal privacy. So [[err_5|I mostly just scroll scroll around but not post]]"
+    },
+    {
+      "role": "AI",
+      "text": "Mmm. When did you start using social media?"
+    },
+    {
+      "role": "User",
+      "text": "Probably when I was a teenager, I think my first account was on some old platform that isn't even active anymore"
+    },
+    {
+      "role": "AI",
+      "text": "Mm-hmm."
+    },
+    {
+      "role": "AI",
+      "text": "Do you think you spend too much time on social media?"
+    },
+    {
+      "role": "User",
+      "text": "Mm, a hundred percent. But I try not to think about it too much. I tell myself it's all about staying connected. But I do need to um, you know, [[err_6|control myself a little bit for not scrolling too much]]"
+    },
+    {
+      "role": "AI",
+      "text": "Mm-hmm."
+    },
+    {
+      "role": "AI",
+      "text": "And do your friends use social media?"
+    },
+    {
+      "role": "User",
+      "text": "Oh, definitely. I don't think I know anyone [[err_7|who don't use it]]. We, um, I feel like we, talked ab- we, we use social media for everything"
+    },
+    {
+      "role": "AI",
+      "text": "Mm-hmm."
+    },
+    {
+      "role": "AI",
+      "text": "So what do people often do on social media?"
+    },
+    {
+      "role": "User",
+      "text": "Well, they post pictures, [[err_8|stock their favorite celebrities]], rant about life, watch funny videos, or sometimes even learn something useful. It's basically a bit of everything"
+    },
+    {
+      "role": "AI",
+      "text": "Mm-hmm. Right."
+    },
+    {
+      "role": "AI",
+      "text": "Thanks. Now let's talk about websites. What kinds of websites do you often visit?"
+    },
+    {
+      "role": "User",
+      "text": "Oh, [[err_9|I usually just visit website just for fun]], you know, like YouTube for vlogs or TikToks for short videos, and tutorials on makeup and skincare routines. Yeah, [[err_10|mostly are vlogs]]"
+    },
+    {
+      "role": "AI",
+      "text": "What is your favourite website?"
+    },
+    {
+      "role": "User",
+      "text": "Oh, definitely YouTube. I think I can spend hours on there just bouncing between coding tutorials, vlogs, and [[err_11|travel contents]]. Yeah, it's my go to spot for, you know, winding down after a long day"
+    },
+    {
+      "role": "AI",
+      "text": "Mm-hmm. Are there any changes to the websites you often visit?"
+    },
+    {
+      "role": "User",
+      "text": "Yeah, for sure. Um, YouTube has definitely changed a lot. I've noticed more [[err_12|shorts videos]] popping up. Um, it feels like they're really pushing [[err_13|that TikTok vibes]], which [[err_14|I'm not a really a fan of]]"
+    },
+    {
+      "role": "AI",
+      "text": "What kinds of websites are popular in your country?"
+    },
+    {
+      "role": "User",
+      "text": "Well, I would say [[err_15|social medias like WeChat and RedNote are huge]], especially their web version. A lot of people use the we- the web version at work because [[err_16|you can just share you can't just, you know, stare at your phone all day without your boss noticing]]. So it's like a sneaky way to take a quick break."
+    },
+    {
+      "role": "AI",
+      "text": "Mmm. Thank you. That ends part one."
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "date": "2026-08-25",
+  "duration_minutes": 15,
+  "metrics": {
+    "overall_score": 8.0,
+    "fluency_coherence": 7.8,
+    "grammar_accuracy": 7.6,
+    "lexical_resource": 8.1,
+    "idiomaticity": 7.7
+  },
+  "summary": {
+    "evaluation": "整体表现很自然，能够持续围绕日常生活和情绪展开交流，表达速度和互动感都不错，已经明显超过“只会回答问题”的口语阶段。主要问题不是词汇量不足，而是临场组织语言时会出现较多自我修正、重复和少量中式搭配；如果进一步减少这些卡顿，并积累更自然的固定表达，口语会更接近母语者的流畅感。",
+    "key_improvements": [
+      "重点减少“重复启动”和自我修正，例如“I'm just I was just...”“grab it grab...”“the-the weather...”，可以先用更短、更简单的句子稳定输出。",
+      "集中纠正高频口语搭配，如“struggle through meetings”“chill out”“take a 10-minute break”“with my family”，这些固定表达对提升地道度非常有效。",
+      "继续扩大描述日常生活和情绪的词汇，避免反复使用“good”“very”“relaxing”，可以尝试用 pleasant、peaceful、refreshing、low-key、recharged 等更具体的表达。"
+    ]
+  },
+  "quick_version": [
+    {
+      "id": "err_1",
+      "original": "So, yeah probably that's how I unwind last week",
+      "corrected": "So, yeah, that's probably how I unwound last week.",
+      "native_upgrade": "So yeah, that's basically how I relaxed last weekend.",
+      "explanation": "这里描述的是已经发生的上周末，因此 unwind 应使用过去式 unwound。Native 口语中“that's basically how I relaxed...”会更自然、顺畅。"
+    },
+    {
+      "id": "err_2",
+      "original": "the sun was not like very strong but still with a little wind by the lake",
+      "corrected": "The sun wasn't very strong, but there was still a little wind by the lake.",
+      "native_upgrade": "The sun wasn't too intense, and there was a nice breeze by the lake.",
+      "explanation": "原句后半部分缺少完整谓语结构；表达“有风”应使用 there was。描述天气时，nice breeze 比 little wind 更符合自然英语习惯。"
+    },
+    {
+      "id": "err_3",
+      "original": "I went there with my families, the whole family",
+      "corrected": "I went there with my family, the whole family.",
+      "native_upgrade": "I went with my whole family.",
+      "explanation": "family 表示“家人/家庭成员”时通常作为集合名词使用，不需要复数 families。Native 表达中“I went with my whole family”最简洁自然。"
+    },
+    {
+      "id": "err_4",
+      "original": "I'm just I was just a struggling from meetings and meetings",
+      "corrected": "I was just struggling with meetings all day.",
+      "native_upgrade": "I was basically stuck in back-to-back meetings all day.",
+      "explanation": "struggle 后面不能直接使用 from 表示“被会议折磨”；这里应使用 struggle with。更自然的口语是 stuck in back-to-back meetings，能够准确表达“一个接一个的会议”。"
+    },
+    {
+      "id": "err_5",
+      "original": "just chill out al, chill up a little bit",
+      "corrected": "just chill out a little bit",
+      "native_upgrade": "just have a little time to chill out",
+      "explanation": "固定短语是 chill out，而不是 chill up。表达“有一点时间放松”时，“have a little time to chill out”比直接重复 chill out 更自然。"
+    },
+    {
+      "id": "err_6",
+      "original": "I'm gonna let's say grab it grab 10 minutes a break, take a break and grab a coffee",
+      "corrected": "I'm gonna, let's say, take a 10-minute break and grab a coffee.",
+      "native_upgrade": "I'm gonna take about 10 minutes to grab a coffee and reset.",
+      "explanation": "“10 minutes a break”不是正确搭配，应说“a 10-minute break”。原句还有明显的临场重复和自我修正；提前掌握“take a 10-minute break”这个整体结构可以显著减少卡顿。"
+    },
+    {
+      "id": "err_7",
+      "original": "I don't really like very sweet and sugary coffee",
+      "corrected": "I don't really like very sweet coffee.",
+      "native_upgrade": "I'm not really into overly sweet coffee.",
+      "explanation": "sweet 和 sugary 在这里语义重复。英语中通常直接说 sweet coffee，或者用“I'm not really into overly sweet coffee”表达个人偏好，会更简洁自然。"
+    }
+  ],
+  "full_transcript": [
+    {
+      "role": "AI",
+      "text": "How'd your week go? What did you do to unwind or recharge?"
+    },
+    {
+      "role": "User",
+      "text": "Oh, uh, nothing very special, just a normal week. Um But I went to a really good park last weekend and had a little picnic there."
+    },
+    {
+      "role": "AI",
+      "text": "Mmm."
+    },
+    {
+      "role": "User",
+      "text": "[[err_1|So, yeah probably that's how I unwind last week]]."
+    },
+    {
+      "role": "AI",
+      "text": "Sounds lovely. Yeah, a picnic sounds like the perfect reset. What made that one so good?"
+    },
+    {
+      "role": "User",
+      "text": "Well, because the-the weather was really good, pretty sunny."
+    },
+    {
+      "role": "AI",
+      "text": "Mmm."
+    },
+    {
+      "role": "User",
+      "text": "[[err_2|and the sun-it the sun was not like very strong but still with a little wind by the lake]]. Uh"
+    },
+    {
+      "role": "AI",
+      "text": "Nice!"
+    },
+    {
+      "role": "User",
+      "text": "just so relaxed."
+    },
+    {
+      "role": "AI",
+      "text": "That does sound lovely. Like the kind of calm that really lingers. Did you go solo or with some friends or family?"
+    },
+    {
+      "role": "User",
+      "text": "Oh, [[err_3|I went there with my families, the whole family]]."
+    },
+    {
+      "role": "AI",
+      "text": "That's sweet."
+    },
+    {
+      "role": "User",
+      "text": "I went there. Yeah, and we bought some, you know, our tans and also some snacks and um, yeah, just a very relaxing day."
+    },
+    {
+      "role": "AI",
+      "text": "That sounds wonderful. Yeah, family plus good weather. Pretty perfect mix. I'm glad you got that time. How are you feeling this week so far?"
+    },
+    {
+      "role": "User",
+      "text": "Well, today is Tuesday, so only two days so far, but Monday was a very busy day, you know, [[err_4|I'm just I was just a struggling from meetings and meetings]]."
+    },
+    {
+      "role": "AI",
+      "text": "Mmm."
+    },
+    {
+      "role": "User",
+      "text": "and um yeah, I didn't have that much time to relax or [[err_5|just chill out al, chill up a little bit]]. So probably I'm gonna grab a coffee later. Well, today's Tuesday, still a lot of meetings and um coding sessions so but still [[err_6|I'm gonna let's say grab it grab 10 minutes a break, take a break and grab a coffee]]."
+    },
+    {
+      "role": "AI",
+      "text": "Yeah, even just ten minutes can help. What kind of coffee hits the spot for you?"
+    },
+    {
+      "role": "User",
+      "text": "Well. Flat white. [[err_7|I don't really like very sweet and sugary coffee]], just a regular flat white will make my day."
+    },
+    {
+      "role": "AI",
+      "text": "Mm. Nice, clean, simple. Sounds like a solid pick-me-up. You think that little break fits into today?"
+    },
+    {
+      "role": "User",
+      "text": "Yeah, absolutely. Probably like, um, I think around 2 PM will be a good time because we don't have um a very long lunch break."
+    },
+    {
+      "role": "AI",
+      "text": "Yeah, that mid-afternoon slump is real. A small pause can reset your brain a bit. Worth it, I think."
+    },
+    {
+      "role": "User",
+      "text": "Yeah."
+    },
+    {
+      "role": "AI",
+      "text": "Yeah."
+    },
+    {
+      "role": "User",
+      "text": "I totally agree."
+    },
+    {
+      "role": "AI",
+      "text": "Well, I hope you get that flat white and a few quiet sips. What's the next meeting after that?"
+    },
+    {
+      "role": "User",
+      "text": "Okay Well, I think at 11:00 PM, 11:00 AM there will be a short meeting and after that meeting I'm gonna grab some lunch. I think that's it for today's session. Thank you."
+    }
+  ]
+}

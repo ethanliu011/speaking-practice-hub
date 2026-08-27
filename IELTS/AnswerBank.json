@@ -1,0 +1,2724 @@
+{
+  "version": "2026_IELTS_Speaking_Bank",
+  "last_updated": "2026-08-07",
+  "part1": [
+    {
+      "category_id": "p1_teachers",
+      "category_name": "Teachers",
+      "questions": [
+        {
+          "q_id": "p1_t1",
+          "question": "Do you have a favorite teacher? Do you have a teacher from your past that you still remember? In what way has your favourite teacher helped you?",
+          "answer_text": "Yeah, I remembered my high school math teacher, she was the best. She had this magical ability to make even the most confusing formulas make sense, and she never made anyone feel dumb for asking questions. She made me not hate math, she really showed us it’s all about understanding, not memorizing.",
+          "chinese_translation": "是的，我还记得我高中的数学老师，她是最棒的。她有一种神奇的能力，能让最让人困惑的公式变得清晰易懂，而且她从不会让任何人因为提问而觉得自己很蠢。她让我不再讨厌数学，她真的向我们证明了数学全在于理解，而不是死记硬背。",
+          "key_vocabulary": [
+            {
+              "word": "make sense",
+              "meaning": "讲得通，变得易于理解；语境中指“让复杂的公式变得容易理解”。",
+              "example": "A good teacher can make complex grammar rules make sense to beginners."
+            },
+            {
+              "word": "memorizing",
+              "meaning": "死记硬背；动词 memorize 的动名词形式。",
+              "example": "Learning a language is about practice, not just memorizing vocabulary lists."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_t2",
+          "question": "Do you want to be a teacher in the future?",
+          "answer_text": "Not really, to be honest. I respect teachers a lot, but I don’t think teaching full-time is something I’d want to do. It doesn’t quite fit my personality or long-term goals.",
+          "chinese_translation": "老实说，不太想。我非常尊敬老师，但我不认为全职教书是我未来想做的事情。这不太符合我的性格或长期目标。",
+          "key_vocabulary": [
+            {
+              "word": "fit my personality",
+              "meaning": "符合我的性格/个性。",
+              "example": "I chose this job because it really fits my personality."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_t3",
+          "question": "Are you still in touch with your primary school teachers?",
+          "answer_text": "Not really, but I kind of wish I was! It would be fun to see if they still remember me, hopefully for good reasons and not because I talked too much in class.",
+          "chinese_translation": "并没有，但我倒挺希望有的！如果看看他们是否还记得我，那一定会很有趣，希望是因为好的一面，而不是因为我在课堂上话太多。",
+          "key_vocabulary": [
+            {
+              "word": "for good reasons",
+              "meaning": "出于好的原因/因为好的表现。",
+              "example": "I hope my boss remembers me for good reasons when it's time for a promotion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_social_media",
+      "category_name": "Social media",
+      "questions": [
+        {
+          "q_id": "p1_sm1",
+          "question": "Have you ever posted anything on social media?",
+          "answer_text": "Honestly, not really. I’m pretty low-key online. Over-sharing just freaks me out a bit regarding personal privacy. So I mostly just lurk and scroll rather than post.",
+          "chinese_translation": "老实说，不怎么发。我在网上相当低调。关于个人隐私的过度分享会让我觉得有点不安。所以我大多只是潜水和刷动态，而不是发帖。",
+          "key_vocabulary": [
+            {
+              "word": "low-key",
+              "meaning": "低调的；不张扬的。",
+              "example": "I prefer to keep my birthday celebrations low-key."
+            },
+            {
+              "word": "lurk and scroll",
+              "meaning": "潜水（光看不发）和刷动态。",
+              "example": "Instead of engaging in arguments, I usually just lurk and scroll through the comments."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_sm2",
+          "question": "When did you start using social media?",
+          "answer_text": "Oh, probably when I was a teenager. I think my first account was on some old platform that isn’t even popular anymore. Then, of course, I jumped onto WeChat, and all the usual ones. It feels like I’ve been on social media forever.",
+          "chinese_translation": "哦，大概是我十几岁的时候吧。我觉得我的第一个账号是在某个现在已经不流行了的老平台上。然后，当然，我也开始用微信和所有那些常用的平台。感觉我用社交媒体已经很久了。",
+          "key_vocabulary": [
+            {
+              "word": "jump onto",
+              "meaning": "加入，投入使用（新平台或新趋势）。",
+              "example": "Many businesses quickly jumped onto the short-video trend."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_sm3",
+          "question": "Do you think you spend too much time on social media?",
+          "answer_text": "A hundred percent(100%), but I try not to think about it too much. I tell myself it’s ‘staying connected,’ but to be honest, I indeed sometimes just scroll for way longer than I should.",
+          "chinese_translation": "百分之百是的，但我尽量不去多想。我告诉自己这是“保持联系”，但老实说，有时候我刷手机的时间确实比我应该刷的时间长得多。",
+          "key_vocabulary": [
+            {
+              "word": "A hundred percent",
+              "meaning": "百分之百，绝对是的（常用于强烈赞同）。",
+              "example": "Do I want to travel the world? A hundred percent!"
+            }
+          ]
+        },
+        {
+          "q_id": "p1_sm4",
+          "question": "Do your friends use social media?",
+          "answer_text": "Definitely, I don’t think I know anyone who doesn’t use it. We share memes, plan hangouts, and sometimes just send random posts without even saying a word. It’s like our way of talking without actually talking.",
+          "chinese_translation": "绝对的，我想我不认识任何不用社交媒体的人。我们分享表情包，计划聚会，有时候甚至一句话都不说就发一些随机的帖子。这就像是我们一种不说话也能交流的方式。",
+          "key_vocabulary": [
+            {
+              "word": "share memes",
+              "meaning": "分享表情包/网络迷因。",
+              "example": "My best friend and I share memes all day long to keep each other entertained."
+            },
+            {
+              "word": "plan hangouts",
+              "meaning": "计划聚会/出行。",
+              "example": "We use a group chat to plan hangouts on weekends."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_sm5",
+          "question": "What do people often do on social media?",
+          "answer_text": "They post pictures, stalk their favorite celebrities, rant about life, watch funny videos, and sometimes even learn something useful. It’s basically a bit of everything.",
+          "chinese_translation": "他们发照片，关注他们最喜欢的名人，抱怨生活，看搞笑视频，有时候甚至学点有用的东西。基本上什么都有。",
+          "key_vocabulary": [
+            {
+              "word": "stalk their favorite celebrities",
+              "meaning": "关注（带有窥探意味）他们最喜欢的名人动态。",
+              "example": "Fans often stalk their favorite celebrities online to see what they are up to."
+            },
+            {
+              "word": "rant about life",
+              "meaning": "抱怨/吐槽生活。",
+              "example": "People tend to use social media as a diary to rant about their daily struggles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_websites",
+      "category_name": "Websites",
+      "questions": [
+        {
+          "q_id": "p1_web1",
+          "question": "What kinds of websites do you often visit?",
+          "answer_text": "I usually hang out on websites just for fun, like YouTube or TikTok for vlogs, tutorials or makeup and skincare routines. Or sometimes websites related to tech and programming, like GitHub, to stay updated on the latest trends and solve coding problems.",
+          "chinese_translation": "我通常只是为了好玩而上一些网站，比如YouTube或TikTok看视频博客、教程或化妆和护肤日常。或者有时候访问与技术和编程相关的网站，比如GitHub，以了解最新趋势并解决编程问题。",
+          "key_vocabulary": [
+            {
+              "word": "hang out on",
+              "meaning": "在（某网站）上消磨时间/闲逛。",
+              "example": "I usually hang out on tech forums to learn new programming skills."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_web2",
+          "question": "What is your favourite website?",
+          "answer_text": "Definitely YouTube. I can spend hours on there, just bouncing between coding tutorials, lifestyle vlogs or random travel vlogs, or fitness routines. it’s my go-to spot for winding down after a long day.",
+          "chinese_translation": "肯定是YouTube。我能在上面花上好几个小时，在编程教程、生活Vlog或随机的旅行视频、健身日常之间来回跳转。这是我漫长一天后放松的首选之地。",
+          "key_vocabulary": [
+            {
+              "word": "go-to spot",
+              "meaning": "首选之地/经常去的地方。",
+              "example": "That coffee shop is my go-to spot for remote work."
+            },
+            {
+              "word": "winding down",
+              "meaning": "放松，平静下来（尤指在劳累之后）。",
+              "example": "Listening to jazz is my favorite way of winding down before bed."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_web3",
+          "question": "Are there any changes to the websites you often visit?",
+          "answer_text": "For sure, YouTube has definitely been switching things up. I’ve noticed more shorts popping up, feels like they’re really pushing that TikTok vibe, which I am not a fan of.",
+          "chinese_translation": "当然，YouTube肯定一直在改变。我注意到出现了更多的短视频，感觉他们真的在推崇TikTok那种风格，但我并不喜欢。",
+          "key_vocabulary": [
+            {
+              "word": "switching things up",
+              "meaning": "做出改变/调整风格。",
+              "example": "The website is switching things up by adding a new dark mode feature."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_web4",
+          "question": "What kinds of websites are popular in your country?",
+          "answer_text": "I’d say social platforms like WeChat and RedNote are huge, especially their web versions. A lot of people use the web version at work because, you can't just stare at your phone all day without your boss noticing! It’s like a sneaky way to take a quick break.",
+          "chinese_translation": "我觉得像微信和小红书这样的社交平台非常受欢迎，尤其是它们的网页版。很多人在工作时使用网页版，因为你不能整天盯着手机而不被老板发现！这就像是一种偷偷休息的小把戏。",
+          "key_vocabulary": [
+            {
+              "word": "sneaky way",
+              "meaning": "偷偷摸摸的方式，小把戏。",
+              "example": "Using the web version of social apps is a sneaky way to chat during office hours."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_watch",
+      "category_name": "Watch",
+      "questions": [
+        {
+          "q_id": "p1_w1",
+          "question": "Do you wear a watch?",
+          "answer_text": "Nope, I don’t wear a watch! I just use my phone for checking the time. I guess I’m just too used to the convenience of having everything in one place.",
+          "chinese_translation": "不戴，我不戴手表！我只用手机看时间。我想我只是太习惯把所有功能都集中在一个设备上的便利了。",
+          "key_vocabulary": [
+            {
+              "word": "convenience of having everything in one place",
+              "meaning": "把所有东西/功能集中在一起的便利性。",
+              "example": "Smartphones offer the convenience of having everything in one place, from maps to music."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_w2",
+          "question": "Have you ever got a watch as a gift?",
+          "answer_text": "Yes! I actually got a super cute watch for my birthday once, but I don’t wear it much. It’s more like a decorative piece now.",
+          "chinese_translation": "有过！其实有一次我过生日收到了一块超级可爱的手表，但我戴得不多。现在它更像是一件装饰品。",
+          "key_vocabulary": [
+            {
+              "word": "decorative piece",
+              "meaning": "装饰品。",
+              "example": "I rarely use that antique clock; it's mostly just a decorative piece."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_w3",
+          "question": "Why do some people wear expensive watches?",
+          "answer_text": "I think for some people, it’s more about the style or status symbol. A really nice watch can be a statement piece, showing off success or taste.",
+          "chinese_translation": "我认为对一些人来说，这更多的是关乎风格或身份象征。一块非常漂亮的手表可以是一件彰显个性的单品，炫耀着成功或品味。",
+          "key_vocabulary": [
+            {
+              "word": "status symbol",
+              "meaning": "身份地位的象征。",
+              "example": "In many cultures, driving a luxury car is seen as a status symbol."
+            },
+            {
+              "word": "statement piece",
+              "meaning": "彰显个性的单品；引人注目的服饰或物品。",
+              "example": "That brightly colored jacket is definitely a statement piece."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_w4",
+          "question": "Do you think it is important to wear a watch? Why?",
+          "answer_text": "I mean, it’s not that important for me, I’m just happy with my phone. But I can see why some people think it is. It’s kind of like an accessory that says something about your personality or lifestyle.",
+          "chinese_translation": "我的意思是，这对我来说没那么重要，用手机我就很满足了。但我能理解为什么有些人认为它很重要。它就像是一种能彰显你个性或生活方式的配饰。",
+          "key_vocabulary": [
+            {
+              "word": "accessory",
+              "meaning": "配饰，附件。",
+              "example": "A watch is no longer just for telling time; it's a fashion accessory."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_cars",
+      "category_name": "Cars",
+      "questions": [
+        {
+          "q_id": "p1_c1",
+          "question": "Did you enjoy traveling by car when you were a kid?",
+          "answer_text": "For sure. I remember road trips with my parents, especially the long ones where we’d get snacks, play card games. It was always an adventure. Now, I still enjoy the ride as long as I don’t have to sit in traffic.",
+          "chinese_translation": "当然。我记得和父母一起去公路旅行，特别是那些漫长的旅程，我们会买零食，打牌。那总是一场冒险。现在，只要不堵车，我仍然很享受乘车的乐趣。",
+          "key_vocabulary": [
+            {
+              "word": "road trips",
+              "meaning": "公路旅行，自驾游。",
+              "example": "We used to go on family road trips every summer."
+            },
+            {
+              "word": "sit in traffic",
+              "meaning": "堵车，在车流中干等。",
+              "example": "I hate commuting because I have to sit in traffic for an hour every morning."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_c2",
+          "question": "What types of cars do you like?",
+          "answer_text": "I would say I’m definitely into sporty yet practical cars, something that’s fun to drive but still is spacious enough for everything I need.",
+          "chinese_translation": "我会说我绝对喜欢既有运动感又实用的车，那种开起来很有趣，但同时又足够宽敞，能装下我所有需要的东西的车。",
+          "key_vocabulary": [
+            {
+              "word": "sporty yet practical",
+              "meaning": "既有运动感又实用的。",
+              "example": "I'm looking for an SUV that is sporty yet practical for my family."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_c3",
+          "question": "Do you prefer to be a driver or a passenger?",
+          "answer_text": "I think I prefer being the driver. I like being in control, and I can listen to my music without complaints, you know how it is when someone else is in charge of the playlist. But if I’m super tired, I’ll happily let someone else take the wheel.",
+          "chinese_translation": "我想我更喜欢当司机。我喜欢掌控一切的感觉，而且我可以听我的音乐而不被抱怨，你知道如果别人掌握歌单会有多麻烦。但如果我特别累，我会很乐意让别人来开车。",
+          "key_vocabulary": [
+            {
+              "word": "take the wheel",
+              "meaning": "开车，掌舵；接管。",
+              "example": "I was exhausted after a long day, so my friend offered to take the wheel."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_c4",
+          "question": "What do you usually do when there is a traffic jam?",
+          "answer_text": "I’ll usually just put on a podcast or catch up on an audiobook. If I’m really bored, I’ll go full multitask mode, like check my emails or scroll through social media.",
+          "chinese_translation": "我通常会放个播客或者听听有声书。如果实在无聊，我就会开启全效多任务模式，比如查收邮件或者刷社交媒体。",
+          "key_vocabulary": [
+            {
+              "word": "catch up on",
+              "meaning": "补上（未做完的事），赶上（进度）。",
+              "example": "During the long flight, I managed to catch up on some sleep."
+            },
+            {
+              "word": "go full multitask mode",
+              "meaning": "开启全效多任务模式；一心多用。",
+              "example": "When the deadline approaches, I go full multitask mode to finish everything."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_c5",
+          "question": "Do you think car colours are important?",
+          "answer_text": "I think car colors are important because they do have a function beyond just looking pretty. For example, lighter colors like white or silver can make a car stand out more for safety reasons, especially in bad weather.",
+          "chinese_translation": "我认为汽车颜色很重要，因为除了好看之外，它们确实有实用功能。例如，出于安全原因，浅色（如白色或银色）能让汽车更显眼，尤其是在恶劣天气下。",
+          "key_vocabulary": [
+            {
+              "word": "stand out",
+              "meaning": "显眼，突出。",
+              "example": "Wearing neon clothes at night helps you stand out and stay safe on the road."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_parks",
+      "category_name": "Parks",
+      "questions": [
+        {
+          "q_id": "p1_p1",
+          "question": "Did you like going to parks as a child?",
+          "answer_text": "Yeah, I loved it! Back then we didn't really have iPads or phones everywhere, so my friends and I were always outdoors, just running around, playing tag, or riding bikes. It was super fun.",
+          "chinese_translation": "是的，我超爱去！那时我们没有到处都是的iPad或手机，所以我和朋友们总是在户外，到处跑，玩抓人游戏，或者骑自行车。那超级好玩。",
+          "key_vocabulary": [
+            {
+              "word": "playing tag",
+              "meaning": "玩抓人游戏/捉迷藏（的一种形式）。",
+              "example": "Kids spend hours in the park playing tag."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_p2",
+          "question": "Do you still like going to parks now?",
+          "answer_text": "Totally! I still go all the time. I love riding my bike along the riverside park or just taking a stroll after dinner. It’s super refreshing and a really nice way to unwind.",
+          "chinese_translation": "绝对喜欢！我现在还经常去。我喜欢在江边公园骑车，或者晚饭后散散步。这让人感觉非常神清气爽，也是放松的好方法。",
+          "key_vocabulary": [
+            {
+              "word": "taking a stroll",
+              "meaning": "散步，溜达。",
+              "example": "We enjoy taking a stroll along the beach when the sun goes down."
+            },
+            {
+              "word": "unwind",
+              "meaning": "放松，解压。",
+              "example": "A hot bath is a great way to unwind after a stressful day."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_p3",
+          "question": "Would you like to see more parks in your city?",
+          "answer_text": "For sure! I think having green spaces is so important for our mental health. We spend way too much time staring at screens these days, so having a park nearby to just see some greenery and chill makes city life way more relaxed.",
+          "chinese_translation": "那是当然！我认为绿地对我们的心理健康太重要了。如今我们在屏幕上花了太多时间，所以附近有个公园，能看看绿色植物并放松一下，会让城市生活轻松得多。",
+          "key_vocabulary": [
+            {
+              "word": "green spaces",
+              "meaning": "绿地，绿化带。",
+              "example": "Urban planners are focusing on creating more green spaces in the city center."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_p4",
+          "question": "Are there any parks you want to go to in the future?",
+          "answer_text": "Definitely. I’ve always wanted to visit Central Park in New York, or maybe Banff National Park in Canada. They just look breathtaking in photos, and I’d love to experience that kind of nature in person.",
+          "chinese_translation": "肯定有。我一直想去纽约的中央公园，或者是加拿大的班夫国家公园。它们在照片上看起来美得令人窒息，我很想亲自去体验那种自然风光。",
+          "key_vocabulary": [
+            {
+              "word": "breathtaking",
+              "meaning": "美得令人窒息的，令人惊叹的。",
+              "example": "The view from the top of the mountain was absolutely breathtaking."
+            },
+            {
+              "word": "in person",
+              "meaning": "亲自，亲身。",
+              "example": "You have to see the Grand Canyon in person to truly appreciate its size."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_science",
+      "category_name": "Science",
+      "questions": [
+        {
+          "q_id": "p1_s1",
+          "question": "When did you start to learn about science?",
+          "answer_text": "Probably as a kid, the serious stuff kicked in during middle school, when I realized science wasn’t just memorizing facts but actually figuring out how things work.",
+          "chinese_translation": "可能是在小时候吧，但真正严肃的学习是在初中开始的，那时我意识到科学不仅仅是死记硬背，而是去弄清楚事物是如何运作的。",
+          "key_vocabulary": [
+            {
+              "word": "kicked in",
+              "meaning": "开始生效，开始发挥作用（语境中指“真正的科学学习开始”）。",
+              "example": "The painkillers finally kicked in after half an hour."
+            },
+            {
+              "word": "figuring out",
+              "meaning": "弄清楚，搞懂。",
+              "example": "Science is all about figuring out the mysteries of the universe."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_s2",
+          "question": "Which science subject is interesting to you?",
+          "answer_text": "I’m really into AI and deep learning. It’s wild how machines can learn patterns, recognize images, and even make decisions like humans. The way AI is transforming everything, like self-driving cars or face filters on social media is just mind-blowing.",
+          "chinese_translation": "我非常喜欢人工智能和深度学习。机器能像人类一样学习模式、识别图像甚至做出决定，这真是太疯狂了。人工智能改变一切的方式，比如自动驾驶汽车或社交媒体上的面部滤镜，简直令人震撼。",
+          "key_vocabulary": [
+            {
+              "word": "mind-blowing",
+              "meaning": "令人震撼的，极好的。",
+              "example": "The rapid advancement of AI technology is simply mind-blowing."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_s3",
+          "question": "What kinds of interesting things have you done with science?",
+          "answer_text": "Oh, plenty. One of the coolest things I’ve worked on is using AI for visual inspection in manufacturing. Basically AI models can analyze images in real-time and spot flaws way faster.",
+          "chinese_translation": "哦，很多。我做过的最酷的事情之一就是将人工智能用于制造业的视觉检测。基本上，人工智能模型可以实时分析图像，并以更快的速度发现缺陷。",
+          "key_vocabulary": [
+            {
+              "word": "spot flaws",
+              "meaning": "发现瑕疵/缺陷。",
+              "example": "The automated system is designed to spot flaws in the products on the assembly line."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_s4",
+          "question": "Do you like watching science TV programs?",
+          "answer_text": "Yes, I find them fascinating, especially documentaries about space, physics, and new technological advancements. Programs that explain complex theories in an engaging way are always interesting to watch.",
+          "chinese_translation": "是的，我觉得它们很迷人，尤其是关于太空、物理和新科技进步的纪录片。那些以引人入胜的方式解释复杂理论的节目看起来总是很有趣。",
+          "key_vocabulary": [
+            {
+              "word": "engaging way",
+              "meaning": "引人入胜的方式，吸引人的方式。",
+              "example": "A great teacher explains difficult concepts in an engaging way."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_s5",
+          "question": "Do Chinese people often visit science museums?",
+          "answer_text": "Not super often, but they do go, especially families with kids. Science museums are really fun for children because they have lots of interactive exhibits.",
+          "chinese_translation": "不是超级频繁，但确实会去，特别是带小孩的家庭。科学博物馆对孩子们来说真的很有趣，因为那里有很多互动展览。",
+          "key_vocabulary": [
+            {
+              "word": "interactive exhibits",
+              "meaning": "互动展览/展品。",
+              "example": "The science museum features interactive exhibits that make learning fun."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_mirrors",
+      "category_name": "Mirrors",
+      "questions": [
+        {
+          "q_id": "p1_m1",
+          "question": "Do you like looking at yourself in the mirror? How often?",
+          "answer_text": "I wouldn't say I love staring at myself, but I do check the mirror a few times a day, mostly when I'm getting ready or just making sure I look alright before leaving the house, or washing my hands in the bathroom.",
+          "chinese_translation": "我不会说我喜欢盯着自己看，但我确实每天会照几次镜子，大多是在我准备出门，或者只是在离家前确保自己看起来还行，又或者是在浴室洗手的时候。",
+          "key_vocabulary": [
+            {
+              "word": "staring at",
+              "meaning": "盯着看。",
+              "example": "She caught him staring at his own reflection in the window."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_m2",
+          "question": "Have you ever bought mirrors?/ Would you use mirrors to decorate your room?",
+          "answer_text": "Yes! I’ve bought a couple for my house. I think mirrors are useful, plus they can make a room feel a bit bigger and brighter. It’s one of those things where you need them, but at the same time, they can add a bit of style to your space.",
+          "chinese_translation": "买过！我给家里买过几面。我觉得镜子很实用，而且它们能让房间感觉更大、更明亮。这属于那种你既需要它，同时它又能给你的空间增添一点风格的东西。",
+          "key_vocabulary": [
+            {
+              "word": "add a bit of style",
+              "meaning": "增添一些风格/情调。",
+              "example": "A well-placed painting can really add a bit of style to your living room."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_m3",
+          "question": "Do you usually take a mirror with you?",
+          "answer_text": "Not really! I don’t usually carry a mirror around. If I’m out and I need to check something, I just use my phone’s camera.",
+          "chinese_translation": "不怎么带！我通常不随身带镜子。如果我在外面需要检查妆容，我直接用手机摄像头。",
+          "key_vocabulary": [
+            {
+              "word": "carry around",
+              "meaning": "随身携带。",
+              "example": "I don't like to carry around too much cash."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_outer_space",
+      "category_name": "Outer Space & Sci-Fi",
+      "questions": [
+        {
+          "q_id": "p1_os1",
+          "question": "Have you ever learnt about outer space and stars?",
+          "answer_text": "Yeah, a little bit back in elementary school science class, like learning about the solar system and constellations. But to be honest, I haven't really kept up with it since then.",
+          "chinese_translation": "是的，以前在小学的科学课上学过一点，比如学习太阳系和星座。但老实说，从那以后我就没怎么关注过这方面了。",
+          "key_vocabulary": [
+            {
+              "word": "kept up with it",
+              "meaning": "跟上，持续关注（某事）。",
+              "example": "Technology changes so fast, it's hard to keep up with it."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_os2",
+          "question": "Do you like science fiction movies? Why?",
+          "answer_text": "Oh, I love them! Movies like Interstellar or Inception are just mind-blowing. I love how sci-fi stretches your imagination and makes you question what the future might actually look like.",
+          "chinese_translation": "哦，我超爱！像《星际穿越》或《盗梦空间》这样的电影简直震撼人心。我喜欢科幻电影拓展你的想象力，让你思考未来可能到底是什么样子。",
+          "key_vocabulary": [
+            {
+              "word": "stretches your imagination",
+              "meaning": "拓宽/延伸你的想象力。",
+              "example": "Reading fantasy novels really stretches your imagination."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_os3",
+          "question": "Do you want to know more about outer space?",
+          "answer_text": "Yeah, out of curiosity, sure! Space is so mysterious and vast. It’s pretty cool to read about space exploration or black holes every now and then, even if the math behind it flies way over my head.",
+          "chinese_translation": "是的，出于好奇，当然想！太空是如此神秘和浩瀚。偶尔读一读关于太空探索或黑洞的内容是很酷的，即使背后的数学原理我完全看不懂。",
+          "key_vocabulary": [
+            {
+              "word": "flies way over my head",
+              "meaning": "完全超出我的理解能力；我完全听不懂。",
+              "example": "The professor's explanation of quantum mechanics just flies way over my head."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_os4",
+          "question": "Do you want to go into outer space in the future?",
+          "answer_text": "Honestly? Hell no! [laughs] Space travel sounds way too intense and terrifying for me. I’m perfectly fine watching it on a giant screen with some popcorn right here on Earth.",
+          "chinese_translation": "老实说？绝不！[笑] 太空旅行对我来说听起来太刺激也太吓人了。我完全可以心安理得地待在地球上，吃着爆米花在大银幕上看它。",
+          "key_vocabulary": [
+            {
+              "word": "Hell no",
+              "meaning": "绝对不行，见鬼去吧（强烈拒绝）。",
+              "example": "Would I go skydiving? Hell no, I'm terrified of heights!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_singing",
+      "category_name": "Singing",
+      "questions": [
+        {
+          "q_id": "p1_sg1",
+          "question": "Do you like singing? Why?",
+          "answer_text": "Yeah, I love singing, mostly just in the shower or during karaoke nights with friends! It’s a total stress reliever and just instantly puts me in a good mood.",
+          "chinese_translation": "是的，我喜欢唱歌，主要是在洗澡的时候或者和朋友去KTV的时候！它能彻底缓解压力，并且瞬间让我心情大好。",
+          "key_vocabulary": [
+            {
+              "word": "stress reliever",
+              "meaning": "缓解压力的方式/事物。",
+              "example": "For me, doing yoga after work is a great stress reliever."
+            },
+            {
+              "word": "puts me in a good mood",
+              "meaning": "让我心情好起来。",
+              "example": "Listening to upbeat music always puts me in a good mood."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_sg2",
+          "question": "Have you ever learnt how to sing?",
+          "answer_text": "Not formally, no. I’ve never taken professional vocal lessons or anything. Everything I sing is just from listening to my favorite artists on Spotify and singing along.",
+          "chinese_translation": "没有正式学过。我从来没上过专业的声乐课。我唱的每一首歌都是在Spotify上听我最喜欢的歌手唱歌时跟着唱学会的。",
+          "key_vocabulary": [
+            {
+              "word": "singing along",
+              "meaning": "跟着唱。",
+              "example": "I love playing my favorite playlist in the car and singing along."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_sg3",
+          "question": "Who do you want to sing for?",
+          "answer_text": "Nobody famous! Just my close friends or maybe my future partner. Singing in front of a huge crowd gives me crazy stage fright, but with my inner circle, it’s just fun and goofy.",
+          "chinese_translation": "不是给什么名人唱！就唱给我的亲密朋友或者我未来的伴侣听。在一大群人面前唱歌会让我有疯狂的怯场感，但和我的核心圈子在一起，这就变得既有趣又好玩。",
+          "key_vocabulary": [
+            {
+              "word": "stage fright",
+              "meaning": "怯场，舞台恐惧。",
+              "example": "I used to get terrible stage fright before giving a presentation."
+            },
+            {
+              "word": "inner circle",
+              "meaning": "核心圈子，密友圈。",
+              "example": "I only share my deepest secrets with my inner circle."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_sg4",
+          "question": "Do you think singing can bring happiness to people?",
+          "answer_text": "Absolutely! Music has this amazing way of connecting people. Whether you’re singing at the top of your lungs at a concert or just jamming in the car, it gives you a huge boost of endorphins.",
+          "chinese_translation": "绝对能！音乐有一种神奇的魔力，能把人们联系在一起。无论你是在演唱会上声嘶力竭地唱歌，还是只是在车里即兴嗨唱，它都会让你产生大量的内啡肽。",
+          "key_vocabulary": [
+            {
+              "word": "at the top of your lungs",
+              "meaning": "扯开嗓门，尽可能大声地。",
+              "example": "We were at the concert, singing at the top of our lungs."
+            },
+            {
+              "word": "boost of endorphins",
+              "meaning": "内啡肽的激增（带来快乐感）。",
+              "example": "A good workout always gives me a huge boost of endorphins."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_clothing_fashion",
+      "category_name": "Clothing & Fashion",
+      "questions": [
+        {
+          "q_id": "p1_cf1",
+          "question": "What kind of clothes do you like to wear?",
+          "answer_text": "I’m definitely all about that low-key, comfortable aesthetic, think oversized hoodies, baggy jeans, sneakers, and basic tees. Pretty casual overall.",
+          "chinese_translation": "我绝对是那种喜欢低调、舒适穿搭风格的人，比如超大号连帽衫、宽松牛仔裤、运动鞋和基础款T恤。总体来说非常休闲。",
+          "key_vocabulary": [
+            {
+              "word": "aesthetic",
+              "meaning": "审美；此处指穿搭风格/调性。",
+              "example": "Her room has a very minimalist aesthetic."
+            },
+            {
+              "word": "baggy",
+              "meaning": "宽松下垂的。",
+              "example": "Baggy jeans are making a huge comeback in fashion."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_cf2",
+          "question": "Do you prefer to wear comfortable and casual clothes or smart clothes?",
+          "answer_text": "Casual, 100%! Life’s too short to be squeezed into tight suits or uncomfortable heels. I mean, dressing up for special occasions is fine, but everyday? Comfort comes first.",
+          "chinese_translation": "百分之百选休闲！人生苦短，没必要把自己塞进紧身西装或不舒服的高跟鞋里。我的意思是，特殊场合盛装打扮一下没问题，但每天都这样？舒适才是第一位的。",
+          "key_vocabulary": [
+            {
+              "word": "Comfort comes first",
+              "meaning": "舒适第一。",
+              "example": "When I am choosing shoes for traveling, comfort comes first."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_cf3",
+          "question": "Do you like wearing T-shirts?",
+          "answer_text": "Oh, totally. A classic white tee with good denim is basically my daily uniform. You can style it up or down so easily, and it’s just effortlessly cool.",
+          "chinese_translation": "哦，完全喜欢。经典的白T恤搭配优质牛仔裤基本上是我的日常“制服”。你可以很容易地把它搭得很精致，也可以搭得很随意，就是那种毫不费力的酷。",
+          "key_vocabulary": [
+            {
+              "word": "style it up or down",
+              "meaning": "通过搭配使其显得隆重或随意。",
+              "example": "A black blazer is great because you can style it up or down depending on the occasion."
+            },
+            {
+              "word": "effortlessly cool",
+              "meaning": "毫不费力的酷感。",
+              "example": "She has this effortlessly cool vibe no matter what she wears."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_cf4",
+          "question": "Do you spend a lot of time choosing clothes?",
+          "answer_text": "Not really! Since my wardrobe is pretty minimal and casual, I usually just grab whatever is clean and comfortable in like five minutes and head out the door.",
+          "chinese_translation": "并不怎么花时间！因为我的衣橱非常极简且休闲，我通常只花个五分钟，抓起干净舒服的衣服穿上就出门了。",
+          "key_vocabulary": [
+            {
+              "word": "head out the door",
+              "meaning": "出门。",
+              "example": "I usually grab a coffee before I head out the door for work."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_jokes_comedy",
+      "category_name": "Jokes & Comedy",
+      "questions": [
+        {
+          "q_id": "p1_jk1",
+          "question": "Are you good at telling jokes?",
+          "answer_text": "Oh gosh, terrible! I always end up laughing before I even reach the punchline, which completely ruins it. But hey, at least I crack myself up!",
+          "chinese_translation": "哎呀，糟透了！我总是在还没讲到笑点之前自己先笑场了，这就完全毁了整个笑话。不过嗨，至少我把自己逗乐了！",
+          "key_vocabulary": [
+            {
+              "word": "punchline",
+              "meaning": "笑点；（笑话等的）妙语，包袱。",
+              "example": "A joke is never funny if you forget the punchline."
+            },
+            {
+              "word": "crack myself up",
+              "meaning": "把自己逗乐。",
+              "example": "I have a weird sense of humor, I always crack myself up with my own jokes."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_jk2",
+          "question": "Do your friends like to tell jokes?",
+          "answer_text": "Yeah, my friends are hilarious! We’re always dropping funny memes, banter, and inside jokes whenever we hang out. They definitely keep me laughing.",
+          "chinese_translation": "是的，我的朋友们太搞笑了！我们聚在一起时总是互发搞笑表情包、互相调侃、讲只有我们才懂的内部笑话。他们绝对能让我一直笑个不停。",
+          "key_vocabulary": [
+            {
+              "word": "banter",
+              "meaning": "打趣，玩笑话，互黑。",
+              "example": "I love the friendly banter between my coworkers in the office."
+            },
+            {
+              "word": "inside jokes",
+              "meaning": "圈内笑话，只有自己人懂的笑话。",
+              "example": "We have so many inside jokes that no one else understands."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_jk3",
+          "question": "Do you like to watch comedies?",
+          "answer_text": "For sure! Sitcoms or stand-up specials are my go-to when I want to turn my brain off after a long day. A good laugh is honestly the best therapy.",
+          "chinese_translation": "当然！当我在漫长的一天后想让大脑休息一下时，情景喜剧或脱口秀专场是我的首选。大笑一场老实说是最好的疗愈方式。",
+          "key_vocabulary": [
+            {
+              "word": "turn my brain off",
+              "meaning": "放空大脑，让大脑休息。",
+              "example": "After a stressful exam, I just want to watch TV and turn my brain off."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_jk4",
+          "question": "Have you ever watched a live show?",
+          "answer_text": "Yeah, I’ve been to a few live concerts and a stand-up comedy show. The energy in a live venue is just electric compared to watching it on a screen, it’s a totally different vibe.",
+          "chinese_translation": "是的，我看过几场现场演唱会和一场脱口秀。与在屏幕上看相比，现场的氛围简直燃爆了，那是完全不同的一种感觉。",
+          "key_vocabulary": [
+            {
+              "word": "electric",
+              "meaning": "令人激动的，气氛燃爆的（尤指气氛）。",
+              "example": "The atmosphere in the stadium was electric when the team scored."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_headphones",
+      "category_name": "Headphones",
+      "questions": [
+        {
+          "q_id": "p1_hp1",
+          "question": "Do you use headphones?",
+          "answer_text": "All the time! I basically can't leave the house without them. They're like my safety net against awkward public noise.",
+          "chinese_translation": "一直用！我出门基本上不能没有它们。它们就像是我抵御公共场合令人尴尬的噪音的安全网。",
+          "key_vocabulary": [
+            {
+              "word": "safety net",
+              "meaning": "安全网，保护伞（此处引申为精神上的缓冲）。",
+              "example": "Putting on headphones serves as a safety net against awkward social interactions."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_hp2",
+          "question": "What type of headphones do you use?",
+          "answer_text": "I mostly use wireless earbuds like AirPods because they’re super portable. But when I'm working at my desk or traveling, I prefer over-ear noise-canceling ones.",
+          "chinese_translation": "我主要使用像AirPods这样的无线入耳式耳机，因为它们超级便携。但当我在办公桌前工作或旅行时，我更喜欢头戴式的降噪耳机。",
+          "key_vocabulary": [
+            {
+              "word": "portable",
+              "meaning": "便携的。",
+              "example": "Tablets are much more portable than traditional laptops."
+            },
+            {
+              "word": "noise-canceling",
+              "meaning": "降噪的。",
+              "example": "Noise-canceling headphones are a must-have for frequent flyers."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_hp3",
+          "question": "When would you use headphones?",
+          "answer_text": "Pretty much whenever I'm commuting on the subway, working in a coffee shop, or hitting the gym. It helps me tune out distractions and get into my own little world.",
+          "chinese_translation": "几乎在任何我坐地铁通勤、在咖啡馆工作或去健身房的时候。它帮助我屏蔽干扰，进入我自己的小世界。",
+          "key_vocabulary": [
+            {
+              "word": "tune out distractions",
+              "meaning": "屏蔽干扰/忽视噪音。",
+              "example": "I need quiet music to tune out distractions while studying."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_hp4",
+          "question": "In what conditions would you not use headphones?",
+          "answer_text": "Probably when I’m walking alone at night for safety reasons, or when I’m hanging out with friends. It’d be super rude to keep them in while having a conversation with someone!",
+          "chinese_translation": "可能是在晚上独自散步出于安全考虑的时候，或者和朋友聚会的时候。和别人聊天时还戴着耳机超级不礼貌！",
+          "key_vocabulary": [
+            {
+              "word": "for safety reasons",
+              "meaning": "出于安全原因。",
+              "example": "You shouldn't wear headphones while cycling for safety reasons."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_food",
+      "category_name": "Food",
+      "questions": [
+        {
+          "q_id": "p1_fd1",
+          "question": "What is your favourite food?",
+          "answer_text": "Hands down, hot pot! I love the variety, the dipping sauces, and how interactive it is. Plus, it’s super cozy, especially in the winter.",
+          "chinese_translation": "毫无疑问，火锅！我喜欢它丰富的种类，各种蘸酱，以及吃火锅那种互动的氛围。而且，它让人感觉超级温暖舒适，尤其是在冬天。",
+          "key_vocabulary": [
+            {
+              "word": "Hands down",
+              "meaning": "毫无疑问，绝对地。",
+              "example": "Hands down, that was the best meal I've ever had."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_fd2",
+          "question": "What kind of food did you like when you were young?",
+          "answer_text": "As a kid, I was obsessed with anything sweet or fast food, like french fries, fried chicken, and ice cream. Pretty standard kid stuff!",
+          "chinese_translation": "小时候，我非常痴迷于任何甜食或快餐，比如炸薯条、炸鸡和冰淇淋。非常标准的小孩子口味！",
+          "key_vocabulary": [
+            {
+              "word": "obsessed with",
+              "meaning": "对……痴迷/着迷。",
+              "example": "I am completely obsessed with this new TV series."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_fd3",
+          "question": "Do you eat different foods at different times of the year?",
+          "answer_text": "Definitely! In the summer, I crave light stuff like cold noodles, salads, and icy drinks. But during winter, I’m all about hearty soups, stews, and hot drinks.",
+          "chinese_translation": "绝对的！在夏天，我非常渴望吃些清淡的东西，比如凉面、沙拉和冷饮。但在冬天，我就全是为了那种丰盛的热汤、炖菜和热饮了。",
+          "key_vocabulary": [
+            {
+              "word": "crave",
+              "meaning": "极度渴望，想吃（某物）。",
+              "example": "When I am stressed, I always crave chocolate."
+            },
+            {
+              "word": "hearty soups",
+              "meaning": "丰盛的/暖胃的汤。",
+              "example": "A bowl of hearty soup is perfect for a cold winter night."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_fd4",
+          "question": "Has your favourite food changed since you were a child?",
+          "answer_text": "Yeah, for sure. I used to hate vegetables and spicy food when I was little, but now I can’t live without spicy food! My palette has definitely matured.",
+          "chinese_translation": "是的，肯定变了。我小时候讨厌蔬菜和辛辣的食物，但现在没有辣的食物我都活不下去！我的口味绝对是成熟了。",
+          "key_vocabulary": [
+            {
+              "word": "palette has matured",
+              "meaning": "口味变得成熟（palette 为 palate 的借用或拼写变化，意指味觉）。",
+              "example": "As I grew older, my palette matured and I started enjoying bitter coffee."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_animals_pets",
+      "category_name": "Animals & Pets",
+      "questions": [
+        {
+          "q_id": "p1_ap1",
+          "question": "What's your favourite animal? Why?",
+          "answer_text": "Dogs, without a doubt! They’re so loyal, affectionate, and just pure joy. Having a dog around automatically brightens up your day.",
+          "chinese_translation": "毫无疑问是狗！它们那么忠诚、充满感情，简直是纯粹的快乐。身边有一只狗会自动点亮你的一天。",
+          "key_vocabulary": [
+            {
+              "word": "affectionate",
+              "meaning": "充满深情的，温柔亲切的。",
+              "example": "Golden Retrievers are known to be very affectionate dogs."
+            },
+            {
+              "word": "brightens up",
+              "meaning": "使……明亮，使（某人）高兴起来。",
+              "example": "Her beautiful smile always brightens up the room."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_ap2",
+          "question": "Where do you prefer to keep your pet, indoors or outdoors?",
+          "answer_text": "Definitely indoors. I view pets as family members, so I want them to be cozy and safe inside with me, not left outside in the heat or cold.",
+          "chinese_translation": "肯定是室内。我把宠物当成家庭成员，所以我想让它们在室内和我待在一起，既舒适又安全，而不是被留在外面的酷暑或严寒中。",
+          "key_vocabulary": [
+            {
+              "word": "cozy",
+              "meaning": "舒适的，惬意的。",
+              "example": "I love staying in my cozy bed on a rainy day."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_ap3",
+          "question": "Have you ever had a pet before?",
+          "answer_text": "Yeah, I used to have a dog when I was growing up! He was a total sweetie and basically grew up alongside me.",
+          "chinese_translation": "养过，我在成长过程中曾经养过一只狗！他是个十足的小甜心，基本上是陪着我长大的。",
+          "key_vocabulary": [
+            {
+              "word": "grew up alongside me",
+              "meaning": "陪伴我一起长大。",
+              "example": "My dog is my best friend; he basically grew up alongside me."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_ap4",
+          "question": "What is the most popular animal in China?",
+          "answer_text": "Giant pandas, for sure! They’re national treasures here. But in terms of domestic pets, cats and dogs are definitely at the top of the list.",
+          "chinese_translation": "绝对是大熊猫！它们是这里的国宝。但在家庭宠物方面，猫和狗绝对位居榜首。",
+          "key_vocabulary": [
+            {
+              "word": "at the top of the list",
+              "meaning": "名列前茅，在榜单顶端。",
+              "example": "When it comes to travel destinations, Japan is at the top of my list."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_sports_teamwork",
+      "category_name": "Sports & Teamwork",
+      "questions": [
+        {
+          "q_id": "p1_st1",
+          "question": "Have you ever been part of a sports team?",
+          "answer_text": "Yeah, back in high school I was on the badminton team for a bit. It was super fun, mostly because of the team bonding and hanging out after practice.",
+          "chinese_translation": "是的，在高中时我在羽毛球队待过一段时间。超级有趣，主要是因为球队凝聚力和训练后的聚会。",
+          "key_vocabulary": [
+            {
+              "word": "team bonding",
+              "meaning": "团队建设/团队凝聚力。",
+              "example": "We went out for dinner as a form of team bonding."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_st2",
+          "question": "Is team sports popular in your culture?",
+          "answer_text": "Yeah, totally! Basketball and badminton are huge here. You’ll see court yards full of people playing pick-up games pretty much every evening.",
+          "chinese_translation": "是的，完全是！篮球和羽毛球在这里非常受欢迎。几乎每天傍晚你都能看到球场里挤满了打野球/随便组队打比赛的人。",
+          "key_vocabulary": [
+            {
+              "word": "pick-up games",
+              "meaning": "野球，临时组队的比赛。",
+              "example": "We usually play basketball pick-up games at the park."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_st3",
+          "question": "Do you like watching team games? Why?",
+          "answer_text": "Yeah, especially big tournaments like the World Cup or NBA games. The energy, the drama, and seeing team chemistry on the court is just super entertaining.",
+          "chinese_translation": "是的，特别是像世界杯或NBA这样的大型锦标赛。球场上的能量、戏剧性以及团队化学反应看起来真的超级带劲。",
+          "key_vocabulary": [
+            {
+              "word": "team chemistry",
+              "meaning": "团队化学反应/默契。",
+              "example": "The team won the championship because they had great team chemistry."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_st4",
+          "question": "What are the differences between team sports and individual sports?",
+          "answer_text": "Well, team sports are all about collaboration, communication, and sharing the win, or the blame. Individual sports, on the other hand, put all the pressure on one person, so it’s more about mental toughness and competing with yourself.",
+          "chinese_translation": "嗯，团队运动全在于合作、沟通以及分享胜利或分担责任。另一方面，个人运动则把所有的压力集中在一个人身上，所以更多的是关于心理韧性和与自己竞争。",
+          "key_vocabulary": [
+            {
+              "word": "mental toughness",
+              "meaning": "心理韧性/精神毅力。",
+              "example": "Marathon runners need an incredible amount of mental toughness."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_hobby",
+      "category_name": "Hobby",
+      "questions": [
+        {
+          "q_id": "p1_hb1",
+          "question": "Do you have any hobbies?",
+          "answer_text": "I like doing some exercise. So, I like going to the gym, running and I like doing yoga. I go the gym twice or three times a week.",
+          "chinese_translation": "我喜欢做一些运动。所以我喜欢去健身房、跑步和做瑜伽。我每周去两三次健身房。",
+          "key_vocabulary": [
+            {
+              "word": "doing some exercise",
+              "meaning": "做运动。",
+              "example": "Doing some exercise every day helps keep you healthy."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_hb2",
+          "question": "Did you have any hobbies when you were a child?",
+          "answer_text": "I was really into drawing when I was a kid. I remember taking art classes every weekend, I tried sketching, oil painting, and gouache.",
+          "chinese_translation": "我小时候非常喜欢画画。我记得每个周末都上美术课，我尝试过素描、油画和水粉画。",
+          "key_vocabulary": [
+            {
+              "word": "really into",
+              "meaning": "对……非常感兴趣/痴迷。",
+              "example": "I am really into photography these days."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_hb3",
+          "question": "Do you have a hobby that you’ve had since childhood?",
+          "answer_text": "I’ve always loved reading. I’ve basically been a bookworm since I was little, though back then it was all about fairy tales and fantasy books. Now, it’s more sci-fi and tech-related stuff.",
+          "chinese_translation": "我一直很喜欢阅读。我从小基本上就是个书虫，不过那会儿全是看童话和奇幻书。现在更多的是看科幻和与科技相关的东西。",
+          "key_vocabulary": [
+            {
+              "word": "bookworm",
+              "meaning": "书虫，书呆子（喜欢读书的人）。",
+              "example": "She's such a bookworm; she reads at least two books a week."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_hb4",
+          "question": "Do you have the same hobbies as your family members?",
+          "answer_text": "My mom’s super into gardening, and I like to help her out sometimes, even though I usually kill her plants when she’s not looking. So, we’ve got our little family activities.",
+          "chinese_translation": "我妈妈超级喜欢园艺，有时我也喜欢帮她，尽管我经常在她不注意的时候把她的植物养死。所以，我们算是保留了家庭小活动。",
+          "key_vocabulary": [
+            {
+              "word": "super into",
+              "meaning": "超级喜欢/沉迷于。",
+              "example": "My dad is super into vintage cars."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_morning_time",
+      "category_name": "Morning Time",
+      "questions": [
+        {
+          "q_id": "p1_mt1",
+          "question": "Do you like getting up early in the morning?",
+          "answer_text": "Honestly, not at all, I’m total night owl. Waking up early feels like torture to me, so I’ll press the snooze button as many times as humanly possible.",
+          "chinese_translation": "老实说，一点也不，我是个十足的夜猫子。早起对我来说就像上刑，所以我会在人类可能的范围内尽可能多地按小睡按钮。",
+          "key_vocabulary": [
+            {
+              "word": "night owl",
+              "meaning": "夜猫子（喜欢熬夜的人）。",
+              "example": "My roommate is a night owl who studies until 3 AM."
+            },
+            {
+              "word": "snooze button",
+              "meaning": "贪睡按钮（闹钟上的小睡功能）。",
+              "example": "I was so tired that I hit the snooze button three times."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_mt2",
+          "question": "What do you usually do in the morning?",
+          "answer_text": "My morning routine is super rushed, to be honest. I basically just drag myself out of bed, grab an iced coffee, brush my teeth, and head straight out the door.",
+          "chinese_translation": "老实说，我的早晨日常非常匆忙。我基本上就是把自己从床上硬拽起来，抓起一杯冰咖啡，刷牙，然后直接出门。",
+          "key_vocabulary": [
+            {
+              "word": "drag myself out of bed",
+              "meaning": "硬撑着起床，挣扎着起床。",
+              "example": "On cold winter mornings, I have to literally drag myself out of bed."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_mt3",
+          "question": "What did you do in the morning when you were little? Why?",
+          "answer_text": "Back then, my mom would always wake me up early, cook a warm breakfast, and make sure I got ready for school. I didn't really have a choice because kids just have to follow their parents' schedule.",
+          "chinese_translation": "那时候，我妈总是早早叫醒我，做一顿热乎的早餐，确保我准备好去上学。我真的没得选，因为孩子们必须听从父母的安排。",
+          "key_vocabulary": [
+            {
+              "word": "follow their parents' schedule",
+              "meaning": "遵循父母的安排/时间表。",
+              "example": "Kids don't have much freedom; they mostly follow their parents' schedule."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_mt4",
+          "question": "Are there any differences between what you do in the morning now and what you did in the past?",
+          "answer_text": "Yeah, huge difference! As a kid, everything was laid out for me by my parents, but now I’m completely on my own and usually running on way less sleep.",
+          "chinese_translation": "是的，巨大的差别！小时候，父母把一切都给我安排好了，但现在我完全靠自己，而且通常睡得少得多。",
+          "key_vocabulary": [
+            {
+              "word": "laid out",
+              "meaning": "被安排好，铺垫好。",
+              "example": "I didn't have to worry about anything; the plan was completely laid out."
+            },
+            {
+              "word": "running on way less sleep",
+              "meaning": "在睡眠严重不足的情况下运转/撑着。",
+              "example": "I'm running on way less sleep today because I worked late last night."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_mt5",
+          "question": "Do you spend your mornings doing the same things on both weekends and weekdays? Why?",
+          "answer_text": "Definitely not. On weekdays I’m rushing around getting ready for work/school, but on weekends I just lie in bed and scroll through my phone until noon.",
+          "chinese_translation": "绝对不会。在工作日我总是匆匆忙忙地准备去上班/上学，但在周末我就躺在床上刷手机，直到中午。",
+          "key_vocabulary": [
+            {
+              "word": "rushing around",
+              "meaning": "四处奔波，匆匆忙忙。",
+              "example": "I spent the whole morning rushing around trying to get chores done."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_gifts",
+      "category_name": "Gifts",
+      "questions": [
+        {
+          "q_id": "p1_gf1",
+          "question": "Have you ever sent handmade gifts to others?",
+          "answer_text": "I’ve made handmade gifts before, but mostly small things like custom keychains or DIY candles to my close friends.",
+          "chinese_translation": "我以前做过手工礼物，但大多是像定制钥匙扣或DIY蜡烛送给好朋友这样的小物件。",
+          "key_vocabulary": [
+            {
+              "word": "custom keychains",
+              "meaning": "定制的钥匙扣。",
+              "example": "I gave him custom keychains as a handmade gift."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_gf2",
+          "question": "Have you ever received a great gift?",
+          "answer_text": "One of the best gift I’ve ever received was probably the graduation trip sent from my grandparents as my graduation gift. They paid for my trip to Nea Zealand, basically everything, flights, accommodation, Visa fee, all the expenses.",
+          "chinese_translation": "我收到过的最好礼物之一，大概是我祖父母作为毕业礼物送给我的毕业旅行。他们支付了我去新西兰旅行的费用，基本上包揽了一切：机票、住宿、签证费，所有的开销。",
+          "key_vocabulary": [
+            {
+              "word": "all the expenses",
+              "meaning": "所有的开销/费用。",
+              "example": "The company covered all the expenses for my business trip."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_gf3",
+          "question": "What do you consider when choosing a gift?/Do you think you are good at choosing gifts?",
+          "answer_text": "I’d say I’m pretty good at sending gifts. Because I always consider what the person actually likes and whether it’s something they’d use often, rather than just random normal stuff. I try to make sure it’s either practical, or just something fun that would make them happy.",
+          "chinese_translation": "我想说我挺擅长送礼的。因为我总是会考虑对方真正喜欢什么，以及这是否是他们经常会用到的东西，而不是随便买的普通东西。我尽量确保它要么很实用，要么就是一些能让他们开心好玩的东西。",
+          "key_vocabulary": [
+            {
+              "word": "practical",
+              "meaning": "实用的。",
+              "example": "I prefer giving practical gifts rather than decorative ones."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_gf4",
+          "question": "What gift have you received recently?",
+          "answer_text": "The most recent gift I got was a really nice mechanical keyboard from my dad, He knew I spend a lot of time coding. Honestly, it was a pretty thoughtful gift.",
+          "chinese_translation": "我最近收到的一份礼物是我爸送的一把非常棒的机械键盘，他知道我花很多时间写代码。老实说，这是一份相当贴心的礼物。",
+          "key_vocabulary": [
+            {
+              "word": "thoughtful gift",
+              "meaning": "贴心的/考虑周到的礼物。",
+              "example": "It was a very thoughtful gift because he remembered my favorite color."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_reading",
+      "category_name": "Reading",
+      "questions": [
+        {
+          "q_id": "p1_rd1",
+          "question": "Do you like reading?",
+          "answer_text": "Yeah, I really do, though I mostly read light novels or self-help books these days. It’s a great way to unwind and disconnect from social media for a bit.",
+          "chinese_translation": "是的，我真的很喜欢，虽然我最近主要看轻小说或励志书。这是一种放松并短暂脱离社交媒体的好方法。",
+          "key_vocabulary": [
+            {
+              "word": "disconnect from",
+              "meaning": "与……断开联系/脱离（尤指网络、工作）。",
+              "example": "Going camping is the perfect way to disconnect from the digital world."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_rd2",
+          "question": "Do you prefer to read on paper or on a screen?",
+          "answer_text": "I definitely prefer paper physical books just feel so much more cozy and nostalgic. Plus, looking at screens all day honestly gives me a total headache.",
+          "chinese_translation": "我绝对更偏爱纸质书，实体书让人感觉更加舒适和怀旧。而且，老实说，整天看屏幕让我头痛欲裂。",
+          "key_vocabulary": [
+            {
+              "word": "nostalgic",
+              "meaning": "怀旧的。",
+              "example": "Smelling the old books always makes me feel nostalgic."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_rd3",
+          "question": "When do you need to read carefully, and when not?",
+          "answer_text": "I read really carefully when I’m studying, checking contracts, or going over important emails. But if it’s just a web article or a romance novel, I just skim through it pretty quickly.",
+          "chinese_translation": "当我在学习、检查合同或查看重要电子邮件时，我会读得非常仔细。但如果只是网络文章或言情小说，我很快就略读过去了。",
+          "key_vocabulary": [
+            {
+              "word": "skim through",
+              "meaning": "略读，浏览。",
+              "example": "I didn't have time to read the whole report, so I just skimmed through it."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_rd4",
+          "question": "Do you prefer scanning or detailed reading?",
+          "answer_text": "It really depends on what I’m reading, but day-to-day I definitely scan more. Life moves so fast, so I usually just want to grab the main points and move on.",
+          "chinese_translation": "这真的取决于我在读什么，但在日常生活中，我绝对更喜欢扫读。生活节奏太快，所以我通常只想抓住要点然后继续干别的事。",
+          "key_vocabulary": [
+            {
+              "word": "grab the main points",
+              "meaning": "抓住要点。",
+              "example": "When I am busy, I just read the summary to grab the main points."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_walking",
+      "category_name": "Walking",
+      "questions": [
+        {
+          "q_id": "p1_wk1",
+          "question": "Do you walk a lot?",
+          "answer_text": "Yeah, actually! I try to get my steps in by walking to local coffee shops or taking quick strolls around my neighborhood just to get some fresh air.",
+          "chinese_translation": "是的，实际上！我尽量通过步行去当地咖啡馆或在社区周围快速溜达一下来凑够我的步数，顺便呼吸点新鲜空气。",
+          "key_vocabulary": [
+            {
+              "word": "get my steps in",
+              "meaning": "凑够步数/完成行走目标。",
+              "example": "I try to get my steps in by walking instead of taking the elevator."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_wk2",
+          "question": "Did you often go outside to have a walk when you were a child?",
+          "answer_text": "Totally! My parents used to take me to the nearby park almost every evening after dinner. It was pretty much a daily routine for us back then.",
+          "chinese_translation": "绝对的！我父母以前几乎每天晚饭后都会带我去附近的公园。那时候对我们来说这基本是日常习惯。",
+          "key_vocabulary": [
+            {
+              "word": "daily routine",
+              "meaning": "日常事务/日常习惯。",
+              "example": "Going for a morning run is part of my daily routine."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_wk3",
+          "question": "Why do people like to walk in parks?",
+          "answer_text": "I think it’s just super peaceful and a good way to escape the concrete jungle. Plus, being surrounded by green trees and nature really helps people de-stress.",
+          "chinese_translation": "我觉得那里非常宁静，是逃离钢筋水泥丛林的好去处。另外，被绿树和大自然包围真的能帮助人们减压。",
+          "key_vocabulary": [
+            {
+              "word": "concrete jungle",
+              "meaning": "水泥丛林（喻指城市）。",
+              "example": "I needed a break from the concrete jungle, so I went to the mountains."
+            },
+            {
+              "word": "de-stress",
+              "meaning": "减压。",
+              "example": "Meditation is an excellent way to de-stress after a busy day."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_wk4",
+          "question": "Where would you like to take a long walk if you had the chance?",
+          "answer_text": "I’d love to take a really long walk along the beach in Hawaii during sunset. That just sounds like the ultimate relaxing vibe to me.",
+          "chinese_translation": "如果有机会，我很想在日落时分沿着夏威夷的海滩进行一次非常长的散步。对我来说，这听起来就是终极放松的氛围。",
+          "key_vocabulary": [
+            {
+              "word": "ultimate relaxing vibe",
+              "meaning": "终极放松的氛围/感觉。",
+              "example": "The jazz bar has that ultimate relaxing vibe I'm looking for."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_wk5",
+          "question": "Where did you go for a walk lately?",
+          "answer_text": "I actually went for a stroll along the riverside promenade near my place last weekend. The breeze was amazing and it was super nice to just put my headphones on and chill.",
+          "chinese_translation": "上周末我其实去我家附近的江边长廊散步了。微风吹着非常舒服，戴上耳机放松一下感觉超级棒。",
+          "key_vocabulary": [
+            {
+              "word": "promenade",
+              "meaning": "散步步道/滨海大道。",
+              "example": "We walked down the beautiful promenade by the river."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_typing",
+      "category_name": "Typing",
+      "questions": [
+        {
+          "q_id": "p1_tp1",
+          "question": "Do you prefer typing or handwriting?",
+          "answer_text": "Typing, hands down! It’s just so much faster and way more efficient, plus my actual handwriting looks like chicken scratch anyway.",
+          "chinese_translation": "毫无疑问是打字！它快得多，也高效得多，而且我真正的字迹怎么看都像是鬼画符。",
+          "key_vocabulary": [
+            {
+              "word": "chicken scratch",
+              "meaning": "潦草的字迹（鬼画符）。",
+              "example": "I can't read his notes; his handwriting is like chicken scratch."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_tp2",
+          "question": "Do you type on a desktop or laptop keyboard every day?",
+          "answer_text": "Yeah, pretty much every single day. Since I do most of my studying and work on my laptop, typing has become second nature to me.",
+          "chinese_translation": "是的，几乎每天都打。因为我大部分的学习和工作都在笔记本电脑上完成，打字对我来说已经成了第二天性/本能。",
+          "key_vocabulary": [
+            {
+              "word": "second nature",
+              "meaning": "第二天性，习惯成自然。",
+              "example": "After driving for 10 years, it just becomes second nature."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_tp3",
+          "question": "When did you learn how to type on a keyboard?",
+          "answer_text": "I think I learned back in elementary school during computer class, where we played those fun typing games. So I’ve been typing blindly for as long as I can remember!",
+          "chinese_translation": "我想我是在小学上电脑课时学会的，我们在那里玩那些有趣的打字游戏。所以从我记事起我就一直会盲打！",
+          "key_vocabulary": [
+            {
+              "word": "typing blindly",
+              "meaning": "盲打。",
+              "example": "Practicing every day helps you master typing blindly."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_tp4",
+          "question": "How do you improve your typing?",
+          "answer_text": "Honestly, I don't really do anything special, it just improves naturally from typing essays, texting, and chatting with friends online all day. Practice makes perfect, right?",
+          "chinese_translation": "老实说，我并没有做什么特别的事，它只是通过整天打论文、发短信和与朋友在网上聊天自然而然地提高了。熟能生巧，对吧？",
+          "key_vocabulary": [
+            {
+              "word": "Practice makes perfect",
+              "meaning": "熟能生巧。",
+              "example": "Keep trying to speak English, practice makes perfect!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_scenery",
+      "category_name": "Scenery",
+      "questions": [
+        {
+          "q_id": "p1_sc1",
+          "question": "Do you look out the window at the scenery when travelling by bus or car?",
+          "answer_text": "Oh, 100%! Put some good music on, lean against the window, and watch the world go by, it’s like being in your own music video.",
+          "chinese_translation": "哦，百分百会！放点好听的音乐，靠在窗边，看着外面的世界飞驰而过，感觉就像在自己的音乐MV里一样。",
+          "key_vocabulary": [
+            {
+              "word": "watch the world go by",
+              "meaning": "看着世界飞逝/静观世态（乘车看窗外时的描述）。",
+              "example": "I love sitting at a café, just watching the world go by."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_sc2",
+          "question": "Do you prefer the mountains or the sea?",
+          "answer_text": "Definitely the sea! I’m a total ocean girl. I love the sound of the waves, the sand, and just that relaxed beachy vibe.",
+          "chinese_translation": "绝对是海！我是个彻头彻尾的爱海女孩。我喜欢海浪的声音、沙滩，以及那种轻松的海滩氛围。",
+          "key_vocabulary": [
+            {
+              "word": "beachy vibe",
+              "meaning": "海滩的氛围/放松的度假感。",
+              "example": "The restaurant has a cool, beachy vibe."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_sc3",
+          "question": "Do you like to take scenery pictures?",
+          "answer_text": "Yeah, totally. Whenever I see a gorgeous sunset or a cool view, I always whip out my phone to snap a pic for my Instagram story.",
+          "chinese_translation": "是的，完全喜欢。每当我看到绝美的日落或酷炫的景色时，我总是掏出手机抓拍一张放在我的Instagram快拍上。",
+          "key_vocabulary": [
+            {
+              "word": "whip out",
+              "meaning": "迅速拿出/掏出。",
+              "example": "He whipped out his phone to take a quick photo of the celebrity."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_sc4",
+          "question": "What are the most beautiful sights you have seen while traveling?",
+          "answer_text": "Hands down, seeing the clear blue ocean and stunning sunsets in Bali. It literally looked like a real-life postcard, absolutely breathtaking!",
+          "chinese_translation": "毫无疑问，是在巴厘岛看到的清澈的蓝色海洋和令人惊叹的日落。它简直看起来就像一张现实版的明信片，绝对令人叹为观止！",
+          "key_vocabulary": [
+            {
+              "word": "real-life postcard",
+              "meaning": "现实版的明信片（形容风景极美）。",
+              "example": "The village in Switzerland looks like a real-life postcard."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_building",
+      "category_name": "Building",
+      "questions": [
+        {
+          "q_id": "p1_bd1",
+          "question": "Are there tall buildings near your home?",
+          "answer_text": "Yeah, tons! I live in a pretty modern urban area, so there are high-rise apartments and office towers everywhere you look.",
+          "chinese_translation": "是的，有很多！我住在一个非常现代的市区，所以放眼望去到处都是高层公寓和办公楼。",
+          "key_vocabulary": [
+            {
+              "word": "high-rise apartments",
+              "meaning": "高层公寓。",
+              "example": "Many young people in the city live in high-rise apartments."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_bd2",
+          "question": "Do you take photos of buildings?",
+          "answer_text": "Sometimes, yeah, especially if the architecture has a cool, modern design or a really unique aesthetic. It makes for super aesthetic phone wallpapers.",
+          "chinese_translation": "有时会，是的，特别是当这栋建筑有一个很酷的现代设计或非常独特的审美感时。它能当成极具美感的手机壁纸。",
+          "key_vocabulary": [
+            {
+              "word": "aesthetic phone wallpapers",
+              "meaning": "具有美感/艺术感的手机壁纸。",
+              "example": "I love taking pictures of neon signs for aesthetic phone wallpapers."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_bd3",
+          "question": "Is there a building that you would like to visit?",
+          "answer_text": "I’ve always wanted to visit the Louvre in Paris. That glass pyramid design is iconic, and I’d love to see it in person one day.",
+          "chinese_translation": "我一直想去参观巴黎的卢浮宫。那个玻璃金字塔的设计是标志性的，我很想有一天能亲自去看看。",
+          "key_vocabulary": [
+            {
+              "word": "iconic",
+              "meaning": "标志性的。",
+              "example": "The Eiffel Tower is the most iconic building in France."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_bd4",
+          "question": "Do you want to live in a tall building?",
+          "answer_text": "Yeah, I’d love to live on a high floor of a skyscraper! The city views at night would be incredible, even if the elevators take forever.",
+          "chinese_translation": "是的，我想住在摩天大楼的高层！晚上的城市夜景肯定不可思议，即使等电梯要花好长时间。",
+          "key_vocabulary": [
+            {
+              "word": "take forever",
+              "meaning": "花好长时间，慢吞吞（夸张表达）。",
+              "example": "It takes forever to download a large file on this slow Wi-Fi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_childhood_activities",
+      "category_name": "Childhood Activities",
+      "questions": [
+        {
+          "q_id": "p1_ca1",
+          "question": "Did you prefer to do activities alone or with a group of people when you were a child?",
+          "answer_text": "I definitely preferred playing in groups back then. I was a super energetic kid, so I was always running around playing tag or hide-and-seek with the neighborhood kids.",
+          "chinese_translation": "那时候我绝对更喜欢成群结队地玩。我是个超级精力充沛的孩子，所以我总是和邻居家的孩子们到处跑，玩抓人或捉迷藏。",
+          "key_vocabulary": [
+            {
+              "word": "hide-and-seek",
+              "meaning": "捉迷藏。",
+              "example": "Hide-and-seek is a classic childhood game."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_ca2",
+          "question": "Are there any differences between the activities you liked when you were a child and those you like now?",
+          "answer_text": "Yeah, for sure. As a kid I was all about high-energy outdoor games, but now I’m way happier doing low-key stuff like grabbing coffee, reading, or watching Netflix.",
+          "chinese_translation": "是的，当然。小时候我只喜欢高耗能的户外游戏，但现在我做一些低调轻松的事情（比如喝咖啡、看书或看Netflix）会快乐得多。",
+          "key_vocabulary": [
+            {
+              "word": "all about",
+              "meaning": "非常热衷于，全是关于。",
+              "example": "When I was younger, I was all about video games."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_views",
+      "category_name": "Views",
+      "questions": [
+        {
+          "q_id": "p1_vw1",
+          "question": "Do you like taking pictures of different views?",
+          "answer_text": "Yeah, totally! Whenever I come across a scenic spot or a cool skyline, I love taking photos to save the memory.",
+          "chinese_translation": "是的，完全喜欢！每当我遇到一个风景优美的景点或很酷的天际线时，我都喜欢拍照片留作纪念。",
+          "key_vocabulary": [
+            {
+              "word": "scenic spot",
+              "meaning": "风景名胜/景点。",
+              "example": "We stopped at a scenic spot to take some photos."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_vw2",
+          "question": "Do you prefer views in urban areas or rural areas?",
+          "answer_text": "Honestly, I like rural views a bit more because they feel so peaceful and untouched. City skylines are cool, but green fields and nature are way more soothing.",
+          "chinese_translation": "老实说，我更喜欢一点乡村景色，因为它们感觉非常宁静和原生态。城市天际线很酷，但绿色的田野和大自然更加令人舒缓。",
+          "key_vocabulary": [
+            {
+              "word": "untouched",
+              "meaning": "原生态的，未受破坏的。",
+              "example": "The island features beautiful, untouched beaches."
+            },
+            {
+              "word": "soothing",
+              "meaning": "令人舒缓的，抚慰人的。",
+              "example": "Listening to the sound of rain is very soothing."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_vw3",
+          "question": "Do you prefer views in your own country or in other countries?",
+          "answer_text": "I think both have their charm, but foreign views always feel a bit more exciting just because they’re totally new and different to me.",
+          "chinese_translation": "我认为两者都有其魅力，但国外的景色总是让人感觉更令人兴奋一点，纯粹是因为它们对我来说完全是新鲜且不同的。",
+          "key_vocabulary": [
+            {
+              "word": "charm",
+              "meaning": "魅力。",
+              "example": "The small town has its own unique charm."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_vw4",
+          "question": "Have you seen an unforgettable and beautiful view or scenery?",
+          "answer_text": "Yeah, once when I was traveling, I saw the sun rising over the mountains above a cloud sea. It was so surreal that it didn't even look real.",
+          "chinese_translation": "有过，有次旅行时，我看到太阳从云海之上的群山中升起。它太超现实了，甚至看起来都不像是真的。",
+          "key_vocabulary": [
+            {
+              "word": "surreal",
+              "meaning": "超现实的，离奇的，梦幻般的。",
+              "example": "Walking through the empty city during the lockdown felt completely surreal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p1_life_stages",
+      "category_name": "Life Stages",
+      "questions": [
+        {
+          "q_id": "p1_ls1",
+          "question": "What did you often do with your friends in your childhood?",
+          "answer_text": "We used to spend hours at the local playground, riding bikes, or just making up silly imaginative games together after school.",
+          "chinese_translation": "放学后，我们过去常在当地的操场上待上好几个小时，骑自行车，或者只是一起编一些傻里傻气、充满想象力的游戏。",
+          "key_vocabulary": [
+            {
+              "word": "making up",
+              "meaning": "编造，虚构（游戏等）。",
+              "example": "Kids are great at making up stories to entertain themselves."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_ls2",
+          "question": "What do you think is the most important at the moment?",
+          "answer_text": "Right now, I’d say finding a good balance between my career goals and my mental health is my top priority. Life is pretty busy at 22, so keeping that balance is key.",
+          "chinese_translation": "眼下，我会说在我的职业目标和心理健康之间找到一个良好的平衡是我的首要任务。22岁的生活很忙碌，所以保持平衡是关键。",
+          "key_vocabulary": [
+            {
+              "word": "top priority",
+              "meaning": "首要任务，当务之急。",
+              "example": "My top priority right now is to finish my thesis."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_ls3",
+          "question": "Do you have any plans for the next five years?",
+          "answer_text": "Yeah, I hope to land a solid job that I actually enjoy, travel to a few bucket-list countries, and hopefully become a bit more financially independent.",
+          "chinese_translation": "是的，我希望能找到一份我真正喜欢的稳定工作，去几个我人生遗愿清单上的国家旅行，并希望能变得更加经济独立。",
+          "key_vocabulary": [
+            {
+              "word": "land a solid job",
+              "meaning": "找到一份稳定的好工作。",
+              "example": "After graduation, she managed to land a solid job at a tech firm."
+            },
+            {
+              "word": "bucket-list",
+              "meaning": "人生遗愿清单，生前必做的事。",
+              "example": "Skydiving has always been on my bucket list."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_ls4",
+          "question": "How do people remember each stage of their lives?",
+          "answer_text": "Mostly through photos, videos on our phones, or nostalgic music that brings back specific memories. Sometimes keeping a journal or talking with old friends helps, too.",
+          "chinese_translation": "主要是通过照片、手机上的视频，或者能唤起特定记忆的怀旧音乐。有时写日记或与老朋友聊天也有帮助。",
+          "key_vocabulary": [
+            {
+              "word": "brings back specific memories",
+              "meaning": "唤回特定的记忆。",
+              "example": "That smell always brings back specific memories from my childhood."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_ls5",
+          "question": "Do you enjoy being the age you are now?",
+          "answer_text": "Totally! Being 22 is great because I have the freedom of an adult, but I still have so much time ahead of me to figure things out.",
+          "chinese_translation": "绝对享受！22岁很棒，因为我拥有了成年人的自由，但我面前仍有大把的时间去弄清楚未来的事情。",
+          "key_vocabulary": [
+            {
+              "word": "figure things out",
+              "meaning": "弄清楚/想明白（人生的方向）。",
+              "example": "Take your time, you don't need to figure things out all at once."
+            }
+          ]
+        },
+        {
+          "q_id": "p1_ls6",
+          "question": "At what age do you think people are the happiest?",
+          "answer_text": "Maybe around childhood, like six or seven, because you have zero responsibilities or real stress back then, your only job is basically just to play and have fun!",
+          "chinese_translation": "也许是在童年时期，大概六七岁吧，因为那时你零责任，也没有真正的压力，你唯一的工作基本上就是玩乐！",
+          "key_vocabulary": [
+            {
+              "word": "zero responsibilities",
+              "meaning": "零责任，无忧无虑。",
+              "example": "Being a kid is wonderful because you have zero responsibilities."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "part2_story_bank": [
+    {
+      "story_id": "story_01",
+      "story_title": "全能好友 Chloe",
+      "associated_topics": [
+        {
+          "title": "发小",
+          "main_desc": "Describe a friend from your childhood",
+          "bullet_points": [
+            "Who he/she is",
+            "Where and how you met each other",
+            "What you often did together",
+            "And explain what made you like him/her"
+          ]
+        },
+        {
+          "title": "朋友自学",
+          "main_desc": "Describe one of your friends who learned something without a teacher",
+          "bullet_points": [
+            "Who he/she is",
+            "What he/she learned",
+            "Why he/she learned this",
+            "And explain whether it would be easier to learn from a teacher"
+          ]
+        },
+        {
+          "title": "擅长学习和说语言的人",
+          "main_desc": "Describe a person who is good at learning and speaking new languages",
+          "bullet_points": [
+            "How you got to know him/her",
+            "How he/she learns a new language",
+            "What languages he/she can speak",
+            "And explain how you feel about him/her"
+          ]
+        },
+        {
+          "title": "擅长做计划的人",
+          "main_desc": "Describe a person who makes plans a lot and is good at planning",
+          "bullet_points": [
+            "Who he/she is",
+            "How you knew him/her",
+            "What plans he/she makes",
+            "And explain how you feel about this person"
+          ]
+        },
+        {
+          "title": "喜欢在家/花园种菜的人",
+          "main_desc": "Describe a person who loves to grow vegetables at home or in the garden",
+          "bullet_points": [
+            "Who this person is",
+            "What vegetables he/she grows",
+            "How he/she grows the vegetables",
+            "And explain why he/she loves growing vegetables"
+          ]
+        }
+      ],
+      "story_content": "So, I wanna talk about my best friend, Chloe. We basically met on the very first day of kindergarten when we were like, four, because our moms happened to be standing in the same line. Growing up, we did pretty much everything together. We would bike around the neighborhood, binge on cartoons, and share all our little secrets. What I love about her is just how driven and full of life she is. She always has this amazing positive energy that just makes everyone around her feel super motivated.\n\nPlus, Chloe is a total genius at languages. She completely self-taught herself French, like, zero teachers involved. She’s a law student right now, which means her schedule is already a total nightmare, but she still wanted to challenge herself. She started learning French from scratch during college breaks. She wanted to read original French legal documents and, well, travel to Paris someday. Instead of paying for classes, she just used free apps, listened to French podcasts on her commute, and read novels with a dictionary. Last year, she completely crushed the DALF B2 exam. That is a super hard, advanced French test, and I was completely blown away. Honestly, learning from a teacher might be easier and faster for most people, for the instant feedback. But Chloe proved you can totally hack a new language on your own if you're disciplined enough.\n\nThe only reason she can pull all of this off is because she’s obsessed with making plans. Like, she’s incredibly good at time management. Ever since I met her, she has carried this physical planner everywhere. She literally maps out her entire life. She color-codes everything, like her law school readings, her workouts, and her social life. Her weekly and daily to-do lists are super detailed, but she’s also realistic enough to leave gaps for unexpected stuff. I seriously look up to her for this. She balances this crazy hectic study schedule with her hobbies perfectly without burning out. Whenever I feel like my life is a mess, I just look at her and feel inspired to get my own act together.\n\nAnd even with her super busy law school schedule, Chloe is super passionate about growing veggies right on her balcony. It’s like her ultimate way to decompress. She grows all kinds of cool stuff, like cherry tomatoes, mint, and especially luffa. She sets up these neat vertical pots to save space on her tiny balcony, and she treats her plants like her babies. She waters them regularly every single morning. Her balcony is low-key turning into a jungle, so she always has way too many veggies. All the luffa we eat at my house is entirely sponsored by her! She loves doing it because she says getting her hands dirty in the dirt keeps her grounded. It helps her unplug from all the legal jargon and screen time.",
+      "key_vocabulary": [
+        {
+          "word": "binge on",
+          "meaning": "狂热地做某事（尤指看剧/吃东西）；语境中指“狂看动画片”。",
+          "example": "We used to binge on Netflix shows all weekend."
+        },
+        {
+          "word": "driven and full of life",
+          "meaning": "充满动力且充满活力的。",
+          "example": "She is so driven and full of life that she inspires everyone around her."
+        },
+        {
+          "word": "from scratch",
+          "meaning": "从零开始。",
+          "example": "She built her business completely from scratch."
+        },
+        {
+          "word": "crushed the exam",
+          "meaning": "极好地通过了考试；在考试中大获全胜。",
+          "example": "After months of studying, he totally crushed the exam."
+        },
+        {
+          "word": "blown away",
+          "meaning": "被震撼到，极为惊讶。",
+          "example": "I was completely blown away by her amazing performance."
+        },
+        {
+          "word": "hack a new language",
+          "meaning": "（巧妙地）攻克/掌握一门新语言。",
+          "example": "With the right methods, you can hack a new language much faster."
+        },
+        {
+          "word": "pull all of this off",
+          "meaning": "成功完成这一切（通常指很困难的事）。",
+          "example": "I don't know how she manages to pull all of this off with such a busy schedule."
+        },
+        {
+          "word": "color-codes",
+          "meaning": "用颜色分类/做标记。",
+          "example": "She color-codes her notes to make reviewing easier."
+        },
+        {
+          "word": "leave gaps",
+          "meaning": "留出空余时间/余地。",
+          "example": "Always leave gaps in your schedule for unexpected events."
+        },
+        {
+          "word": "get my own act together",
+          "meaning": "振作起来，安排好自己的生活/事情。",
+          "example": "After failing the test, I decided it was time to get my own act together."
+        },
+        {
+          "word": "keeps her grounded",
+          "meaning": "让她保持脚踏实地/心态平和。",
+          "example": "Working in the garden keeps her grounded and reduces her stress."
+        },
+        {
+          "word": "unplug from",
+          "meaning": "远离/摆脱（电子设备或繁忙的事务）。",
+          "example": "A camping trip is the perfect way to unplug from the daily grind."
+        }
+      ]
+    },
+    {
+      "story_id": "story_02",
+      "story_title": "前 NASA 工程师 Mark Rober",
+      "associated_topics": [
+        {
+          "title": "想见的名人",
+          "main_desc": "Describe a famous person you would like to meet",
+          "bullet_points": [
+            "Who he/she is",
+            "How you knew him/her",
+            "How/where you would like to meet him/her",
+            "And explain why you would like to meet him/her"
+          ]
+        },
+        {
+          "title": "拥有成功商业的人",
+          "main_desc": "Describe a person you know who has a successful business",
+          "bullet_points": [
+            "Who this person is",
+            "How you got to know him/her",
+            "Why and how he/she started the business",
+            "What business he/she does",
+            "And explain why you think the business is successful"
+          ]
+        },
+        {
+          "title": "机智解决问题的人",
+          "main_desc": "Describe a person who solved a problem in a smart way",
+          "bullet_points": [
+            "Who this person is",
+            "What the problem was",
+            "How he/she solved it",
+            "And explain why you think he/she did it in a smart way"
+          ]
+        },
+        {
+          "title": "想从事医疗行业的人",
+          "main_desc": "Describe a person you know who would like to choose a career in the medical field (e.g. a doctor, a nurse)",
+          "bullet_points": [
+            "When you knew him/her",
+            "When he/she started to think about that",
+            "What he/she would like to do",
+            "And explain why he/she would like to choose this career"
+          ]
+        },
+        {
+          "title": "乐于助人的人",
+          "main_desc": "Describe a person who often helps others",
+          "bullet_points": [
+            "Who this person is",
+            "How often he/she helps others",
+            "How/why he/she helps others",
+            "And how you feel about this person"
+          ]
+        },
+        {
+          "title": "爱护自然之人",
+          "main_desc": "Describe a person who likes to look after the natural world",
+          "bullet_points": [
+            "Who this person is",
+            "What he or she does",
+            "How he or she does it",
+            "How often he or she does it",
+            "And explain how you feel about this person"
+          ]
+        }
+      ],
+      "story_content": "The famous person I would love to meet is Mark Rober. I first stumbled upon him on YouTube years ago, and I have been a loyal fan ever since. He’s a former NASA engineer who turned into a content creator. But what a lot of people don’t know is that he actually runs this incredibly successful business called CrunchLabs. It’s a subscription box service, and they ship out DIY mechanical toys every month to help kids learn engineering. He started it because he wanted to make science fun and hands-on for kids. The business is a massive hit. Because it’s not just a cash grab, it actually solves a real problem for parents by getting kids off screens and making them build things. If I ever got the chance, I’d love to meet him at a tech convention or just grab a casual coffee with him. Because I think his creativity is just unreal.\n\nI love one of his videos where he deals with wild squirrels. They kept breaking into his bird feeders, and he found a really cool way to solve it. He built a super complex and high-tech obstacle course in his backyard just to test the squirrels' intelligence. It had spinning platforms and mazes. It was such a genius move because he basically used physics to outsmart the squirrels. But at the same time, he kept them entertained and well-fed with walnuts at the end. The video went completely viral, and it totally proved how he can turn a frustrating thing into something amazing.\n\nAnd also I can tell he is an incredible person who deeply cares about looking after nature and loves helping others. He’s always using his massive platform to do good. For example, he co-founded this huge global movement called #TeamSeas. He teamed up with trash-skimming boats to clean up millions of pounds of plastic waste from oceans and rivers. He does these massive charity projects every single year. On top of that, he regularly helps special needs kids. His own son actually has autism, so Mark hosted this huge livestream and raised millions of dollars for autism education and support groups. Seeing a global influencer use his fame to basically heal the planet and lift up vulnerable communities, it just gives me so much respect for him. He’s low-key a real-life superhero.\n\nAnd I know for a fact that he’s a person who would love to choose a career in the medical field. He actually opened up about this in a recent podcast. He mentioned that his older sister tragically passed away recently and after finding out about his son’s autism, he started thinking deeply about medical science. He said if he could do it all over again, he would want to become a neurological researcher or a genetic engineer in medicine. He wants to use his engineering mindset to crack the code of incurable brain diseases and help families going through that heartbreak. It makes total sense because his heart is always in the right place. I think his problem-solving skills would bring a massive breakthrough in medical research.",
+      "key_vocabulary": [
+        {
+          "word": "stumbled upon",
+          "meaning": "偶然发现。",
+          "example": "I stumbled upon a great little café while walking around the city."
+        },
+        {
+          "word": "hands-on",
+          "meaning": "亲自动手的，实践的。",
+          "example": "The workshop offers a lot of hands-on experience in woodworking."
+        },
+        {
+          "word": "cash grab",
+          "meaning": "纯为捞钱的手段/圈钱行为。",
+          "example": "Many people thought the movie sequel was just a cheap cash grab."
+        },
+        {
+          "word": "outsmart",
+          "meaning": "智胜，比……聪明。",
+          "example": "The clever detective managed to outsmart the criminal."
+        },
+        {
+          "word": "went completely viral",
+          "meaning": "在网络上彻底爆红/病毒式传播。",
+          "example": "Her dance video went completely viral overnight."
+        },
+        {
+          "word": "trash-skimming boats",
+          "meaning": "清理垃圾的船只（特指打捞水面垃圾）。",
+          "example": "They deployed trash-skimming boats to clean up the river."
+        },
+        {
+          "word": "lift up vulnerable communities",
+          "meaning": "帮助/提携弱势群体。",
+          "example": "The charity's main goal is to lift up vulnerable communities through education."
+        },
+        {
+          "word": "crack the code",
+          "meaning": "破解密码，找到解决难题的办法。",
+          "example": "Scientists are working hard to crack the code of this incurable disease."
+        },
+        {
+          "word": "heart is always in the right place",
+          "meaning": "出发点总是好的，心地善良。",
+          "example": "He makes mistakes sometimes, but his heart is always in the right place."
+        }
+      ]
+    },
+    {
+      "story_id": "story_03",
+      "story_title": "吉隆坡出差",
+      "associated_topics": [
+        {
+          "title": "推荐旅行过的地方",
+          "main_desc": "Describe a place you have travelled to that you would like to recommend to others",
+          "bullet_points": [
+            "What it is",
+            "Where it is",
+            "What you saw and did there",
+            "And explain why you would like to recommend it to others"
+          ]
+        },
+        {
+          "title": "去过且喜欢的城市",
+          "main_desc": "Describe a city you enjoyed visiting",
+          "bullet_points": [
+            "Where it is",
+            "When you visited it",
+            "How long you stayed there",
+            "What you did there",
+            "And explain why you enjoyed visiting it"
+          ]
+        },
+        {
+          "title": "喜欢或不喜欢的高建筑",
+          "main_desc": "Describe a tall building you like or dislike",
+          "bullet_points": [
+            "What it is used for",
+            "Where it is",
+            "What it looks like",
+            "And explain why you like/dislike it"
+          ]
+        },
+        {
+          "title": "去过的无聊地方",
+          "main_desc": "Describe a boring place",
+          "bullet_points": [
+            "Where it is",
+            "Who you went there with",
+            "What you did there",
+            "And explain why you think it is a boring place"
+          ]
+        },
+        {
+          "title": "喜欢拜访但不想住的家",
+          "main_desc": "Describe a home that you like to visit but do not want to live in",
+          "bullet_points": [
+            "Where it is",
+            "What it is like",
+            "Why you like to visit it",
+            "And explain why you would not like to live there"
+          ]
+        }
+      ],
+      "story_content": "So, I actually went to Kuala Lumpur last month for a business trip, and honestly, the place is such a vibe. It is this crazy melting pot of Malay, Chinese, and Indian cultures. I stayed there for about a week, and I was literally hooked from day one. During my free time, I just walked around exploring these chaotic street food markets, checking out futuristic neighborhoods, and soaking in all the multicultural energy. I loved it because you can experience three completely different cultures in one single day. It just makes the whole city feel so alive and constantly fascinating.\n(上个月我因为工作去吉隆坡短途出差了一趟。说实话，那地方真的绝了。它简直是一个融合了马来、华人和印度文化的疯狂大熔炉。我在那儿待了大概一个星期，真的从第一天起就被彻底吸引住了。空闲的时候，我就到处乱逛，去打卡那些热闹得不行的街头小吃市场，看看那些极具未来感的社区，纯粹让自己沉沉浸在这种多元文化的活力氛围里。我超级喜欢这里，因为你可以在一天之内体验三种完全不同的文化。这让整个城市显得非常有生命力，而且时刻充满趣味。)\n\nAlso, the skyline there is just insane, and my absolute favorite has gotta be the Petronas Twin Towers. It’s this massive, super tall building right in the heart of the city. Inside, it’s got corporate offices, a luxury mall, and an observation deck. It honestly looks like two futuristic silver rockets piercing through the clouds, and there's a skybridge connecting them in the middle. I heard that the design is inspired by traditional Islamic geometric patterns, which is super cool. I obsessed over it because, during the day, the stainless steel reflects the sunlight beautifully. But at night? The whole thing lights up like a pair of giant diamonds. It’s just this breathtaking mix of modern engineering and art.\n(而且，那里的天际线简直绝了，我的绝对最爱那肯定得是双子塔。这是一栋座落在城市最核心地带的、极其巨大的超高建筑。里面有企业办公室、奢侈品商场和一个高空观景台。它看起来真的就像两枚穿透云层的未来感银色火箭，中间还有一座天桥把它们连在一起。它的设计灵感来源于传统的伊斯兰几何图案，超级酷。我真的被它迷倒了，因为白天的时候，它的不锈钢外墙反射着绝美的阳光。但到了晚上呢？整个建筑亮起来，就像一双巨大的钻石。这简直是现代工程与艺术令人窒息的完美结合。)\n\nBut, not everywhere in the city is a hit. I actually stumbled upon this really boring, over-hyped place called Batu Caves. I went there with my local friend on a scorching afternoon around 1:00 PM, and oh my god, big mistake. It’s basically this limestone hill with a temple inside, and you have to climb like, 272 colorful, super steep stairs to get to the top. Honestly, the whole experience was just exhausting and dull. It was packed with tourist crowds, and wild monkeys were literally everywhere trying to snatch food right out of your hands! We just stood in lines the whole time, sweating bullets. There wasn't really much to do at the top except look at pigeons. It low-key ruined my afternoon, and I couldn't wait to leave.\n(但是这个城市也不是每个地方都好玩。我当时还踩雷了一个超级无聊、被全网吹过头的景点，叫黑风洞。我是和一个旅行搭子在一个下午一点最暴晒的时候去的，我的天哪，简直是重大决策失误。那基本上是一个里面建有寺庙的石灰岩山洞，你必须爬大概272级五彩斑斓但超级陡峭的台阶才能到顶。说实话，整个体验真的只有心累和枯燥。到处都挤满了游客，空气里弥漫着浓重的香火味混杂着汗水味，野生的猴子简直无处不在，还极力想从你手里直接抢吃的！我们全程基本都在排队，汗流浃背。到了山顶除了看鸽子真的没什么别的事可做。这说实话毁了我的整个下午，我当时巴不得立马走人。)\n\nAnother cool part of my trip was visiting my local friend’s place. She lives in this gorgeous, high-end apartment in a luxury high-rise, right in the city center. I loved hanging out there because the apartment itself is super sleek, and you get access to this legendary rooftop infinity pool that looks right at the Twin Towers. The night view from her living room balcony is to die for! But, as much as I loved visiting, I would never want to live there permanently. First of all, the neighborhood has Kuala Lumpur’s notorious, 24/7 bumper-to-bumper traffic, so getting groceries is a total logistical nightmare. Plus, because the building is a major hotspot for Airbnb tourists, the lobby and elevators are always packed and chaotic, especially during public holidays. It completely lacks that quiet, cozy, neighborhood vibe that I need for my daily life.",
+      "key_vocabulary": [
+        {
+          "word": "melting pot",
+          "meaning": "大熔炉（指各种文化、种族融合的地方）。",
+          "example": "New York City is a cultural melting pot."
+        },
+        {
+          "word": "hooked from day one",
+          "meaning": "从第一天起就被深深吸引。",
+          "example": "I started playing the game last week and I was hooked from day one."
+        },
+        {
+          "word": "soaking in",
+          "meaning": "沉浸在，吸收（氛围/知识等）。",
+          "example": "We spent the afternoon just soaking in the sun at the beach."
+        },
+        {
+          "word": "piercing through",
+          "meaning": "穿透，刺穿。",
+          "example": "The tall skyscraper looks like a needle piercing through the clouds."
+        },
+        {
+          "word": "breathtaking mix",
+          "meaning": "令人叹为观止的完美结合。",
+          "example": "The performance was a breathtaking mix of dance and technology."
+        },
+        {
+          "word": "over-hyped",
+          "meaning": "被过度炒作的，吹过头的。",
+          "example": "The new restaurant is definitely over-hyped; the food was just average."
+        },
+        {
+          "word": "scorching afternoon",
+          "meaning": "极其炎热的下午。",
+          "example": "We didn't want to go out in the scorching afternoon heat."
+        },
+        {
+          "word": "sweating bullets",
+          "meaning": "满头大汗，汗流浃背（也可表示极度紧张）。",
+          "example": "Waiting for the exam results had me sweating bullets."
+        },
+        {
+          "word": "to die for",
+          "meaning": "好得要命的，令人极度渴望的。",
+          "example": "The chocolate cake at that bakery is absolutely to die for."
+        },
+        {
+          "word": "bumper-to-bumper traffic",
+          "meaning": "首尾相连的堵车，严重塞车。",
+          "example": "It took me two hours to get home due to the bumper-to-bumper traffic."
+        },
+        {
+          "word": "logistical nightmare",
+          "meaning": "后勤上的噩梦/调度上的巨大麻烦。",
+          "example": "Moving 500 people to another venue on short notice was a logistical nightmare."
+        }
+      ]
+    },
+    {
+      "story_id": "story_04",
+      "story_title": "全职旅游 Vlogger 梦",
+      "associated_topics": [
+        {
+          "title": "完美工作",
+          "main_desc": "Describe a perfect job you would like to have in the future",
+          "bullet_points": [
+            "What it is",
+            "How you knew it",
+            "What you need to learn to get this job",
+            "And explain why you think it is a perfect job for you"
+          ]
+        },
+        {
+          "title": "想从事的短期海外工作",
+          "main_desc": "Describe a short-term job you want to have in a foreign country",
+          "bullet_points": [
+            "Where it is",
+            "How you know of it",
+            "What the job is",
+            "And explain why you want to do it"
+          ]
+        },
+        {
+          "title": "自行车/摩托车/汽车旅行",
+          "main_desc": "Describe a bicycle/motorcycle/car trip you would like to go",
+          "bullet_points": [
+            "Who you would like to go with",
+            "Where you would like to go",
+            "When you would like to go",
+            "And explain why you would like to go by bicycle/motorcycle/car"
+          ]
+        },
+        {
+          "title": "想拥有的科技产品",
+          "main_desc": "Describe a piece of technology (not a phone) that you would like to own",
+          "bullet_points": [
+            "What it is",
+            "How much it costs",
+            "How you knew it",
+            "And explain why you would like to own it"
+          ]
+        }
+      ],
+      "story_content": "Honestly my absolute perfect job would be an independent travel content creator, a full-time travel vlogger. I actually stumbled upon this whole lifestyle a couple of years ago during college. I was just binge-watching travel channels on YouTube, and I was instantly hooked. To really pull this off and get my channel going, I know I need to level up my skills. I need to master professional editing software, learn how to tell a good story, and really crack the social media algorithms. For me, it’s the ultimate dream because it perfectly blends my love for exploring the world with 100% creative freedom. I could basically work from anywhere.\n(说实话，我心目中绝对完美的工作是成为一名独立的旅游内容创作者，也就是全职旅游博主。其实我是在几年前读大学的时候，偶然接触到这种生活方式的。当时我正在YouTube上刷各种旅游频道，瞬间就被深深吸引住了。为了真正实现这个目标并把我的频道做起来，我知道自己必须提升技能。我需要精通专业的剪辑软件，学会如何讲好一个故事，并且真正摸透社交媒体的算法。对我来说，这是终极梦想，因为它将我对探索世界的热爱与100%的创作自由完美结合在了一起。基本上，我可以在任何地方工作。)\n\nSo, to jumpstart this dream and rack up some epic footage, my immediate plan is to take a gap year, apply for a Working Holiday Visa, and head over to New Zealand. I really want to land a short-term job as a farm assistant in Queenstown. I actually found out about this gig through some forums and vlogs. The job is pretty straightforward, basically helping out with daily farm chores and hanging out with animals. I am super drawn to it because it’s the perfect way to fund my travels while capturing that authentic, slow-life content for my channel.\n(所以，为了开启这个梦想并积累一些史诗级的素材，我眼下的计划是休假一年，申请打工度假签证，然后前往新西兰。我很想在皇后镇找一份农场助理的短期工作。其实我是通过一些论坛和Vlog了解到这份工作的。这份工作非常简单直接，基本上就是帮着做做农场的日常杂务，和动物们待在一起。我超级被它吸引，因为这是为我的旅行提供资金的绝佳方式，同时还能为我的频道捕捉到那种真实、慢生活的内容。)\n\nAnd to make the most of it, I’m planning this epic campervan road trip across the South Island of New Zealand. I’ve already pitched the idea to my best friend, and she is totally down to fly out and catch up with me for a few weeks next autumn. We want to rent a super cozy campervan and drive all the way from Christchurch, stop by Lake Tekapo and head straight down to Queenstown. Doing it by campervan is a total game-changer. Because New Zealand has this incredibly mature holiday park system, where you can camp right by crystal-clear lakes or basically at the foot of massive, snow-capped mountains. Plus, a van gives us total freedom to pull over whenever we want, making it so much easier to cook, live, and film those aesthetic shots on the road.\n(为了充分利用这次机会，我正计划一场横跨新西兰南岛的史诗级房车公路旅行。我已经把这个想法安利给了我最好的朋友，她完全赞同，并打算在明年秋天飞过来和我汇合，一起待上几个星期。我们想租一辆超级舒适的房车，一路从基督城开过去，中途在蒂卡普湖停留，然后直奔皇后镇。开房车旅行完全改变了游戏规则。因为新西兰有着难以置信的成熟假日公园体系，你可以直接在清澈见底的湖畔宿营，或者基本上就在巍峨的雪山脚下露营。此外，房车给了我们随时随地靠边停车的绝对自由，这让在路上的做饭、生活以及拍摄那些唯美的画面变得容易得多。)\n\nBut To really give my videos that extra edge, I’m dying to buy a professional DJI drone. It’s pretty pricey, probably around 3 thousand RMB, which is a massive investment for me. I first saw it on a tech review channel and I was completely blown away by how stable and sharp the video was. But for my upcoming trip, it’s a total must-have. If I can get those cinematic drone shots, my content is gonna be next level. You just can't fully capture how stunning New Zealand is without them.\n(但是，为了真正让我的视频更具优势，我极其渴望买一台专业的大疆无人机。它挺贵的，大概要3000元人民币，这对我来说是一笔巨大的投资。我最初是在一个科技评测频道上看到它的，当时完全被它那稳定且清晰的画质震撼到了。但对于我即将到来的旅行来说，它绝对是必备之物。如果我能拍出那些电影质感的航拍镜头，我的内容将会提升到全新的层次。没有这些镜头，你根本无法完全记录下新西兰究竟有多么令人惊叹。)",
+      "key_vocabulary": [
+        {
+          "word": "level up",
+          "meaning": "提升（技能、等级等）。",
+          "example": "I need to take some courses to level up my graphic design skills."
+        },
+        {
+          "word": "rack up",
+          "meaning": "积累，大量获得（分数、经验、素材等）。",
+          "example": "The video managed to rack up a million views in just two days."
+        },
+        {
+          "word": "fund my travels",
+          "meaning": "为我的旅行提供资金/筹资。",
+          "example": "Working as a freelancer allows me to fund my travels around the globe."
+        },
+        {
+          "word": "totally down to",
+          "meaning": "非常乐意去/完全同意做某事。",
+          "example": "If you guys want to order pizza, I am totally down to share."
+        },
+        {
+          "word": "game-changer",
+          "meaning": "改变游戏规则的事物，带来革命性改变的东西。",
+          "example": "Getting a second monitor for my setup was a total game-changer."
+        },
+        {
+          "word": "aesthetic shots",
+          "meaning": "有美感/艺术感的镜头或照片。",
+          "example": "The director is famous for capturing incredibly aesthetic shots in his movies."
+        },
+        {
+          "word": "extra edge",
+          "meaning": "额外的优势。",
+          "example": "Knowing a second language gives you an extra edge in the job market."
+        },
+        {
+          "word": "cinematic",
+          "meaning": "电影质感的，电影般的。",
+          "example": "The drone provides cinematic footage that looks extremely professional."
+        }
+      ]
+    },
+    {
+      "story_id": "story_05",
+      "story_title": "腾讯视频与《十三邀》",
+      "associated_topics": [
+        {
+          "title": "App/程序",
+          "main_desc": "Describe a program or app on your computer or phone",
+          "bullet_points": [
+            "What it is",
+            "How often you use it",
+            "When/how you use it",
+            "When/how you found it",
+            "And explain how you feel about it"
+          ]
+        },
+        {
+          "title": "最近看过的电视/网络节目",
+          "main_desc": "Describe a TV show/online program you have watched recently",
+          "bullet_points": [
+            "What it is",
+            "What it is about",
+            "How often you watch it",
+            "And explain how you feel about it"
+          ]
+        },
+        {
+          "title": "有趣视频",
+          "main_desc": "Describe an interesting video",
+          "bullet_points": [
+            "When and where you watched it",
+            "What it is about",
+            "Why you watched it",
+            "And explain how you feel about it"
+          ]
+        },
+        {
+          "title": "想颁布的新法律",
+          "main_desc": "Describe a new law you would like to introduce in your country",
+          "bullet_points": [
+            "What law it is",
+            "What changes this law brings",
+            "Whether this new law will be popular",
+            "How you came up with the new law",
+            "And explain how you feel about this new law"
+          ]
+        }
+      ],
+      "story_content": "To be honest, I am a bit obsessed with Tencent Video lately. It is hands down my absolute go-to video app right now. To be fair, I didn't really care about it at first. But then, a few months ago, I actually dropped money on their premium VIP membership. Because I was dying to watch this super high-quality cultural show, and it’s exclusive to their platform. Now, I basically open the app every single day. I usually scroll through it during my subway commute, or right before I hit the sack to unwind. I love it because the layout is super clean. Plus, with the VIP pass, I get to skip all those annoying, unskippable ads and just jump straight into the premium, HD content.\n\nAnd speaking of that exclusive show, the online program I’ve been binge-watching is called Thirteen Invitations. It’s basically this deeply thought-provoking interview show hosted by Xu Zhiyuan. He is a super famous Chinese intellectual. In each episode, he sits down with different cultural icons and they just chat about society, modern trends, and human psychology. I catch up on it maybe once or twice a week, usually on weekends when I can get an hour of uninterrupted me-time. I am such a huge fan because it’s not just mindless entertainment. It really dives deep into how our modern world works, and honestly, it always gives me a fresh perspective on life.\n\nLike, just last Sunday, I watched this incredibly interesting video clip from their latest season. The host and his guest had this super intense, brilliant debate about celebrity endorsements. I originally clicked on it just because I’m a loyal follower, but the conversation was absolutely mind-blowing and inspiring. They were basically dissecting how big brands use elite celebrities to create fake needs. They are blindly guiding the public to buy stuff they don’t even need. And all this time, the celebrities just pocket massive endorsement checks and take zero responsibility. It was witty, it was funny, but at the same time deeply reflective. It totally blew my mind and made question my own spending habits.\n\nIt really got me thinking. Like, we need a serious, systemic change here. So, if I could, I would love to introduce a new law in my country. This law would legally require public figures to actually use the products they endorse for at least, let’s say six months before they can star in any commercials. Plus, it would slap them with heavy legal liabilities and massive fines, if the products turn out to be a scam or harmful to minors. I came up with this because public figures shouldn’t just take the money and run, without owning up to the lifestyle they are selling. I honestly feel this law would be a total game-changer, protecting young people from impulse buying. Brands and celebs might hate it at first, but I believe it’s 100% essential for a healthier and more responsible consumer culture.",
+      "key_vocabulary": [
+        {
+          "word": "dropped money on",
+          "meaning": "砸钱在……上，花钱买。",
+          "example": "I finally dropped money on a new laptop after my old one broke."
+        },
+        {
+          "word": "hit the sack",
+          "meaning": "睡觉，就寝。",
+          "example": "It's been a long day, I think I'm ready to hit the sack."
+        },
+        {
+          "word": "unskippable ads",
+          "meaning": "无法跳过的广告。",
+          "example": "The worst part about this free app is the 30-second unskippable ads."
+        },
+        {
+          "word": "thought-provoking",
+          "meaning": "发人深省的，引人思考的。",
+          "example": "The documentary was deeply thought-provoking and changed my view on the issue."
+        },
+        {
+          "word": "fresh perspective",
+          "meaning": "全新的视角/观点。",
+          "example": "Traveling to different countries gives you a fresh perspective on your own culture."
+        },
+        {
+          "word": "fake needs",
+          "meaning": "伪需求（商家创造出的非必要需求）。",
+          "example": "Marketing often creates fake needs to convince people to buy things."
+        },
+        {
+          "word": "pocket massive endorsement checks",
+          "meaning": "把巨额代言费揣进腰包。",
+          "example": "Many athletes pocket massive endorsement checks from sportswear brands."
+        },
+        {
+          "word": "owning up to",
+          "meaning": "勇于承认/承担（责任等）。",
+          "example": "He is respected for owning up to his mistakes and fixing them."
+        },
+        {
+          "word": "impulse buying",
+          "meaning": "冲动消费。",
+          "example": "Online shopping sales often encourage impulse buying."
+        }
+      ]
+    },
+    {
+      "story_id": "story_06",
+      "story_title": "外婆的手写食谱与长寿面",
+      "associated_topics": [
+        {
+          "title": "对家庭重要的东西",
+          "main_desc": "Describe something important that has been kept in your family for a long time",
+          "bullet_points": [
+            "What it is",
+            "When your family had it",
+            "How your family got it",
+            "And explain why it is important to your family"
+          ]
+        },
+        {
+          "title": "特别场合的食物",
+          "main_desc": "Describe a food that people eat on special occasions/events",
+          "bullet_points": [
+            "What it is",
+            "What the special event/occasion is",
+            "How it is cooked/made",
+            "And explain why people eat it on that special occasion/event"
+          ]
+        },
+        {
+          "title": "给别人建议",
+          "main_desc": "Describe a time when you gave advice to others",
+          "bullet_points": [
+            "When it was",
+            "To whom you gave the advice",
+            "What the advice was",
+            "And explain why you gave the advice"
+          ]
+        },
+        {
+          "title": "早起经历",
+          "main_desc": "Describe a time when you got up early",
+          "bullet_points": [
+            "When it was",
+            "What you did",
+            "Why you got up early",
+            "And how you felt about it"
+          ]
+        },
+        {
+          "title": "在团队中工作",
+          "main_desc": "Describe a time when you worked in a group",
+          "bullet_points": [
+            "What you did",
+            "Who you worked with",
+            "What problems you faced",
+            "And explain why you worked in the group"
+          ]
+        },
+        {
+          "title": "为家人骄傲",
+          "main_desc": "Describe a time when you felt proud of a family member",
+          "bullet_points": [
+            "When it happened",
+            "Who the person is",
+            "What the person did",
+            "And explain why you felt proud of him/her"
+          ]
+        },
+        {
+          "title": "微笑的场合",
+          "main_desc": "Describe an occasion when many people were smiling",
+          "bullet_points": [
+            "When it happened",
+            "Who you were with",
+            "What happened",
+            "And explain why most people were smiling"
+          ]
+        }
+      ],
+      "story_content": "So, there’s this one thing that’s been kept in my family for literally ages, and it’s super important to us. It’s this old, handwritten recipe book from my grandma. She actually started writing it when she was just a young girl in her twenties, like, way before I was even born. It's so cute because she basically customized it by scribbling little notes on the sides, pointing out who loves which dish the most. And there’s this one specific recipe for Braised Pork Longevity Noodles. This is our absolute go-to food for special occasions, especially birthdays. To make it, you slow-cook pork belly in soy sauce and spices until it’s melt-in-your-mouth tender, and then you pour that rich, amazing gravy over one single, super long noodle. In our culture, long noodles mean a long, healthy life. So every single time someone has a birthday, my grandma cooks this to wish them a long life. It is low-key the most comforting food ever.\n(我们家真的保存了超级久的一样东西，对我们全家来说特别特别重要。那就是我外婆的一本旧旧的、纯手写的食谱。她早在二十多岁还是个小姑娘的时候就开始记了，真的，那会儿我都还没出生呢。特别可爱的是，她基本上把这本食谱做成了定制版，在边边角角上涂涂写写，标注出谁最爱吃哪道菜。里面有一个特别的食谱，是卤肉长寿面。这绝对是我们家在特别场合（尤其是过生日时）必吃的食物。做法是把五花肉放在酱油和香料里慢炖，直到入口即化，然后把那层浓郁、绝美的肉汁浇在一根超级长的面条上。在我们的文化里，长长的面条象征着健康长寿。所以每当有人过生日，我外婆都会做这个来祝他们长寿。说实话，这绝对是世界上最治愈的食物。)\n\nAnyway, just last week, my grandma turned 70, which was a huge milestone for our family. My two cousins and I were trying to think of a meaningful birthday gift. We wanted something heartfelt. That’s when I gave my cousins a piece of advice. I was like, \"Hey, why don't we roll up our sleeves and secretly make Grandma’s signature longevity noodles for her birthday lunch?\" I gave them this advice because Grandma spent her entire life cooking for everyone else. I just thought it would mean the world to her, if she got to taste her own cooking legacy made by us.\n(不管怎样，就在上周，我外婆过70大寿，这对我们家来说是个超级大的日子。我和我的两个表弟妹想送她一个有意义的生日礼物。我们想要那种走心的。所以我给我的表弟妹们提了一个建议。我说：“嘿，咱们要不自己动手，偷偷在外婆的生日午宴上复刻她招牌的长寿面怎么样？”我之所以提这个建议，是因为外婆一辈子都在给别人做饭。我当时就觉得她可以品尝到由我们亲手复刻的她自己的手艺，她绝对会感动死。)\n\nSo, to pull off this secret mission, we actually had to get up super early last Sunday, 8:00 AM. I know 8:00 AM doesn’t sound that early to most people, but for us it was a literal miracle. We had to hit the local wet market early to grab the freshest pork belly before it sold out. We worked together as a tight little team, and honestly, it was such a vibe. I was the head chef since I’m the oldest, so I was tracking the recipe step-by-step. My 18-year-old male cousin did all the heavy lifting, like kneading the heavy dough for the long noodles. And my little 10-year-old cousin was our prep cook. The biggest challenge was that the kitchen became a total disaster zone, and we were under so much time pressure to finish everything before the guests showed up.\n(为了搞定这个秘密任务，上周日我们不得不早上8点就起来了。我知道对大多数人来说8点听起来没多早，但对于我们来说，这简直是个奇迹。我们必须大清早去当地菜市场，在卖光之前抢到最顶尖、最鲜嫩的五花肉。我们三个人作为一个默契的小团队一起分工合作，说实话，那氛围真的很绝。因为我最大，所以我当主厨，一步步盯着食谱。我18岁的表弟负责干体力活，比如揉长寿面那个死沉的面团。而我10岁的小表妹则是我们的备菜帮厨。我们面临的最大挑战是厨房最后变成了灾难现场，而且面临巨大的时间压力，必须在大家到场之前把所有东西搞定。)\n\nDuring the whole process, I felt so incredibly proud of my little cousin. She’s only 10, but she didn’t complain even once. She was hyper-focused, carefully washing the veggies and setting up the bowls perfectly. At the birthday lunch, we finally served the noodles, it turned into the most wholesome, smiling occasion ever. My grandma even got a little teary-eyed. Everyone was smiling because they were so touched by our effort, and it just created this pure, joyful energy in the room. It was honestly the best feeling.\n(在整个过程中，我由衷地为我的小表妹感到无比骄傲。她才10岁，但全程连一次都没有抱怨过。她高度专注，小心翼翼地洗菜，把碗摆得完美无瑕。在生日午宴上，我们终于把面端了上去, 现场瞬间变成了最温馨、每个人都在微笑的画面。我外婆甚至眼里闪着泪光。大家之所以都在笑，是因为被我们的心意彻底感动到了，屋子里弥漫着纯粹而快乐的能量。说实话，那种感觉真的太棒了。)",
+      "key_vocabulary": [
+        {
+          "word": "literally ages",
+          "meaning": "极其漫长的时间（夸张手法）。",
+          "example": "I've been waiting in this line for literally ages."
+        },
+        {
+          "word": "melt-in-your-mouth tender",
+          "meaning": "入口即化的软糯。",
+          "example": "The slow-cooked beef was melt-in-your-mouth tender."
+        },
+        {
+          "word": "huge milestone",
+          "meaning": "巨大的里程碑/极其重要的日子。",
+          "example": "Graduating from university is a huge milestone in anyone's life."
+        },
+        {
+          "word": "roll up our sleeves",
+          "meaning": "挽起袖子准备大干一场。",
+          "example": "We have a lot of work to do, so let's roll up our sleeves."
+        },
+        {
+          "word": "mean the world to her",
+          "meaning": "对她来说意义非凡/意味着一切。",
+          "example": "Your presence at her wedding will mean the world to her."
+        },
+        {
+          "word": "disaster zone",
+          "meaning": "灾难区（常比喻极其混乱的地方）。",
+          "example": "After the party, my living room looked like a complete disaster zone."
+        },
+        {
+          "word": "hyper-focused",
+          "meaning": "高度专注的。",
+          "example": "When he codes, he gets hyper-focused and ignores everything else."
+        },
+        {
+          "word": "wholesome",
+          "meaning": "温馨治愈的，有益身心的。",
+          "example": "It was such a wholesome family moment."
+        },
+        {
+          "word": "teary-eyed",
+          "meaning": "热泪盈眶的，眼含泪水的。",
+          "example": "The heartfelt speech left everyone in the room teary-eyed."
+        }
+      ]
+    },
+    {
+      "story_id": "story_07",
+      "story_title": "iPad 坏掉与延迟雅思考试",
+      "associated_topics": [
+        {
+          "title": "坏掉的电子设备",
+          "main_desc": "Describe a time when you had a problem with using an electronic device",
+          "bullet_points": [
+            "When it happened",
+            "Where it happened",
+            "What the problem was",
+            "And explain how you solved the problem at last"
+          ]
+        },
+        {
+          "title": "遇到的科技问题",
+          "main_desc": "Describe a challenging technological problem you faced",
+          "bullet_points": [
+            "What the problem was",
+            "When and where you faced it",
+            "How challenging it was",
+            "And explain how you solved it"
+          ]
+        },
+        {
+          "title": "别人帮助解决问题",
+          "main_desc": "Describe a time when a person did something to help you solve a problem",
+          "bullet_points": [
+            "Who the person is",
+            "What the problem was",
+            "How he/she helped you",
+            "And explain how you felt about the experience"
+          ]
+        },
+        {
+          "title": "重要决定",
+          "main_desc": "Describe an important decision that you made",
+          "bullet_points": [
+            "What the decision was",
+            "How you made your decision",
+            "What the results of the decision were",
+            "And explain why it was important"
+          ]
+        },
+        {
+          "title": "近期改变的计划",
+          "main_desc": "Describe a plan that you had to change recently",
+          "bullet_points": [
+            "When this happened",
+            "What made you change the plan",
+            "What the new plan was",
+            "And how you felt about the change"
+          ]
+        }
+      ],
+      "story_content": "So, a few months ago, I was in the library when my iPad suddenly went completely black. It just died on me out of nowhere. At first, I thought the battery was just dead, so I plugged it in, but nothing happened. I tried to force restart it by clicking the volume buttons and holding down the power button, but the screen was just stone dead. I went online and found out it was probably a super serious motherboard issue, like a short circuit in the power IC chip or something like that. It was definitely such a challenging technological problem for me. Plus, most of my Goodnotes backup wasn't synced to iCloud yet. My iPad is basically my entire life because all of my study notes are on it. I was completely freaking out.\n\nSince I couldn't fix it myself, I immediately booked a Genius Bar appointment and rushed over to the Apple Store the next morning. That’s where this super nice tech girl saved my life. She was a total life-saver. She took my iPad, connected it to their diagnostic software, and confirmed that it wasn’t just a quick software glitch, it was indeed a hardware failure on the logic board. Since it was still under AppleCare, she told me they could ship it back to the factory for a full repair, but it would take about 10 business days. She was incredibly patient. She even helped me check if any of my notes could be retrieved from my phone's local drive. Even though she couldn't magically revive the iPad on the spot, I felt so incredibly grateful to have someone guide me through that stressful mess.\n\nSo, because it would take at least two full weeks to get my device back, I had to make this huge, bittersweet decision, which completely changed all of my plans for the month. Originally, I was scheduled to take my IELTS test in three weeks. But without my iPad, there was no way I could sit for it. So, I decided to postpone the test. I hopped onto the official registration site and paid an extra rescheduling fee. It definitely pinched my pocket and felt a bit painful. But honestly? Deep down, I felt this weird sense of relief. Secretly, I had been feeling so underprepared and stressed out about the exam, and I was already low-key wishing for more time to study. So when the iPad broke, it magically gave me the perfect, guilt-free excuse to push the date back. The new plan gave me a whole extra month to catch up, and looking back, it was legit the best decision I could have made.",
+      "key_vocabulary": [
+        {
+          "word": "died on me out of nowhere",
+          "meaning": "毫无征兆地死机/罢工了。",
+          "example": "My laptop just died on me out of nowhere during the presentation."
+        },
+        {
+          "word": "stone dead",
+          "meaning": "死透了的/毫无反应的（指机器或电子设备）。",
+          "example": "I tried charging it, but the battery was just stone dead."
+        },
+        {
+          "word": "freaking out",
+          "meaning": "抓狂/极其慌张。",
+          "example": "I lost my passport at the airport and started completely freaking out."
+        },
+        {
+          "word": "life-saver",
+          "meaning": "救星，帮了大忙的人或物。",
+          "example": "Thank you for bringing me coffee, you are an absolute life-saver!"
+        },
+        {
+          "word": "software glitch",
+          "meaning": "软件小故障/系统漏洞。",
+          "example": "The app crashed due to a minor software glitch."
+        },
+        {
+          "word": "magically revive",
+          "meaning": "奇迹般地修复/唤醒。",
+          "example": "He tried to magically revive the old engine, but it was beyond repair."
+        },
+        {
+          "word": "bittersweet decision",
+          "meaning": "苦乐参半的决定/令人喜忧参半的决定。",
+          "example": "Leaving my hometown for a better job was a bittersweet decision."
+        },
+        {
+          "word": "pinched my pocket",
+          "meaning": "让我的钱包大出血/破费了。",
+          "example": "Buying those concert tickets really pinched my pocket."
+        },
+        {
+          "word": "sense of relief",
+          "meaning": "如释重负的感觉。",
+          "example": "Hearing that the surgery was successful brought a huge sense of relief."
+        },
+        {
+          "word": "guilt-free excuse",
+          "meaning": "不用感到内疚的借口。",
+          "example": "The heavy rain gave me a guilt-free excuse to cancel my gym session."
+        }
+      ]
+    },
+    {
+      "story_id": "story_08",
+      "story_title": "DIY 黑胡桃木茶几",
+      "associated_topics": [
+        {
+          "title": "发挥想象力",
+          "main_desc": "Describe a time you needed to use your imagination",
+          "bullet_points": [
+            "When it was",
+            "Why you needed to use imagination",
+            "How difficult or easy it was",
+            "And explain how you felt about it"
+          ]
+        },
+        {
+          "title": "花费超过预期的物品",
+          "main_desc": "Describe an item on which you spent more than expected",
+          "bullet_points": [
+            "What it is",
+            "How much you spent on it",
+            "Why you bought it",
+            "And explain why you think you spent more than expected"
+          ]
+        }
+      ],
+      "story_content": "A month ago, I wanted a new wooden coffee table for my living room. At first, I was just gonna buy some basic, pre-made one online. But then, I randomly scrolled past this super cool DIY woodworking workshop on social media, where you can literally design and build your own furniture from scratch. I was like, \"Oh my god, why not?\" and just booked a session. It was a total blank canvas. I had to picture the exact shape, the wood grain, and the dimensions to fit my apartment perfectly. I even had to sketch out the whole design by hand! Honestly, it was low-key hard at first. Trying to take the 3D picture in my head and put it on paper took some serious brainpower. But man, the whole time I was just so hyped and creatively alive.\n(大概一个月前，我想给客厅买张新的木头小茶几。刚开始，我只是打算在网上随便买个现成的普普通通的款。但后来，我刷社交媒体时偶然看到了这个超级酷的DIY木工工坊，在那儿你真的可以从零开始设计并制作自己的家具。我当时就想，“天哪，干嘛不试一下呢？”然后直接就定了一节课。那完全是一张白纸。我必须在脑海里勾勒出精确的形状、木头的纹理、还有能完美融入我公寓的尺寸。我甚至还得亲手画出整张设计草图！说实话，刚开始说实话有点难。要把脑子里的3D画面放到纸上，真的挺费脑细胞的。但天哪，整个过程中我整个人超级兴奋，感觉自己的创造力彻底活了过来。)\n\nSo, the item I ended up making and spent way too much money on was this custom black walnut coffee table. Since I wanted it to be completely unique, I picked this gorgeous, super boujee black walnut wood. I spent hours sawing, sanding, and oiling it myself. The experience was amazing, but when it came time to pay, the total was like, 1500 RMB. That was a massive splurge for me.\n(所以,我最后做出来的这件东西,也是我花了远超预期价格的物品,就是这张定制的黑胡桃木茶几。因为我想让它绝对独一无二，所以我挑选了这种绝美的、非常高级的黑胡桃木。我花了好几个小时亲自动手锯木头、打磨、上油。这体验真的很棒，但到了结账的时候，总价居然要差不多1500块。)\n\nLooking back, I spent so much more than expected for two big reasons. First, raw premium wood like black walnut is just crazy expensive right now. Second, the workshop charges you by the hour for the space and professional tools. And because I got so carried away trying to make the design absolutely perfect, I ended up staying there the whole day! It was definitely a painful moment for my bank account, but honestly, I don’t regret it at all. It is literally one-of-a-kind.\n(现在回想起来，我之所以花得比预期多那么多，主要有两个大原因。首先，像黑胡桃木这种优质的原木现在真的贵得离谱。其次，工坊是根据你使用他们场地和专业工具的时间按小时收费的。而我当时为了让设计变得绝对完美，整个人太投入了，结果在里面赖了整整一天！虽然交钱那一刻我的银行账户确实挺肉疼的，但说实话，我一点都不后悔。它真的是独一无二的。)",
+      "key_vocabulary": [
+        {
+          "word": "blank canvas",
+          "meaning": "空白的画布（比喻没有任何限制的开始）。",
+          "example": "When moving to a new apartment, the empty space feels like a blank canvas."
+        },
+        {
+          "word": "brainpower",
+          "meaning": "脑力，智力。",
+          "example": "Solving this complex math problem requires a lot of brainpower."
+        },
+        {
+          "word": "hyped and creatively alive",
+          "meaning": "兴奋且充满创造力的。",
+          "example": "After attending the design conference, I felt so hyped and creatively alive."
+        },
+        {
+          "word": "boujee",
+          "meaning": "奢华的，高级的（网络流行语，源自bourgeois）。",
+          "example": "We treated ourselves to a very boujee dinner at a five-star restaurant."
+        },
+        {
+          "word": "splurge",
+          "meaning": "挥霍，砸重金买的东西。",
+          "example": "Buying that designer bag was a massive splurge for her."
+        },
+        {
+          "word": "crazy expensive",
+          "meaning": "贵得离谱的。",
+          "example": "Real estate in this city is just crazy expensive."
+        },
+        {
+          "word": "got so carried away",
+          "meaning": "忘乎所以，太投入了。",
+          "example": "I got so carried away shopping that I lost track of time."
+        },
+        {
+          "word": "one-of-a-kind",
+          "meaning": "独一无二的。",
+          "example": "This antique ring is truly one-of-a-kind."
+        }
+      ]
+    },
+    {
+      "story_id": "story_09",
+      "story_title": "德约科维奇网球赛",
+      "associated_topics": [
+        {
+          "title": "喜欢现场体育赛事",
+          "main_desc": "Describe a live sports event you watched and liked",
+          "bullet_points": [
+            "What it was",
+            "When and where you watched it",
+            "Who you watched it with",
+            "And explain why you liked it"
+          ]
+        },
+        {
+          "title": "不享受的音乐活动",
+          "main_desc": "Describe an event you attended in which you didn’t enjoy the music played",
+          "bullet_points": [
+            "What it was",
+            "Who you went with",
+            "Why you decided to go there",
+            "And explain why you didn’t enjoy it"
+          ]
+        },
+        {
+          "title": "名人出演的广告",
+          "main_desc": "Describe an advertisement with a famous person in it",
+          "bullet_points": [
+            "Who the person is",
+            "Where you can see it",
+            "What the advertisement is about",
+            "And explain how you feel about the advertisement"
+          ]
+        }
+      ],
+      "story_content": "About a month ago, my bestie and I went to watch this pro tennis tournament live at the city stadium. We are both massive tennis nerds, and I absolutely loved the actual match. The main reason we even bought the tickets was to see Novak Djokovic play in person. And oh my god, he was incredible! The energy in the stadium during the game was just unreal. Like, every single serve and rally had us on the edge of our seats, and the crowd was going totally wild. Seeing my favorite athlete dominate the court live was a literal dream come true. The match itself was a solid ten out of ten.\n(大概一个月前，我和我闺蜜去城市体育馆看了一场职业网球公开赛的现场。我们俩 Sundays 都是疯狂的网球迷，而且我本人真的超级喜欢比赛本身。我们之所以买票，核心原因就是为了能亲眼看德约科维奇打球。我的天哪，他简直太牛了！正式比赛时体育馆里的氛围真切地绝了。每一次发球和拉锯战都让我们紧张得坐在椅子边缘，全场观众完全嗨翻了。能现场看到我最喜欢的运动员统治赛场，简直是梦想成真。比赛本身绝对是无可挑剔的满分。)\n\nBut the intermissions were a whole different story. It completely turned into this event where I absolutely hated the music. In between the sets, instead of letting everyone just breathe or playing some chill background tunes, the sponsors forced these incredibly loud, blasting EDM tracks over the speakers. It was so intense that the bass was literally vibrating in my chest! It was impossible to even talk to my friend. I didn’t enjoy it at all, because it felt super forced and totally ruined the classy, focused tennis vibe. It just gave me a massive headache.\n(但是中场休息的时候完全是另外一码事了。那直接变成了一个我极其讨厌现场音乐的活动。在每盘比赛之间，赞助商没有让大家喘口气或者放点轻松的背景音乐，而是通过大音响强行播放那种震耳欲聋的电子舞曲。那音乐大声到低音炮真的在我的胸腔里震动！搞得我们完全无法说话。一点儿都不享受，因为这感觉超级违和，完全毁了网球比赛那种高级、专注的氛围。简直震得我头疼欲裂。)\n\nTo make things even worse, the giant stadium screens kept playing this advertisement with Djokovic in it during every single break. You literally couldn’t escape it. It was this luxury watch ad where he was wearing a sleek suit, looking intensely into the camera, and saying this super corny tagline about \"mastering time.\" I mean, I love the guy on the court, but the ad felt so unnatural and commercial. It was so obvious that the sponsors just shoved his face and that annoying music into every single blank second just to get their money's worth. So, while the actual tennis was top-tier, the whole commercial and musical mess in between low-key left a bad taste in my mouth.\n(更糟糕的是体育馆的巨型大屏幕在每一次休息时，都疯狂循环播放这一则由德约科维奇出演的广告。你真的无处可逃。那是一则奢侈手表的广告，视频里他穿着一身笔挺的西装，眼神犀利地盯着镜头，说着一句关于“掌控时间”的超级老套掉牙的广告词。我的意思是，在赛场上我爱死这个人了，但那个广告看起来真的很不自然、商业味太浓了。太明显了，赞助商就是为了把赞助费赚够，才把他的脸和那段烦人的音乐强行塞进每一个空闲的秒数里。所以，虽然网球比赛本身是顶级的，但中间夹杂的那些糟糕的广告和音乐，让我心里挺膈应的。)",
+      "key_vocabulary": [
+        {
+          "word": "massive tennis nerds",
+          "meaning": "疯狂的网球迷/极客。",
+          "example": "We are massive sci-fi nerds who watch every new movie on opening night."
+        },
+        {
+          "word": "on the edge of our seats",
+          "meaning": "紧张得坐在椅子边缘/被深深吸引。",
+          "example": "The thriller movie had the whole audience on the edge of their seats."
+        },
+        {
+          "word": "dominate the court",
+          "meaning": "统治赛场，在赛场上称霸。",
+          "example": "It was amazing to watch him dominate the court and win effortlessly."
+        },
+        {
+          "word": "blasting EDM tracks",
+          "meaning": "震耳欲聋的电子舞曲。",
+          "example": "The club was blasting EDM tracks all night long."
+        },
+        {
+          "word": "corny tagline",
+          "meaning": "老套的/掉牙的广告词。",
+          "example": "The commercial ended with a super corny tagline that made everyone cringe."
+        },
+        {
+          "word": "shoved his face",
+          "meaning": "强行塞入他的脸（指频繁地展示）。",
+          "example": "The network just shoved ads into every minute of the broadcast."
+        },
+        {
+          "word": "left a bad taste in my mouth",
+          "meaning": "让我心里很不舒服/觉得恶心（比喻用法）。",
+          "example": "The poor customer service really left a bad taste in my mouth."
+        }
+      ]
+    },
+    {
+      "story_id": "story_10",
+      "story_title": "《荒野机器人》",
+      "associated_topics": [
+        {
+          "title": "近期看过且享受的电影",
+          "main_desc": "Describe a movie you watched and enjoyed recently",
+          "bullet_points": [
+            "When and where you watched it",
+            "Who you watched it with",
+            "What it was about",
+            "And explain why you watched this movie"
+          ]
+        },
+        {
+          "title": "包含动物的故事或书",
+          "main_desc": "Describe a story/book with animals in it",
+          "bullet_points": [
+            "What animals are in it",
+            "What the story/book is about",
+            "Why you read the story/book",
+            "And explain what you think of this story/book"
+          ]
+        }
+      ],
+      "story_content": "So, last Friday night, I was just totally burnt out from a super brutal week at work, so I decided to just stay in, grab some snacks, and watch a movie by myself in my living room. I randomly picked this animated film called The Wild Robot. I'd seen it trending all over my social media, and people were saying it’s really cute and relaxing for stressed-out adults.\n(上周五晚上，经历了一整周非人的工作折磨，所以决定干脆呆在家里，拿点零食，在客厅里一个人看部电影。我随便挑了一部叫《荒野机器人》的动画片。我之前看到它在我的社交媒体上到处刷屏，大家都说这部片子对压力大的成年人来说非常可爱且放松。)\n\nThe story is actually super sweet. Right after it ended, I was curious, so I looked it up on my phone and found out it’s based on a bestselling children’s book with all kinds of wild animals in it. The whole plot is about this futuristic helper robot named Roz, who accidentally gets stuck on an empty island. Since there are no humans around, she has to learn how to survive by making friends with the wildlife. The main animals are this super witty, sarcastic fox named Fink, and a tiny baby goose, named Brightbill. Roz accidentally ruins Brightbill’s nest, so she decides to adopt him. The whole story is about her teaching this little bird how to swim and fly before the winter migration, and eventually, she even gets all the forest animals to team up and protect their island.\n(这个故事其实超级温馨。电影刚一结束，我有点好奇，就在手机上查了一下，发现它其实是改编自一本非常畅销的、里面有各种野生动物的儿童书。整个剧情是关于一个叫Roz的未来派助手机器人，她意外流落到了一座荒岛上。因为周围完全没有人类，她必须通过跟岛上的野生动物交朋友来学习生存。里面的主要动物有一只超级机智、说话带刺的狐狸叫Fink，还有一只小鹅叫Brightbill。Roz不小心弄坏了Brightbill的窝，所以她决定收养他。整个故事就是关于她怎么在冬天迁徙前教会这只小小鸟游泳和飞翔，到最后，她甚至让森林里的所有动物都组队联合起来，一起保护他们的岛屿。)\n\nSince the movie left me in such a good mood, I actually went ahead and bought the Kindle version of the book that same night, just because I wanted to check out the original story. Honestly, I think the whole story is just so well-done. Even though it’s technically a book for kids, it’s not childish at all. It talks about some really relatable things, like feeling lonely, learning how to be a parent, and just how to fit in. The relationship between the robot, the fox, and the little goose is just so wholesome. It low-key cured my work anxiety for the weekend.\n(因为这部电影看完让我心情特别好，我当晚就直接下单了这本书的Kindle电子版，纯粹是因为我想看看原著故事是怎么写的。说实话，我觉得整个故事真的编得太好了。虽然它严格来说是一本给小孩子看的书，但一点都不幼稚。它探讨了一些让我们很有共鸣的话题，比如感到孤独、学习如何为人父母、以及如何融入一个新集体。机器人、狐狸和小大雁之间的关系真的太治愈了，它说实话把我周末的职场焦虑全给治好了。)",
+      "key_vocabulary": [
+        {
+          "word": "burnt out",
+          "meaning": "极度疲惫的，心力交瘁的。",
+          "example": "After working 60 hours this week, I am completely burnt out."
+        },
+        {
+          "word": "brutal week",
+          "meaning": "残酷的/极其折磨人的一周。",
+          "example": "It's been a brutal week with so many tight deadlines."
+        },
+        {
+          "word": "witty",
+          "meaning": "机智幽默的。",
+          "example": "He is known for his witty remarks during meetings."
+        },
+        {
+          "word": "sarcastic",
+          "meaning": "讽刺的，爱挖苦人的。",
+          "example": "She has a sarcastic sense of humor that not everyone understands."
+        },
+        {
+          "word": "team up",
+          "meaning": "组队，合作。",
+          "example": "We should team up to finish the project faster."
+        },
+        {
+          "word": "relatable",
+          "meaning": "引起共鸣的，感同身受的。",
+          "example": "The struggles of the main character were highly relatable to young audiences."
+        },
+        {
+          "word": "fit in",
+          "meaning": "融入（集体或环境）。",
+          "example": "As a new student, she tried hard to fit in with her classmates."
+        },
+        {
+          "word": "cured my work anxiety",
+          "meaning": "治愈了我的工作焦虑。",
+          "example": "Watching cat videos on YouTube totally cured my work anxiety."
+        }
+      ]
+    }
+  ],
+  "part3": []
+}
