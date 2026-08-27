@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speaking Practice Hub V3</title>
+  
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: { 50: '#F4F6F4', 100: '#E2ECE9', 200: '#C5DCD6', 300: '#94BCB2', 600: '#4A7C70', 800: '#2E5B50', 900: '#1A3831' },
+            lavender: { 50: '#F6F4FA', 500: '#E9E5F3', 600: '#D5CCE8', 800: '#6B4C9A' },
+            sand: { 50: '#FDFBF9', 500: '#F7E9DE', 600: '#ECCEC0', 800: '#A36B46' },
+            mint: { 50: '#F0FAF8', 100: '#E6F4F1', 200: '#BCE3DA' }
+          },
+          borderRadius: { '2xl': '1rem', '3xl': '1.25rem', '4xl': '1.5rem' },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'toast-in': 'toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(6px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            toastIn: {
+              '0%': { opacity: '0', transform: 'translateY(-15px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #F8F9FA; color: #1A3831; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #C5DCD6; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94BCB2; }
+    
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #E2ECE9; border-radius: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94BCB2; }
+
+    pre { font-family: inherit; margin: 0; white-space: pre-wrap; word-wrap: break-word; }
+  </style>
+</head>
+<body class="p-2 md:p-4 min-h-screen">
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useRef, useLayoutEffect } = React;
+
+    const EMPTY_PROMPTS = { system_tools: { analysis_prompt: { title: "未加载", content: "请先绑定工作区" } }, scenarios_hub: [] };
+
+    // Icons
+    const IconFolder = () => <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-1.22-1.8A2 2 0 0 0 7.53 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>;
+    const IconFolderLarge = () => <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-1.22-1.8A2 2 0 0 0 7.53 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>;
+    const IconRefresh = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>;
+    const IconCopy = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>;
+    const IconCheck = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>;
+    const IconCalendar = () => <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>;
+    const IconSparkles = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>;
+    const IconX = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>;
+    const IconChevronDown = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>;
+    const IconChevronUp = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 15-6-6-6 6"/></svg>;
+    const IconFilter = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>;
+    const IconGrid = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>;
+    const IconList = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>;
+
+    const Toast = ({ message, visible }) => {
+      if (!visible) return null;
+      return (
+        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 animate-toast-in">
+          <div className="bg-forest-900 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 font-medium text-xs">
+            <div className="bg-mint-200 text-forest-900 rounded-full p-0.5"><IconCheck /></div>
+            {message}
+          </div>
+        </div>
+      );
+    };
+
+    // 浮动词卡弹窗
+    const InlineVocabCard = ({ vocab, text }) => {
+      const [isOpen, setIsOpen] = useState(false);
+      const containerRef = useRef(null);
+      const popupRef = useRef(null);
+
+      useEffect(() => {
+        const handleClickOutside = (event) => {
+          if (isOpen && popupRef.current && !popupRef.current.contains(event.target) && containerRef.current && !containerRef.current.contains(event.target)) {
+            setIsOpen(false);
+          }
+        };
+        if (isOpen) document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+      }, [isOpen]);
+
+      useLayoutEffect(() => {
+        const updatePosition = () => {
+          if (isOpen && containerRef.current && popupRef.current) {
+            const trigger = containerRef.current.getBoundingClientRect();
+            const popup = popupRef.current.getBoundingClientRect();
+            const vw = window.innerWidth;
+            
+            let top = trigger.top - popup.height - 8;
+            let showBelow = false;
+            
+            if (top < 10) {
+              top = trigger.bottom + 8;
+              showBelow = true;
+            }
+            
+            let left = trigger.left + trigger.width / 2 - popup.width / 2;
+            let arrowLeft = popup.width / 2;
+            
+            if (left < 10) {
+              const shift = 10 - left;
+              left = 10;
+              arrowLeft -= shift; 
+            } else if (left + popup.width > vw - 10) {
+              const shift = (left + popup.width) - (vw - 10);
+              left -= shift;
+              arrowLeft += shift;
+            }
+            
+            popupRef.current.style.top = `${top}px`;
+            popupRef.current.style.left = `${left}px`;
+            popupRef.current.style.visibility = 'visible';
+            
+            const arrow = popupRef.current.querySelector('.popup-arrow');
+            if (arrow) {
+              arrow.className = `popup-arrow absolute border-[6px] border-transparent drop-shadow-sm ${showBelow ? 'bottom-full border-b-white' : 'top-full border-t-white'}`;
+              arrow.style.left = `${arrowLeft}px`;
+              arrow.style.marginLeft = '-6px';
+            }
+          }
+        };
+
+        if (isOpen) {
+          updatePosition();
+          const timer = setTimeout(updatePosition, 10); 
+          window.addEventListener('scroll', updatePosition, true);
+          window.addEventListener('resize', updatePosition);
+          return () => {
+            clearTimeout(timer);
+            window.removeEventListener('scroll', updatePosition, true);
+            window.removeEventListener('resize', updatePosition);
+          };
+        }
+      }, [isOpen]);
+
+      const isObj = typeof vocab === 'object' && vocab !== null;
+      const word = isObj ? (vocab.word || text) : vocab;
+
+      const popupContent = isOpen && (
+        <div 
+          ref={popupRef}
+          onClick={(e) => e.stopPropagation()}
+          className="fixed w-72 md:w-80 bg-white border border-forest-100 p-4 rounded-3xl shadow-2xl z-[9999] text-left animate-fade-in-up"
+          style={{ visibility: 'hidden', top: '-9999px', left: '0' }}
+        >
+          <div className="flex justify-between items-start mb-2 border-b border-forest-50 pb-2">
+            <div>
+              {isObj && vocab.original ? (
+                <div className="font-bold text-red-500/90 text-xs line-through decoration-red-300">
+                  {vocab.original}
+                </div>
+              ) : null}
+              <div className="font-bold text-forest-900 text-sm flex items-center gap-1.5">
+                {word}
+                {isObj && vocab.phonetic && (
+                  <span className="text-forest-400 text-[10px] font-mono bg-forest-50 px-1.5 py-0.5 rounded">
+                    {vocab.phonetic}
+                  </span>
+                )}
+              </div>
+            </div>
+            <button onClick={() => setIsOpen(false)} className="text-forest-300 hover:text-forest-600 bg-forest-50 rounded-full p-1"><IconX /></button>
+          </div>
+
+          {isObj && vocab.meaning && (
+            <div className="mb-2 text-xs text-forest-800 font-medium leading-relaxed">
+              <span className="text-forest-500 font-bold mr-1">修正 / 释义:</span>{vocab.meaning}
+            </div>
+          )}
+
+          {isObj && (vocab.native_upgrade || vocab.corrected) && (
+            <div className="bg-mint-50/80 p-2.5 rounded-xl mb-2 border border-mint-200/60">
+              <div className="font-bold text-forest-800 text-xs flex items-center gap-1 mb-1">
+                <IconSparkles /> Native 升级
+              </div>
+              <div className="text-forest-900 text-xs font-bold leading-relaxed">{vocab.native_upgrade || vocab.corrected}</div>
+            </div>
+          )}
+
+          {isObj && vocab.example && (
+            <div className="bg-forest-50/70 p-2 rounded-lg text-xs text-forest-700 italic border border-forest-100/60 leading-relaxed">
+              <span className="font-bold text-forest-500 not-italic mr-1">例句:</span>"{vocab.example}"
+            </div>
+          )}
+
+          {isObj && vocab.explanation && (
+            <div className="mt-2 text-[11px] text-forest-600 font-medium leading-normal flex items-start gap-1">
+              <span>💡</span>
+              <span>{vocab.explanation}</span>
+            </div>
+          )}
+
+          <div className="popup-arrow absolute border-[6px] border-transparent drop-shadow-sm top-full border-t-white" style={{ left: '50%', marginLeft: '-6px' }}></div>
+        </div>
+      );
+
+      return (
+        <span className="relative inline-block mx-0.5" ref={containerRef}>
+          <span
+            onClick={(e) => { e.stopPropagation(); setIsOpen(!isOpen); }}
+            className={`bg-amber-100/90 hover:bg-amber-200 text-amber-900 border-b-2 border-amber-500 font-semibold px-1.5 py-0.5 rounded cursor-pointer transition-all inline-flex items-center gap-1 ${isOpen ? 'ring-2 ring-amber-400 bg-amber-200' : ''}`}
+            title="点击查看高分表达解析"
+          >
+            <span>{text}</span>
+          </span>
+          {isOpen && ReactDOM.createPortal(popupContent, document.body)}
+        </span>
+      );
+    };
+
+    // 错误解析弹窗
+    const ErrorHighlighter = ({ errId, wrongText, errInfo }) => {
+      const [isOpen, setIsOpen] = useState(false);
+      const containerRef = useRef(null);
+      const popupRef = useRef(null);
+
+      useEffect(() => {
+        const handleClickOutside = (event) => {
+          if (isOpen && popupRef.current && !popupRef.current.contains(event.target) && containerRef.current && !containerRef.current.contains(event.target)) {
+            setIsOpen(false);
+          }
+        };
+        if (isOpen) document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+      }, [isOpen]);
+
+      useLayoutEffect(() => {
+        const updatePosition = () => {
+          if (isOpen && containerRef.current && popupRef.current) {
+            const trigger = containerRef.current.getBoundingClientRect();
+            const popup = popupRef.current.getBoundingClientRect();
+            const vw = window.innerWidth;
+            
+            let top = trigger.top - popup.height - 8;
+            let showBelow = false;
+            
+            if (top < 10) {
+              top = trigger.bottom + 8;
+              showBelow = true;
+            }
+            
+            let left = trigger.left + trigger.width / 2 - popup.width / 2;
+            let arrowLeft = popup.width / 2;
+            
+            if (left < 10) {
+              const shift = 10 - left;
+              left = 10;
+              arrowLeft -= shift;
+            } else if (left + popup.width > vw - 10) {
+              const shift = (left + popup.width) - (vw - 10);
+              left -= shift;
+              arrowLeft += shift;
+            }
+            
+            popupRef.current.style.top = `${top}px`;
+            popupRef.current.style.left = `${left}px`;
+            popupRef.current.style.visibility = 'visible';
+            
+            const arrow = popupRef.current.querySelector('.popup-arrow');
+            if (arrow) {
+              arrow.className = `popup-arrow absolute border-[6px] border-transparent drop-shadow-sm ${showBelow ? 'bottom-full border-b-white' : 'top-full border-t-white'}`;
+              arrow.style.left = `${arrowLeft}px`;
+              arrow.style.marginLeft = '-6px';
+            }
+          }
+        };
+
+        if (isOpen) {
+          updatePosition();
+          const timer = setTimeout(updatePosition, 10);
+          window.addEventListener('scroll', updatePosition, true);
+          window.addEventListener('resize', updatePosition);
+          return () => {
+            clearTimeout(timer);
+            window.removeEventListener('scroll', updatePosition, true);
+            window.removeEventListener('resize', updatePosition);
+          };
+        }
+      }, [isOpen]);
+
+      const popupContent = isOpen && errInfo && (
+        <div 
+          ref={popupRef}
+          className="fixed w-72 md:w-80 bg-white border border-forest-100 p-4 rounded-3xl shadow-2xl z-[9999] text-left animate-fade-in-up"
+          style={{ visibility: 'hidden', top: '-9999px', left: '0' }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex justify-between items-start mb-2 border-b border-forest-50 pb-1.5">
+            <div className="font-bold text-red-500/90 text-xs line-through decoration-red-300 flex-1">{errInfo.original}</div>
+            <button onClick={() => setIsOpen(false)} className="text-forest-200 hover:text-forest-600 bg-forest-50 rounded-full p-1 ml-2"><IconX /></button>
+          </div>
+          <div className="text-forest-600 text-xs mb-2">修正: <span className="font-bold text-forest-900">{errInfo.corrected}</span></div>
+          <div className="bg-forest-50 p-2.5 rounded-xl mb-2 border border-forest-100">
+            <div className="font-bold text-forest-800 text-xs flex items-center gap-1 mb-1"><IconSparkles /> Native 升级</div>
+            <div className="text-forest-900 text-xs font-semibold leading-relaxed">{errInfo.native_upgrade}</div>
+          </div>
+          <div className="text-forest-800 italic text-[11px] leading-relaxed font-medium">💡 {errInfo.explanation}</div>
+          <div className="popup-arrow absolute border-[6px] border-transparent drop-shadow-sm top-full border-t-white" style={{ left: '50%', marginLeft: '-6px' }}></div>
+        </div>
+      );
+
+      return (
+        <span className="relative inline-block mx-0.5" ref={containerRef}>
+          <span 
+            onClick={() => setIsOpen(!isOpen)}
+            className={`bg-sand-500/60 border-b-2 border-sand-800/40 text-sand-800 px-1 py-0.5 rounded cursor-pointer font-medium hover:bg-sand-500 transition-colors text-xs ${isOpen ? 'bg-sand-500' : ''}`}
+            title="点击查看修正解析"
+          >
+            {wrongText}
+          </span>
+          {isOpen && ReactDOM.createPortal(popupContent, document.body)}
+        </span>
+      );
+    };
+
+    const HighlightedText = ({ text, vocabList }) => {
+      if (!text) return null;
+      if (!vocabList || vocabList.length === 0) return <span>{text}</span>;
+
+      const normalizedVocab = vocabList.map(v => typeof v === 'string' ? { word: v } : v).filter(v => v && (v.word || v.original));
+      if (normalizedVocab.length === 0) return <span>{text}</span>;
+
+      const sortedVocab = [...normalizedVocab].sort((a, b) => {
+        const lenA = (a.word || a.original || "").length;
+        const lenB = (b.word || b.original || "").length;
+        return lenB - lenA;
+      });
+
+      const escapeRegExp = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const wordsToMatch = sortedVocab.map(v => escapeRegExp(v.word || v.original)).filter(Boolean);
+      
+      if (wordsToMatch.length === 0) return <span>{text}</span>;
+
+      const pattern = new RegExp(`(${wordsToMatch.join('|')})`, 'gi');
+      const parts = text.split(pattern);
+
+      return (
+        <span>
+          {parts.map((part, i) => {
+            const matchedVocab = sortedVocab.find(v => (v.word || v.original || "").toLowerCase() === part.toLowerCase());
+            if (matchedVocab) {
+              return <InlineVocabCard key={i} vocab={matchedVocab} text={part} />;
+            }
+            return <span key={i}>{part}</span>;
+          })}
+        </span>
+      );
+    };
+
+    const MultiSelector = ({ options, selected, onChange, label }) => {
+      const handleToggle = (opt) => {
+        if (selected.includes(opt)) onChange(selected.filter(o => o !== opt));
+        else onChange([...selected, opt]);
+      };
+      const handleSelectAll = () => onChange([...options]);
+      const handleClearAll = () => onChange([]);
+      
+      return (
+        <div className="mb-4 bg-white p-3 md:p-4 rounded-2xl border border-forest-100 shadow-sm animate-fade-in-up">
+          <div className="flex items-center justify-between mb-2 border-b border-forest-50 pb-1.5">
+            <span className="text-xs font-bold text-forest-800 flex items-center gap-1.5"><IconFilter/>{label} 筛选</span>
+            <div className="space-x-2 text-[11px] font-semibold">
+              <button onClick={handleSelectAll} className="text-forest-400 hover:text-forest-800 transition-colors">全选</button>
+              <button onClick={handleClearAll} className="text-forest-400 hover:text-forest-800 transition-colors">全不选</button>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto custom-scrollbar pr-1">
+            {options.map(opt => {
+              const isSelected = selected.includes(opt);
+              return (
+                <button 
+                  key={opt} 
+                  onClick={() => handleToggle(opt)} 
+                  className={`px-2.5 py-1 rounded-lg text-[11px] font-medium transition-all ${isSelected ? 'bg-forest-800 text-white shadow-sm' : 'bg-forest-50 text-forest-600 hover:bg-forest-100'}`}
+                >
+                  {opt}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      );
+    };
+
+    const TranscriptViewer = ({ transcript, quickVersionMap }) => {
+      const renderAnnotatedText = (text) => {
+        const regex = /\[\[(err_\d+)\|([^\]]+)\]\]/g;
+        const parts = [];
+        let lastIndex = 0;
+        let match;
+        while ((match = regex.exec(text)) !== null) {
+          if (match.index > lastIndex) parts.push(text.substring(lastIndex, match.index));
+          parts.push(<ErrorHighlighter key={match[1]+lastIndex} errId={match[1]} wrongText={match[2]} errInfo={quickVersionMap[match[1]]} />);
+          lastIndex = regex.lastIndex;
+        }
+        if (lastIndex < text.length) parts.push(text.substring(lastIndex));
+        return parts;
+      };
+
+      return (
+        <div className="space-y-3 pb-6">
+          {transcript.map((item, idx) => (
+            <div key={idx} className={`flex flex-col ${item.role === 'User' ? 'items-end' : 'items-start'}`}>
+              <span className="text-[10px] font-bold text-forest-300 mb-0.5 uppercase tracking-wider px-1">
+                {item.role === 'User' ? 'You' : 'AI Coach'}
+              </span>
+              <div className={`p-3 md:p-4 rounded-2xl text-xs md:text-sm leading-relaxed max-w-[92%] md:max-w-[85%] ${item.role === 'User' ? 'bg-forest-100 text-forest-900 rounded-tr-none' : 'bg-white border border-forest-100 text-forest-800 rounded-tl-none shadow-sm'}`}>
+                {renderAnnotatedText(item.text)}
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    };
+
+    // 针对雅思提示词卡片的内联选择器
+    const PromptMiniSelector = ({ options, selected, onChange, label }) => {
+      return (
+        <div>
+          <div className="text-[10px] font-bold text-forest-600 mb-1.5 flex items-center gap-1">
+            <IconCheck /> {label}
+          </div>
+          <div className="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto custom-scrollbar pr-1">
+            {options.map(opt => (
+              <button
+                key={opt}
+                onClick={(e) => { 
+                  e.stopPropagation(); 
+                  onChange(selected.includes(opt) ? selected.filter(o => o !== opt) : [...selected, opt]); 
+                }}
+                className={`px-2 py-1 rounded-md text-[10px] font-medium transition-colors ${selected.includes(opt) ? 'bg-forest-800 text-white shadow-sm' : 'bg-white border border-forest-100 text-forest-600 hover:bg-forest-50'}`}
+              >
+                {opt}
+              </button>
+            ))}
+          </div>
+        </div>
+      );
+    };
+
+    // 动态可扩展的提示词卡片（已修正下拉高度拉伸与文本截断问题）
+    const ExpandablePromptCard = ({ item, copyToClipboard, moduleType, answerBank }) => {
+      const [isExpanded, setIsExpanded] = useState(false);
+      
+      // 题目状态
+      const [selP1, setSelP1] = useState([]);
+      const [selP2, setSelP2] = useState([]);
+      const [selP3, setSelP3] = useState([]);
+
+      // 判定卡片属性
+      const isIelts = moduleType === 'ielts';
+      const isPart1 = item.title.includes('Part 1');
+      const isPart2 = item.title.includes('Part 2');
+      const isPart3 = item.title.includes('Part 3');
+      const isFull = item.title.includes('全真模考') || item.title.includes('全流程');
+
+      const needP1 = isIelts && (isPart1 || isFull);
+      const needP2 = isIelts && (isPart2 || isFull);
+      const needP3 = isIelts && (isPart3 || isFull);
+
+      const p1Options = answerBank?.part1?.map(c => c.category_name) || [];
+      
+      // Part 2: 提取所有的 Topics 供用户选择
+      let allP2Topics = [];
+      if (answerBank && answerBank.part2_story_bank) {
+        answerBank.part2_story_bank.forEach(story => {
+          if (story.associated_topics) {
+            story.associated_topics.forEach(topic => {
+              if (typeof topic === 'object' && topic.title) {
+                if (!allP2Topics.some(t => typeof t === 'object' && t.title === topic.title)) {
+                  allP2Topics.push(topic);
+                }
+              } else if (typeof topic === 'string') {
+                if (!allP2Topics.some(t => t === topic)) {
+                  allP2Topics.push(topic);
+                }
+              }
+            });
+          }
+        });
+      }
+      const p2Options = allP2Topics.map(t => typeof t === 'object' ? t.title : t);
+
+      const p3Options = answerBank?.part3?.map(c => c.category_name) || [];
+
+      // 动态生成最终 Prompt
+      let finalPrompt = item.prompt_text;
+
+      // 注入 Part 1
+      if (needP1 && finalPrompt.includes('${part1_questions}')) {
+        if (selP1.length > 0) {
+          const p1Data = answerBank.part1.filter(c => selP1.includes(c.category_name));
+          let str = "SELECTED PART 1 QUESTIONS:\n";
+          p1Data.forEach(cat => {
+            str += `[Topic: ${cat.category_name}]\n`;
+            cat.questions.forEach((q, i) => str += `Q${i+1}: ${q.question}\n`);
+          });
+          finalPrompt = finalPrompt.replace('${part1_questions}', str);
+        } else {
+          finalPrompt = finalPrompt.replace('${part1_questions}', '[NO PART 1 TOPIC SELECTED - Please select topics from the UI above]');
+        }
+      }
+
+      // 注入 Part 2
+      if (needP2 && finalPrompt.includes('${part2_cue_card}')) {
+        if (selP2.length > 0) {
+          let str = "SELECTED PART 2 CUE CARDS:\n";
+          selP2.forEach(selectedTitle => {
+            const topicObj = allP2Topics.find(t => (typeof t === 'object' ? t.title : t) === selectedTitle);
+            if (topicObj) {
+              if (typeof topicObj === 'object') {
+                str += `[Cue Card Topic]: ${topicObj.title}\n`;
+                if(topicObj.main_desc) str += `Description: ${topicObj.main_desc}\n`;
+                if(topicObj.bullet_points) {
+                  str += `Points to cover:\n`;
+                  topicObj.bullet_points.forEach(bp => str += `- ${bp}\n`);
+                }
+                str += `\n`;
+              } else {
+                str += `[Cue Card Topic]: ${topicObj}\n\n`;
+              }
+            }
+          });
+          finalPrompt = finalPrompt.replace('${part2_cue_card}', str);
+        } else {
+          finalPrompt = finalPrompt.replace('${part2_cue_card}', '[NO PART 2 CUE CARD SELECTED - Please select topics from the UI above]');
+        }
+      }
+
+      // 注入 Part 3
+      if (needP3 && finalPrompt.includes('${part3_questions}')) {
+        if (selP3.length > 0) {
+          const p3Data = answerBank.part3.filter(c => selP3.includes(c.category_name));
+          let str = "SELECTED PART 3 QUESTIONS:\n";
+          p3Data.forEach(cat => {
+            str += `[Topic: ${cat.category_name}]\n`;
+            cat.questions.forEach((q, i) => str += `Q${i+1}: ${q.question}\n`);
+          });
+          finalPrompt = finalPrompt.replace('${part3_questions}', str);
+        } else {
+          finalPrompt = finalPrompt.replace('${part3_questions}', '[NO PART 3 TOPIC SELECTED - Please select topics from the UI above]');
+        }
+      }
+
+      return (
+        <div onClick={() => setIsExpanded(!isExpanded)} className="group bg-white border border-forest-100 hover:border-mint-200 p-3.5 rounded-2xl transition-all cursor-pointer flex flex-col shadow-sm hover:shadow-md self-start">
+          <div className="flex justify-between items-start mb-2">
+            <h5 className="font-bold text-forest-900 text-xs md:text-sm leading-tight pr-2 flex items-center gap-1.5">
+              {item.title}
+            </h5>
+            <button 
+              onClick={(e) => { e.stopPropagation(); copyToClipboard(finalPrompt); }} 
+              className={`text-forest-400 hover:text-forest-800 bg-forest-50 p-1.5 rounded-lg transition-all shrink-0 ${isExpanded ? 'opacity-100 bg-mint-100 text-forest-800' : 'opacity-0 group-hover:opacity-100'}`} 
+              title="复制注入后的 Prompt 并跳转 ChatGPT"
+            >
+              <IconCopy />
+            </button>
+          </div>
+          
+          <div className="flex flex-wrap gap-1 mb-3">
+            {item.tags?.map(tag => <span key={tag} className="bg-forest-50 border border-forest-100 text-forest-600 px-1.5 py-0.5 rounded text-[10px] font-semibold">{tag}</span>)}
+          </div>
+
+          {/* 雅思特供题目注入控制台 */}
+          {isExpanded && isIelts && (needP1 || needP2 || needP3) && (
+            <div className="mb-3 p-3 bg-mint-50/50 rounded-xl border border-mint-100 space-y-3 cursor-default" onClick={e => e.stopPropagation()}>
+              {needP1 && p1Options.length > 0 && <PromptMiniSelector label="Part 1 Topics" options={p1Options} selected={selP1} onChange={setSelP1} />}
+              {needP2 && p2Options.length > 0 && <PromptMiniSelector label="Part 2 Topics (Cue Cards)" options={p2Options} selected={selP2} onChange={setSelP2} />}
+              {needP3 && p3Options.length > 0 && <PromptMiniSelector label="Part 3 Topics" options={p3Options} selected={selP3} onChange={setSelP3} />}
+            </div>
+          )}
+
+          {/* 修正：解耦容器内边距与 line-clamp 逻辑，解决半行文本截断问题 */}
+          <div className="bg-forest-50/30 p-2 rounded-lg border border-transparent hover:border-forest-100">
+            <div className={`text-[11px] text-forest-700 leading-normal transition-all ${isExpanded ? 'whitespace-pre-wrap' : 'line-clamp-4 overflow-hidden'}`}>
+              {finalPrompt}
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    const QuestionCard = ({ question, index, viewMode, expandAll }) => {
+      const [isOpen, setIsOpen] = useState(expandAll);
+      
+      useEffect(() => { setIsOpen(expandAll); }, [expandAll]);
+
+      const vocabList = question.key_vocabulary || [];
+
+      return (
+        <div className="border border-forest-100/80 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all duration-200 flex flex-col self-start">
+          <div 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="p-3 flex justify-between items-start cursor-pointer hover:bg-forest-50/40 transition-colors select-none"
+          >
+            <div className="flex items-start gap-2 flex-1 pr-2">
+              <span className="bg-mint-100 text-forest-800 text-[10px] font-black px-1.5 py-0.5 rounded shrink-0 mt-0.5">
+                Q{index + 1}
+              </span>
+              <h5 className="font-bold text-forest-900 text-xs md:text-sm leading-snug">{question.question}</h5>
+            </div>
+            <button className="text-forest-400 hover:text-forest-700 mt-0.5 shrink-0">
+              {isOpen ? <IconChevronUp /> : <IconChevronDown />}
+            </button>
+          </div>
+
+          {isOpen && (
+            <div className="p-3 pt-0 border-t border-forest-50/60 animate-fade-in-up flex-1 flex flex-col justify-between">
+              <div className="mt-1.5 text-forest-800 text-xs leading-relaxed font-medium bg-forest-50/30 p-2.5 rounded-xl border border-forest-100/50">
+                <HighlightedText text={question.answer_text} vocabList={vocabList} />
+              </div>
+
+              {question.chinese_translation && (
+                <p className="text-forest-500 text-[11px] mt-2 pt-1.5 border-t border-forest-50 leading-normal font-medium">
+                  <span className="font-bold text-forest-600 mr-1">💡 翻译:</span>{question.chinese_translation}
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    const IeltsInputBoard = ({ answerBank }) => {
+      const [activePart, setActivePart] = useState('part1');
+      const [expandAll, setExpandAll] = useState(true);
+      const [part1ViewMode, setPart1ViewMode] = useState('grid');
+      
+      const [selectedPart1Topics, setSelectedPart1Topics] = useState([]);
+      const [selectedPart2Stories, setSelectedPart2Stories] = useState([]);
+
+      useEffect(() => {
+        if (answerBank.part1) setSelectedPart1Topics(answerBank.part1.map(c => c.category_name));
+      }, [answerBank.part1]);
+
+      useEffect(() => {
+        if (answerBank.part2_story_bank) setSelectedPart2Stories(answerBank.part2_story_bank.map(s => s.story_title));
+      }, [answerBank.part2_story_bank]);
+
+      const renderPart1 = () => {
+        if (!answerBank.part1) return <p className="text-forest-400 text-xs">暂无 Part 1 数据</p>;
+        const allTopics = answerBank.part1.map(c => c.category_name);
+        const filteredCategories = answerBank.part1.filter(c => selectedPart1Topics.includes(c.category_name));
+
+        return (
+          <>
+            <MultiSelector options={allTopics} selected={selectedPart1Topics} onChange={setSelectedPart1Topics} label="Topics" />
+            {filteredCategories.length === 0 && <p className="text-forest-400 text-xs text-center py-8">没有选中的话题，请在上方筛选</p>}
+            
+            {filteredCategories.map((category, idx) => (
+              <div key={idx} className="mb-4 bg-white border border-forest-100 p-4 rounded-2xl shadow-sm animate-fade-in-up">
+                <div className="flex items-center justify-between mb-3 pb-1.5 border-b border-forest-50">
+                  <h4 className="font-bold text-sm md:text-base text-forest-900 flex items-center gap-2">
+                    <span className="bg-mint-100 text-forest-800 px-2 py-0.5 rounded-md text-[11px] font-bold">Topic</span> {category.category_name}
+                  </h4>
+                  <span className="text-[11px] text-forest-400 font-semibold">{category.questions.length} 题</span>
+                </div>
+                
+                <div className={part1ViewMode === 'grid' ? "grid grid-cols-1 md:grid-cols-2 gap-3 items-start" : "space-y-2.5"}>
+                  {category.questions.map((q, qIdx) => (
+                    <QuestionCard key={q.q_id || qIdx} question={q} index={qIdx} viewMode={part1ViewMode} expandAll={expandAll} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </>
+        );
+      };
+
+      const renderPart2 = () => {
+        if (!answerBank.part2_story_bank) return <p className="text-forest-400 text-xs">暂无 Part 2 数据</p>;
+        const allStories = answerBank.part2_story_bank.map(s => s.story_title);
+        const filteredStories = answerBank.part2_story_bank.filter(s => selectedPart2Stories.includes(s.story_title));
+
+        return (
+          <>
+            <MultiSelector options={allStories} selected={selectedPart2Stories} onChange={setSelectedPart2Stories} label="Stories" />
+            {filteredStories.length === 0 && <p className="text-forest-400 text-xs text-center py-8">没有选中的故事，请在上方筛选</p>}
+            
+            {filteredStories.map((story, idx) => (
+              <div key={idx} className="mb-4 bg-white border border-forest-100 p-4 rounded-2xl shadow-sm animate-fade-in-up flex flex-col lg:flex-row gap-4 lg:h-[520px]">
+                <div className="w-full lg:w-1/3 flex flex-col overflow-hidden bg-sand-50/30 rounded-xl border border-sand-500/10">
+                  <div className="p-3 bg-white/60 border-b border-sand-500/10 shrink-0">
+                    <h4 className="font-bold text-xs text-sand-900 flex items-center gap-1.5">🎯 对应题目 (Topics)</h4>
+                  </div>
+                  <div className="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-3">
+                    {story.associated_topics.map((topic, tidx) => {
+                      if (typeof topic === 'string') {
+                        return <div key={tidx} className="bg-white border border-sand-500/20 px-2.5 py-1.5 rounded-lg text-xs font-medium text-sand-800 shadow-sm">{topic}</div>;
+                      } else {
+                        return (
+                          <div key={tidx} className="bg-white border border-sand-500/20 rounded-xl p-3 shadow-sm hover:border-sand-500/40 transition-colors">
+                             <h6 className="font-bold text-sand-900 text-xs mb-1.5 leading-tight">{topic.title}</h6>
+                             {topic.main_desc && <p className="text-[11px] text-sand-800 font-bold mb-1.5 pb-1.5 border-b border-sand-500/10 leading-snug">{topic.main_desc}</p>}
+                             {topic.bullet_points && topic.bullet_points.length > 0 && (
+                               <ul className="list-disc list-inside text-[11px] text-sand-700 space-y-0.5 ml-1 leading-normal">
+                                  {topic.bullet_points.map((bp, i) => <li key={i}>{bp}</li>)}
+                               </ul>
+                             )}
+                          </div>
+                        );
+                      }
+                    })}
+                  </div>
+                </div>
+
+                <div className="w-full lg:w-2/3 flex flex-col bg-forest-50/20 rounded-xl border border-forest-50 shadow-inner">
+                  <div className="p-3 bg-forest-50/80 border-b border-forest-100 shrink-0 flex items-center justify-between">
+                    <span className="font-bold text-forest-900 text-xs md:text-sm flex items-center gap-1.5">📖 {story.story_title}</span>
+                    <span className="text-[10px] font-medium text-forest-600 bg-white px-2 py-0.5 rounded-full border border-forest-100">Story Answer</span>
+                  </div>
+                  <div className="p-4 md:p-6 overflow-y-auto custom-scrollbar flex-1 rounded-b-xl">
+                    <div className="text-forest-800 text-xs md:text-sm leading-relaxed whitespace-pre-wrap font-medium">
+                      <HighlightedText text={story.story_content} vocabList={story.key_vocabulary} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </>
+        );
+      };
+
+      const renderPart3 = () => {
+        if (!answerBank.part3) return <div className="text-center py-8 text-forest-400 font-medium text-xs">Part 3 题库构建中...</div>;
+        return <p className="text-xs">渲染 Part 3 逻辑</p>;
+      };
+
+      return (
+        <div className="animate-fade-in-up">
+          <div className="flex items-center justify-between mb-4 sticky top-14 bg-[#F8F9FA]/90 backdrop-blur-md py-2 z-30">
+            <div className="flex bg-forest-50 p-1 rounded-xl border border-forest-100 shadow-sm">
+              <button onClick={() => setActivePart('part1')} className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${activePart === 'part1' ? 'bg-white text-forest-900 shadow' : 'text-forest-500 hover:text-forest-800'}`}>Part 1</button>
+              <button onClick={() => setActivePart('part2')} className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${activePart === 'part2' ? 'bg-white text-forest-900 shadow' : 'text-forest-500 hover:text-forest-800'}`}>Part 2</button>
+              <button onClick={() => setActivePart('part3')} className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${activePart === 'part3' ? 'bg-white text-forest-900 shadow' : 'text-forest-500 hover:text-forest-800'}`}>Part 3</button>
+            </div>
+
+            {activePart === 'part1' && (
+              <div className="flex items-center gap-2">
+                <div className="flex bg-white border border-forest-100 p-0.5 rounded-lg text-xs shadow-sm">
+                  <button onClick={() => setPart1ViewMode('grid')} className={`px-2 py-1 rounded-md font-medium transition-all flex items-center gap-1 ${part1ViewMode === 'grid' ? 'bg-forest-800 text-white shadow-xs' : 'text-forest-600 hover:bg-forest-50'}`} title="网格视图 (多题并行)"><IconGrid /> 网格</button>
+                  <button onClick={() => setPart1ViewMode('list')} className={`px-2 py-1 rounded-md font-medium transition-all flex items-center gap-1 ${part1ViewMode === 'list' ? 'bg-forest-800 text-white shadow-xs' : 'text-forest-600 hover:bg-forest-50'}`} title="单栏列表"><IconList /> 列表</button>
+                </div>
+                <button onClick={() => setExpandAll(!expandAll)} className="text-xs font-bold text-forest-600 bg-white border border-forest-100 px-3 py-1.5 rounded-lg shadow-sm hover:bg-forest-50 transition-all">
+                  {expandAll ? '折叠全部' : '展开全部'}
+                </button>
+              </div>
+            )}
+          </div>
+          
+          <div className="pb-8 max-w-6xl mx-auto">
+            {activePart === 'part1' && renderPart1()}
+            {activePart === 'part2' && renderPart2()}
+            {activePart === 'part3' && renderPart3()}
+          </div>
+        </div>
+      );
+    };
+
+    const generateMonthOptions = () => {
+      const options = [];
+      const startYear = 2026;
+      const startMonth = 8;
+      const endYear = 2027;
+      const endMonth = 12;
+
+      for (let y = startYear; y <= endYear; y++) {
+        const mStart = (y === startYear) ? startMonth : 1;
+        const mEnd = (y === endYear) ? endMonth : 12;
+        for (let m = mStart; m <= mEnd; m++) {
+          const val = `${y}-${m.toString().padStart(2, '0')}`;
+          const label = `${y}年 ${m.toString().padStart(2, '0')}月`;
+          options.push({ val, label });
+        }
+      }
+      return options;
+    };
+
+    const getCalendarGrid = (year, monthNum, pData) => {
+      const daysInMonth = new Date(year, monthNum, 0).getDate();
+      const firstDay = new Date(year, monthNum - 1, 1).getDay();
+      const startOffset = (firstDay + 6) % 7;
+      
+      const grid = [];
+      for (let i = 0; i < startOffset; i++) {
+        grid.push({ isPadding: true, key: `pad-${i}` });
+      }
+      
+      for (let d = 1; d <= daysInMonth; d++) {
+        const monthStr = monthNum.toString().padStart(2, '0');
+        const dayStr = d.toString().padStart(2, '0');
+        const dateStr = `${year}-${monthStr}-${dayStr}`;
+        const dayRecords = pData[dateStr] || [];
+        grid.push({
+          isPadding: false,
+          day: d,
+          dateStr: dateStr,
+          hasData: dayRecords.length > 0,
+          count: dayRecords.length,
+          key: dateStr
+        });
+      }
+      return grid;
+    };
+
+    const PracticeDashboard = ({ practiceData, selectedDate, setSelectedDate }) => {
+      const [activeSessionIdx, setActiveSessionIdx] = useState(0);
+      const [viewMode, setViewMode] = useState('full');
+      const [currentMonthStr, setCurrentMonthStr] = useState("2026-08");
+
+      useEffect(() => { 
+        setActiveSessionIdx(0); 
+        setViewMode('full');
+      }, [selectedDate]);
+
+      const [year, monthNum] = currentMonthStr.split('-').map(Number);
+      const monthOptions = generateMonthOptions();
+      const calendarGrid = getCalendarGrid(year, monthNum, practiceData);
+
+      const currentDayPractices = practiceData[selectedDate] || [];
+      const currentData = currentDayPractices[activeSessionIdx];
+      const quickVersionMap = currentData?.quick_version ? currentData.quick_version.reduce((acc, curr) => { acc[curr.id] = curr; return acc; }, {}) : {};
+
+      const monthlyCheckInDays = Object.keys(practiceData).filter(d => d.startsWith(currentMonthStr)).length;
+
+      return (
+        <div className="grid lg:grid-cols-[240px_1fr] gap-4 animate-fade-in-up items-start">
+          <div className="bg-white border border-forest-100 p-4 rounded-3xl shadow-sm sticky top-16">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-1">
+                <IconCalendar />
+                <select 
+                  value={currentMonthStr} 
+                  onChange={(e) => setCurrentMonthStr(e.target.value)}
+                  className="bg-forest-50 border border-forest-100 text-forest-900 text-xs font-bold rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-forest-600 cursor-pointer"
+                >
+                  {monthOptions.map(opt => (
+                    <option key={opt.val} value={opt.val}>{opt.label}</option>
+                  ))}
+                </select>
+              </div>
+              <span className="text-[10px] font-bold bg-lavender-50 text-lavender-800 px-2 py-0.5 rounded-full shrink-0">
+                打卡 {monthlyCheckInDays} 天
+              </span>
+            </div>
+
+            <div className="grid grid-cols-7 gap-1 text-center text-xs font-bold text-forest-400 mb-1.5">
+              <div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div><div>S</div>
+            </div>
+
+            <div className="grid grid-cols-7 gap-1">
+              {calendarGrid.map((cell) => {
+                if (cell.isPadding) return <div key={cell.key} className="aspect-square"></div>;
+
+                const isSelected = selectedDate === cell.dateStr;
+                return (
+                  <button
+                    key={cell.key}
+                    onClick={() => cell.hasData && setSelectedDate(cell.dateStr)}
+                    disabled={!cell.hasData}
+                    className={`aspect-square rounded-xl flex items-center justify-center text-xs font-bold transition-all relative
+                      ${isSelected ? 'bg-forest-800 text-white shadow transform scale-105 z-10' : ''}
+                      ${!isSelected && cell.hasData ? 'bg-mint-100 text-forest-800 hover:bg-mint-200 cursor-pointer' : ''}
+                      ${!cell.hasData ? 'text-forest-200 cursor-not-allowed' : ''}
+                    `}
+                  >
+                    {cell.day}
+                    {cell.hasData && cell.count > 1 && (
+                      <span className="absolute -top-1 -right-1 bg-red-500 border-2 border-white text-white text-[8px] w-3.5 h-3.5 rounded-full flex items-center justify-center z-20">
+                        {cell.count}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            {currentDayPractices.length > 0 && currentData ? (
+              <>
+                {currentDayPractices.length > 1 && (
+                  <div className="flex flex-wrap gap-1.5 mb-2 bg-white p-1.5 rounded-xl border border-forest-100 shadow-sm w-fit animate-fade-in-up">
+                    {currentDayPractices.map((_, idx) => (
+                      <button 
+                        key={idx} 
+                        onClick={() => setActiveSessionIdx(idx)} 
+                        className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${activeSessionIdx === idx ? 'bg-forest-800 text-white shadow' : 'text-forest-500 hover:bg-forest-50'}`}
+                      >
+                        Session {idx + 1}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                <div className="space-y-4 relative animate-fade-in-up" key={`${selectedDate}-${activeSessionIdx}`}>
+                  <div className="bg-white border border-forest-100 p-4 rounded-2xl shadow-sm">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-3">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 rounded-xl bg-forest-50 flex flex-col items-center justify-center border border-forest-100 shrink-0">
+                          <span className="text-[8px] text-forest-400 font-bold tracking-wider">SCORE</span>
+                          <span className="text-lg font-black text-forest-900 leading-none">{currentData.metrics.overall_score}</span>
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2 mb-0.5">
+                            <h2 className="text-sm font-bold text-forest-900">Practice Dashboard</h2>
+                            <span className="bg-sand-50 text-sand-800 text-[10px] px-2 py-0.5 rounded-full font-bold border border-sand-500/20">{currentData.date}</span>
+                          </div>
+                          <p className="text-[11px] text-forest-500 font-medium">持续输出：{currentData.duration_minutes} 分钟</p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-x-3 gap-y-1.5 flex-1 md:justify-end max-w-sm">
+                        {Object.entries(currentData.metrics).filter(([k]) => k !== 'overall_score').map(([key, val]) => (
+                          <div key={key} className="w-[45%]">
+                            <div className="flex justify-between text-[10px] font-semibold text-forest-600 mb-0.5">
+                              <span className="capitalize">{key.replace('_', ' ')}</span>
+                              <span>{val}</span>
+                            </div>
+                            <div className="h-1.5 w-full bg-forest-50 rounded-full overflow-hidden">
+                              <div className="h-full bg-mint-200 rounded-full" style={{ width: `${(val / 9) * 100}%` }}></div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-3 pt-2.5 border-t border-forest-50">
+                      <div>
+                        <h4 className="font-bold text-lavender-800 text-xs mb-1 flex items-center gap-1"><IconSparkles/> 整体评价</h4>
+                        <p className="text-[11px] text-lavender-800/90 leading-relaxed">{currentData.summary.evaluation}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sand-800 text-xs mb-1">🎯 核心改进点</h4>
+                        <ul className="text-[11px] text-sand-800/90 space-y-0.5 list-disc list-outside ml-3.5">
+                          {currentData.summary.key_improvements.map((imp, idx) => <li key={idx} className="leading-snug">{imp}</li>)}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white border border-forest-100 p-4 md:p-5 rounded-2xl shadow-sm min-h-[350px]">
+                    <div className="flex items-center justify-between border-b border-forest-50 pb-3 mb-4">
+                      <h3 className="font-bold text-sm md:text-base text-forest-900">对话复盘明细</h3>
+                      <div className="flex bg-forest-50 p-0.5 rounded-xl border border-forest-100">
+                        <button onClick={() => setViewMode('full')} className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${viewMode === 'full' ? 'bg-white shadow-xs text-forest-900' : 'text-forest-400'}`}>原文版</button>
+                        <button onClick={() => setViewMode('quick')} className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${viewMode === 'quick' ? 'bg-white shadow-xs text-forest-900' : 'text-forest-400'}`}>提炼版</button>
+                      </div>
+                    </div>
+
+                    {viewMode === 'full' && <TranscriptViewer transcript={currentData.full_transcript} quickVersionMap={quickVersionMap} />}
+                    
+                    {viewMode === 'quick' && (
+                      <div className="space-y-4 pb-6">
+                        {currentData.quick_version.map((item) => (
+                          <div key={item.id} className="border border-forest-50 p-4 rounded-2xl space-y-2.5 hover:shadow-sm transition-shadow bg-white">
+                            <div className="flex items-start gap-3">
+                              <div className="mt-0.5 bg-sand-50 text-sand-800 text-[9px] font-black px-1.5 py-0.5 rounded border border-sand-500/20 whitespace-nowrap shrink-0">MY SAY</div>
+                              <div className="text-red-500/80 line-through decoration-red-300 font-medium text-xs leading-relaxed">{item.original}</div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                              <div className="mt-0.5 bg-forest-50 text-forest-600 text-[9px] font-black px-1.5 py-0.5 rounded border border-forest-100 whitespace-nowrap shrink-0">FIXED</div>
+                              <div className="text-forest-900 font-semibold text-xs leading-relaxed">{item.corrected}</div>
+                            </div>
+                            <div className="ml-10 md:ml-12 bg-mint-50/50 p-3 rounded-xl border border-mint-100">
+                              <div className="text-forest-800 font-bold text-xs mb-1 flex items-center gap-1"><IconSparkles/> Native Upgrade</div>
+                              <div className="text-forest-900 text-xs mb-1 font-medium">{item.native_upgrade}</div>
+                              <div className="text-[11px] text-forest-600/80 italic font-medium">💡 {item.explanation}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <div className="bg-white border border-forest-100 p-8 rounded-2xl flex flex-col items-center justify-center text-forest-300 h-[450px] shadow-sm">
+                <IconFolderLarge />
+                <p className="mt-3 font-medium text-center text-xs">
+                  {Object.keys(practiceData).length > 0 ? "当前日期没有打卡数据，请在左侧选择其他日期" : "暂无打卡数据"}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    };
+
+    const PromptHub = ({ prompts, copyToClipboard, moduleType, answerBank }) => {
+      const [isSysExpanded, setIsSysExpanded] = useState(false);
+
+      return (
+        <div className="space-y-6 animate-fade-in-up">
+          {prompts.system_tools?.analysis_prompt && (
+            <section>
+              <h2 className="text-base font-bold text-forest-900 mb-2.5 pl-1">System Tools</h2>
+              <div 
+                onClick={() => setIsSysExpanded(!isSysExpanded)}
+                className={`bg-forest-800 text-white p-4 md:p-5 rounded-3xl shadow-md relative group cursor-pointer transition-all duration-300 ${isSysExpanded ? '' : 'hover:bg-forest-900 overflow-hidden'}`}
+              >
+                <div className="relative z-10 flex flex-col md:flex-row justify-between items-start gap-4">
+                  <div className="flex-1 w-full">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <h3 className="font-bold text-base">{prompts.system_tools.analysis_prompt.title}</h3>
+                      <span className="bg-white/20 px-2.5 py-0.5 rounded-full text-[9px] font-bold backdrop-blur-sm">System</span>
+                    </div>
+                    <pre className={`text-forest-100 text-[11px] leading-relaxed max-w-4xl opacity-90 relative font-sans transition-all duration-300 ${isSysExpanded ? 'whitespace-pre-wrap' : 'max-h-20 overflow-hidden line-clamp-4'}`}>
+                      {prompts.system_tools.analysis_prompt.content}
+                      {!isSysExpanded && (
+                        <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-forest-800 to-transparent pointer-events-none"></div>
+                      )}
+                    </pre>
+                  </div>
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); copyToClipboard(prompts.system_tools.analysis_prompt.content); }}
+                    className="flex-shrink-0 bg-white text-forest-900 hover:bg-mint-100 px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm w-full md:w-auto justify-center z-20 relative"
+                  >
+                    <IconCopy /> 复制并前往 ChatGPT
+                  </button>
+                </div>
+              </div>
+            </section>
+          )}
+          <section>
+            <h2 className="text-base font-bold text-forest-900 mb-3 pl-1">Scenarios Hub</h2>
+            <div className="flex flex-col gap-6">
+              {prompts.scenarios_hub && prompts.scenarios_hub.length > 0 ? prompts.scenarios_hub.map((categoryObj, cIdx) => (
+                <div key={cIdx} className="flex flex-col gap-2.5">
+                  <div className="pl-2 border-l-4 border-mint-200">
+                    <div className="flex items-center gap-1.5 mb-0.5">
+                      <span className="text-base">{categoryObj.icon}</span>
+                      <h4 className="font-black text-forest-900 text-xs uppercase tracking-wider">{categoryObj.category_name}</h4>
+                    </div>
+                    <p className="text-[10px] font-medium text-forest-400 pl-6">{categoryObj.description}</p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 items-start">
+                    {categoryObj.items.map((item, iIdx) => (
+                      <ExpandablePromptCard key={iIdx} item={item} copyToClipboard={copyToClipboard} moduleType={moduleType} answerBank={answerBank} />
+                    ))}
+                  </div>
+                </div>
+              )) : (
+                <div className="text-center text-forest-400 py-8 text-xs font-medium">暂无 Prompts 数据。</div>
+              )}
+            </div>
+          </section>
+        </div>
+      );
+    };
+
+    function App() {
+      const [mainModule, setMainModule] = useState('daily');
+      const [dailyTab, setDailyTab] = useState('prompts'); 
+      const [ieltsTab, setIeltsTab] = useState('input');
+      const [ieltsOutputTab, setIeltsOutputTab] = useState('prompts');
+      
+      const [workspaceHandle, setWorkspaceHandle] = useState(null);
+      const [dailyData, setDailyData] = useState({ prompts: EMPTY_PROMPTS, practiceData: {}, selectedDate: "" });
+      const [ieltsData, setIeltsData] = useState({ answerBank: {}, prompts: EMPTY_PROMPTS, practiceData: {}, selectedDate: "" });
+      
+      const [toastMsg, setToastMsg] = useState('');
+      const [isLoading, setIsLoading] = useState(false);
+
+      const showToast = (msg) => {
+        setToastMsg(msg);
+        setTimeout(() => setToastMsg(''), 3000);
+      };
+
+      const copyToClipboard = (text) => {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast("已复制 Prompt，正在跳转 ChatGPT...");
+          setTimeout(() => {
+             window.open('https://chatgpt.com/', '_blank');
+          }, 600);
+        }).catch(err => alert("复制失败，请重试"));
+      };
+
+      const bindWorkspace = async () => {
+        try {
+          const dirHandle = await window.showDirectoryPicker({ mode: 'read' });
+          setWorkspaceHandle(dirHandle);
+          await loadDataFromHandle(dirHandle, mainModule);
+          showToast(`[${mainModule === 'daily' ? '日常口语' : '雅思口语'}] 工作区绑定成功!`);
+        } catch (error) {
+          console.log("用户取消了选择或出现错误:", error);
+        }
+      };
+
+      const refreshWorkspace = async () => {
+        if (!workspaceHandle) return;
+        setIsLoading(true);
+        await loadDataFromHandle(workspaceHandle, mainModule);
+        setIsLoading(false);
+        showToast("数据刷新完成 🔄");
+      };
+
+      const loadDataFromHandle = async (handle, moduleType) => {
+        let loadedPrompts = EMPTY_PROMPTS;
+        try {
+          const promptFileName = moduleType === 'ielts' ? 'ielts_prompts.json' : 'prompts.json';
+          const promptFileHandle = await handle.getFileHandle(promptFileName);
+          const file = await promptFileHandle.getFile();
+          const text = await file.text();
+          loadedPrompts = JSON.parse(text);
+        } catch (e) { console.warn(`未找到 ${moduleType} 的 prompt 文件`); }
+
+        const newPracticeData = {};
+        let latestDate = "";
+        try {
+          const dataDirHandle = await handle.getDirectoryHandle('data');
+          for await (const entry of dataDirHandle.values()) {
+            if (entry.kind === 'file' && entry.name.endsWith('.json')) {
+              const file = await entry.getFile();
+              const text = await file.text();
+              try {
+                const json = JSON.parse(text);
+                const dateMatch = entry.name.match(/^(\d{4}-\d{2}-\d{2})/);
+                if (dateMatch && json.metrics) {
+                  const fileDate = dateMatch[1];
+                  json.date = fileDate;
+                  json._filename = entry.name;
+
+                  if (!newPracticeData[fileDate]) newPracticeData[fileDate] = [];
+                  newPracticeData[fileDate].push(json);
+                  if (fileDate > latestDate) latestDate = fileDate;
+                }
+              } catch (err) {}
+            }
+          }
+
+          Object.keys(newPracticeData).forEach(date => {
+            newPracticeData[date].sort((a, b) => a._filename.localeCompare(b._filename));
+          });
+          
+        } catch (e) { console.warn("未找到 data 文件夹或读取失败"); }
+
+        if (moduleType === 'ielts') {
+          let loadedAnswerBank = {};
+          try {
+            const abHandle = await handle.getFileHandle('AnswerBank.json');
+            const file = await abHandle.getFile();
+            const text = await file.text();
+            loadedAnswerBank = JSON.parse(text);
+          } catch (e) { console.warn("未找到 AnswerBank.json"); }
+
+          setIeltsData(prev => ({
+            ...prev,
+            answerBank: loadedAnswerBank,
+            prompts: loadedPrompts,
+            practiceData: newPracticeData,
+            selectedDate: prev.selectedDate && newPracticeData[prev.selectedDate] ? prev.selectedDate : latestDate
+          }));
+        } else {
+          setDailyData(prev => ({
+            ...prev,
+            prompts: loadedPrompts,
+            practiceData: newPracticeData,
+            selectedDate: prev.selectedDate && newPracticeData[prev.selectedDate] ? prev.selectedDate : latestDate
+          }));
+        }
+      };
+
+      const handleModuleSwitch = (mod) => {
+        setMainModule(mod);
+        setWorkspaceHandle(null);
+      };
+
+      const EmptyStateWorkspace = () => (
+        <div className="flex flex-col items-center justify-center py-16 md:py-24 bg-white rounded-3xl border border-forest-100 border-dashed animate-fade-in-up mt-4">
+          <div className="text-forest-200 mb-3"><IconFolderLarge /></div>
+          <h2 className="text-base font-bold text-forest-900 mb-1">未绑定工作区</h2>
+          <p className="text-xs text-forest-400 mb-5 max-w-xs text-center">请先点击绑定对应的工作区文件夹。</p>
+          <button onClick={bindWorkspace} className="bg-forest-800 hover:bg-forest-900 text-white px-5 py-2.5 rounded-full text-xs font-bold shadow-sm transition-all flex items-center gap-1.5">
+             <IconFolder /> 绑定工作区
+          </button>
+        </div>
+      );
+
+      return (
+        <div className="max-w-7xl mx-auto space-y-4 pb-8">
+          <Toast message={toastMsg} visible={!!toastMsg} />
+
+          <header className="flex flex-col md:flex-row justify-between items-center bg-white border border-forest-100 py-2 px-4 rounded-full shadow-sm gap-3 sticky top-2 z-40">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-forest-900 text-mint-100 flex items-center justify-center font-bold text-base">🌿</div>
+                <h1 className="font-bold text-base text-forest-900 tracking-tight">Speaking<span className="text-forest-300">Hub</span></h1>
+              </div>
+              
+              <div className="flex bg-mint-50 p-0.5 rounded-full text-xs font-bold border border-mint-100">
+                <button onClick={() => handleModuleSwitch('daily')} className={`px-4 py-1.5 rounded-full transition-all ${mainModule === 'daily' ? 'bg-forest-800 shadow text-white' : 'text-forest-600 hover:text-forest-800'}`}>日常口语</button>
+                <button onClick={() => handleModuleSwitch('ielts')} className={`px-4 py-1.5 rounded-full transition-all ${mainModule === 'ielts' ? 'bg-forest-800 shadow text-white' : 'text-forest-600 hover:text-forest-800'}`}>雅思口语</button>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 pr-1">
+              {!workspaceHandle ? (
+                <button onClick={bindWorkspace} className="flex items-center gap-1.5 bg-forest-800 hover:bg-forest-900 text-white px-4 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm">
+                  <IconFolder /> 绑定工作区
+                </button>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-bold text-forest-600 bg-forest-50 px-3 py-1.5 rounded-full border border-forest-100">📂 {workspaceHandle.name}</span>
+                  <button onClick={refreshWorkspace} disabled={isLoading} className="flex items-center gap-1 bg-mint-100 hover:bg-mint-200 text-forest-900 px-3 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm disabled:opacity-50">
+                    <IconRefresh /> {isLoading ? '加载中...' : '刷新'}
+                  </button>
+                </div>
+              )}
+            </div>
+          </header>
+
+          {mainModule === 'daily' && (
+            workspaceHandle ? (
+              <div className="space-y-4 animate-fade-in-up">
+                <div className="flex justify-center mb-2">
+                  <div className="flex bg-white p-0.5 rounded-full text-xs font-medium border border-forest-100 shadow-sm">
+                    <button onClick={() => setDailyTab('prompts')} className={`px-5 py-1.5 rounded-full transition-all ${dailyTab === 'prompts' ? 'bg-forest-50 text-forest-900 font-bold' : 'text-forest-500 hover:text-forest-800'}`}>提示词中心</button>
+                    <button onClick={() => setDailyTab('practice')} className={`px-5 py-1.5 rounded-full transition-all ${dailyTab === 'practice' ? 'bg-forest-50 text-forest-900 font-bold' : 'text-forest-500 hover:text-forest-800'}`}>复盘看板</button>
+                  </div>
+                </div>
+
+                {dailyTab === 'prompts' && <PromptHub prompts={dailyData.prompts} copyToClipboard={copyToClipboard} moduleType="daily" answerBank={null} />}
+                {dailyTab === 'practice' && (
+                  <PracticeDashboard 
+                    practiceData={dailyData.practiceData} 
+                    selectedDate={dailyData.selectedDate} 
+                    setSelectedDate={(date) => setDailyData(prev => ({...prev, selectedDate: date}))} 
+                  />
+                )}
+              </div>
+            ) : <EmptyStateWorkspace />
+          )}
+
+          {mainModule === 'ielts' && (
+            workspaceHandle ? (
+              <div className="space-y-4 animate-fade-in-up">
+                <div className="flex justify-center mb-2">
+                  <div className="flex bg-white p-0.5 rounded-full text-xs font-medium border border-forest-100 shadow-sm">
+                    <button onClick={() => setIeltsTab('input')} className={`px-5 py-1.5 rounded-full transition-all ${ieltsTab === 'input' ? 'bg-forest-50 text-forest-900 font-bold' : 'text-forest-500 hover:text-forest-800'}`}>输入练习 (AnswerBank)</button>
+                    <button onClick={() => setIeltsTab('output')} className={`px-5 py-1.5 rounded-full transition-all ${ieltsTab === 'output' ? 'bg-forest-50 text-forest-900 font-bold' : 'text-forest-500 hover:text-forest-800'}`}>输出练习 (Output)</button>
+                  </div>
+                </div>
+
+                {ieltsTab === 'input' && <IeltsInputBoard answerBank={ieltsData.answerBank} />}
+                
+                {ieltsTab === 'output' && (
+                  <div className="space-y-4 animate-fade-in-up">
+                    <div className="flex bg-forest-50 p-0.5 rounded-lg text-xs font-medium border border-forest-100 max-w-fit mb-3">
+                      <button onClick={() => setIeltsOutputTab('prompts')} className={`px-4 py-1 rounded-md transition-all ${ieltsOutputTab === 'prompts' ? 'bg-white shadow-xs text-forest-900 font-bold' : 'text-forest-600 hover:text-forest-800'}`}>提示词中心</button>
+                      <button onClick={() => setIeltsOutputTab('practice')} className={`px-4 py-1 rounded-md transition-all ${ieltsOutputTab === 'practice' ? 'bg-white shadow-xs text-forest-900 font-bold' : 'text-forest-600 hover:text-forest-800'}`}>复盘看板</button>
+                    </div>
+
+                    {ieltsOutputTab === 'prompts' && <PromptHub prompts={ieltsData.prompts} copyToClipboard={copyToClipboard} moduleType="ielts" answerBank={ieltsData.answerBank} />}
+                    {ieltsOutputTab === 'practice' && (
+                      <PracticeDashboard 
+                        practiceData={ieltsData.practiceData} 
+                        selectedDate={ieltsData.selectedDate} 
+                        setSelectedDate={(date) => setIeltsData(prev => ({...prev, selectedDate: date}))} 
+                      />
+                    )}
+                  </div>
+                )}
+              </div>
+            ) : <EmptyStateWorkspace />
+          )}
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
