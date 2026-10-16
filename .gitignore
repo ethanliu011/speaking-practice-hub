@@ -1,0 +1,19 @@
+# 个人练习数据（口语原文 / 纠错记录 / 打卡记录）
+# 默认不提交到公开仓库；如需保留示例，把文件名改成 *example*.json 即可
+Daily/data/*.json
+IELTS/data/*.json
+!**/*example*.json
+!**/.gitkeep
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 依赖（本项目无构建步骤，预留）
+node_modules/

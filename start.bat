@@ -22,7 +22,7 @@ if "%ERRORLEVEL%"=="0" goto RUN_PY_LAUNCHER
 where node >nul 2>nul
 if "%ERRORLEVEL%"=="0" goto RUN_NODE
 
-goto NO_RUNTIME
+goto RUN_PS
 
 :RUN_PY
 echo [OK] Python found. Starting server on port 8000...
@@ -51,15 +51,15 @@ start "" "%URL%"
 npx --yes serve -l 8000
 goto DONE
 
-:NO_RUNTIME
-echo [ERROR] Neither Python nor Node.js was found on PATH.
+:RUN_PS
+echo [OK] No Python/Node found - using built-in PowerShell server.
+echo      (Windows built-in, no extra install needed)
+echo      Press Ctrl+C in this window to stop.
+echo      Open: %URL%
 echo.
-echo Please install one of them, then run this script again:
-echo   Python : https://www.python.org/downloads/
-echo   Node.js: https://nodejs.org/
-echo.
-pause
-exit /b 1
+start "" "%URL%"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0server.ps1" -Port 8000
+goto DONE
 
 :DONE
 echo.

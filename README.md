@@ -13,13 +13,12 @@
 
 > 本项目 fork 自 [**jialuhu06/speaking-practice-hub**](https://github.com/jialuhu06/speaking-practice-hub)（原作者：**陆加**，MIT 协议）。
 > 在其基础上做了一系列功能增强与问题修复，详细内容见下方「[🆕 本版相对上游的增强](#-本版相对上游的增强)」。
-> 原项目 `LICENSE` 文件完整保留；本仓库另附本版维护者对新增 / 修改部分的署名。
+
 
 | 角色 | 链接 |
 |---|---|
 | **Upstream** | <https://github.com/jialuhu06/speaking-practice-hub> |
 | **This fork** | <https://github.com/ethanliu011/speaking-practice-hub> |
-| **License** | MIT（保留原作者署名） |
 
 如果你觉得本项目有用，欢迎给 **上游项目** 也点一个 ⭐ — 它是这一切的起点。
 
@@ -46,75 +45,87 @@
 > ⚠️ **不要直接双击 `SpeakingHub.html`！**
 > 浏览器出于安全限制，禁止 `file://` 协议下的页面读取本地文件夹，直接双击打开将无法「绑定工作区」。
 
-**方式一（推荐）：双击 `start.bat`**
-脚本会自动检测 Python 或 Node.js 并启动本地服务，然后自动打开浏览器。
+**方式一（推荐）：双击启动脚本**
+
+| 系统 | 操作 |
+|---|---|
+| **Windows** | 双击 `start.bat` |
+| **macOS / Linux** | 终端执行 `./start.sh`（首次需 `chmod +x start.sh`） |
+
+脚本会**自动探测本机已有的运行环境**，找到哪个用哪个，**通常不需要你额外安装任何东西**：
+
+| 优先级 | 运行时 | 通常在哪 |
+|---|---|---|
+| 1 | `python3` | Linux 基本自带；macOS 装过 Xcode 命令行工具就有 |
+| 2 | `python` | 老版 macOS / Windows |
+| 3 | `node` | 开发者的机器上一般都有 |
+| 4 | `ruby` | **macOS 系统自带**（兜底） |
+
+- **Windows**：即使 Python / Node.js 都没装，也会自动改用 Windows 自带的 PowerShell 运行，**完全免安装**。
+- **macOS**：即使没装 Python / Node.js，通常也能靠系统自带的 Ruby 启动，**无需预先安装**。
+- **Linux**：一般自带 `python3`，直接可用。
+
+只有在以上全都找不到时，脚本才会提示你安装其中一个（会给出对应系统的安装命令）。
 
 **方式二：手动启动**
 在项目根目录执行任意一条命令，再访问 <http://127.0.0.1:8000/SpeakingHub.html>
 
 ```bash
-python -m http.server 8000      # 有 Python
-npx serve -l 8000               # 有 Node.js
+python3 -m http.server 8000      # macOS / Linux
+python  -m http.server 8000      # Windows
+npx serve -l 8000                # 任意（需 Node.js）
 ```
 
-> 需使用 **Chrome / Edge**（File System Access API 目前仅 Chromium 系支持）。
+> 需使用 **Chrome / Edge**（浏览器本地文件夹读取能力目前仅 Chromium 系支持）。
+> macOS 同样支持 Chrome / Edge，Safari 暂不支持。
 > 页面顶部会在环境不支持时显示黄色提示条。
 
 ---
 
 ## 🆕 本版相对上游的增强
 
-> 本节列出本 fork 相对 [jialuhu06/speaking-practice-hub](https://github.com/jialuhu06/speaking-practice-hub) 的所有新增功能与问题修复。
+> 本节列出本 fork 相对 [jialuhu06/speaking-practice-hub](https://github.com/jialuhu06/speaking-practice-hub) 在使用体验上的主要改进。
 
 ### ✨ 新增功能
 
-1. **一键启动脚本 `start.bat`（Windows）**
-   - 双击即用，自动按优先级探测 Python → `py` → Node.js 并启动本地静态服务
-   - 自动打开浏览器（`http://127.0.0.1:8000/SpeakingHub.html`）
-   - 已修复上游「双击一闪而过」问题：换行符改为 CRLF、删除 `chcp 65001`、将跨行 `if (...)` 块改为平铺 `goto` 标签、纯 ASCII 编码
-   - 服务绑定 `127.0.0.1` 避免 Windows 上 `localhost` → `::1` 解析失败
+1. **一键启动，开箱即用**
+   新增 `start.bat`（Windows）与 `start.sh`（macOS / Linux）启动脚本，双击即可自动打开应用，**无需手动敲命令或配置环境**。脚本会依次探测本机的 Python / Node.js / Ruby 等已有环境，找到哪个用哪个；Windows 还能进一步回退到系统自带的 PowerShell，Mac 也能依靠系统自带的 Ruby——**绝大多数情况下一个软件都不用装**。
 
-2. **`file://` 协议下的环境自检与引导**
-   - 新增 `ENV_UNSUPPORTED` 常量，自动检测 `file://` 协议 或 不存在 `window.showDirectoryPicker`
-   - 命中时：顶部显示**黄色提示条** + 空状态文案自动改成启动指引 + 「绑定工作区」点击直接弹 alert
-   - 让「为什么双击没反应」从此有明确反馈
+2. **用错方式打开时，会明确告诉你原因**
+   直接双击 `SpeakingHub.html` 时，原版会毫无反应、让人一头雾水。本版会自动检测并在页面顶部弹出**醒目的提示条**，说明原因并给出具体的解决步骤，点「绑定工作区」也会直接弹窗指引。
 
-3. **雅思 Part 3 完整题库（从 0 到 32 题）**
-   - 上游 `AnswerBank.json` 的 `part3` 字段为空数组 `[]`，本版补全为 **8 个抽象话题 / 32 题**
-   - 话题与上游 Part 2 的 10 个故事线对齐（Friendship / Fame / Work / Travel / Technology / Environment / Education / Creativity），方便串练
-   - 每题沿用上游 `question / answer_text / chinese_translation / key_vocabulary` 结构，可直接复用上游的高亮、词卡组件
-   - 配套完善 `renderPart3()`、Part 3 工具栏（网格/列表、展开全部）、`ExpandablePromptCard` 的 Part 3 注入器
+3. **雅思 Part 3 完整题库**
+   上游的 Part 3 题库为空。本版补全了 **8 个抽象话题、共 32 道高频题**，每道题都配有：
 
-4. **多模块独立绑定**
-   - 上游为全局单一 `workspaceHandle`，且切换模块时 `setWorkspaceHandle(null)` 会清空绑定
-   - 本版改为按模块各自持有 `FileSystemHandle`，切换模块**互不失效**，可同时绑 `Daily/` 和 `IELTS/`
-   - 模块标签上加**小圆点**指示各自绑定状态
-   - header chip 显式标注「📂 日常口语 · Daily」
-   - 新增**「解绑」按钮**，独立重绑不影响另一模块
+   * 考官视角的提问
+   * 高分范文
+   * 全文中文对照翻译
+   * 可点击展开的高分词汇卡片
 
-5. **IndexedDB 持久化工作区（核心体验提升）**
-   - 上游绑定存在内存里，刷新页面就丢失，本版写入 IndexedDB
-   - 启动时**自动恢复**两个模块的绑定与数据，无需重复选择
-   - 权限失效 / 文件被删时自动清理过期记录
-   - 解绑时同步清库
-   - 利用 `FileSystemHandle` 结构化克隆特性，浏览器一般直接返回 `queryPermission === 'granted'`，无需用户再次确认
+   话题设计**与 Part 2 的 10 个核心故事相互呼应**（友谊、名人、工作、旅行、科技、环境、教育、创意），让你能用同一套素材串起三个 Part，**大幅减少备考准备量**。
 
-### 🐛 优化与问题修复
+4. **「日常口语」与「雅思口语」可同时独立绑定**
+   上游在切换模块时会清空文件夹绑定，来回切换就要反复重新选择。本版让**两个模块各自记住自己的文件夹**，互不干扰，来回切换不再失效，也不用重复选择。
 
-- **日历月份从写死改为动态生成**：上游 `generateMonthOptions()` 硬编码 `2026-08 ~ 2027-12`，超出区间无法显示；本版按 `practiceData` 日期键 + 当月动态推导，新增 `monthPinned` 防止用户手动切月后被 `selectedDate` 自动拉回
-- **雅思输入区宽度对齐**：上游用 `max-w-6xl`（1152px）比标题栏（`max-w-7xl`，1280px）窄 128px；本版改为 `max-w-7xl` 与容器同宽
-- **URL 统一改为 `127.0.0.1`**：上游文案与 `start.bat` 用 `localhost`，Windows 可能优先解析到 `::1` 导致连不上；本版全部统一为 `http://127.0.0.1:8000/SpeakingHub.html`
-- **README 增加 🚀 快速启动章节**：上游写「双击直接在浏览器中运行」是错的；本版明确说明必须用本地服务，并解释原因
-- **目录结构注释更新**：补全 `start.bat`、调整子目录注释、补充题库规模信息
+5. **关掉浏览器再打开，绑定依然在**
+   上游的绑定只存在内存里，刷新或重开页面就丢失。本版会**自动记住你选过的文件夹**，下次打开直接恢复，不用再选一次。想换文件夹时可随时点「解绑」。
 
-### 🧱 仍待你来做 / Future Ideas
+### 🐛 优化与体验修复
 
-下面这几条本版没动，但 fork 之后可以继续做：
+- **打卡日历自动跟到最新月份**：原版日历的月份范围是写死的，超出这个范围的练习记录不会显示。本版改为**自动跟随你的练习记录**，练到哪个月就显示哪个月；手动切换月份后也不会被自动跳回。
+- **练习区排版与标题栏对齐**：雅思练习区的内容区域比顶部标题栏窄了一截，已调整为同宽，视觉更整齐。
+- **打开地址更可靠**：统一改用 `127.0.0.1` 形式的访问地址，避免部分电脑上原本的写法会解析失败、导致页面打不开。
+- **说明书更准确**：修正了原版 README 中「双击直接在浏览器中运行」的错误指引，并补充解释了原因与正确做法。
+- **项目结构说明补全**：补充新增文件的说明，并标注了题库规模。
 
-- 数据导出 / 备份（备份整套 `Daily/data/` 与 `IELTS/data/`）
-- 多设备 / 多 Profile 支持（现在每浏览器一份绑定，换设备要重选）
-- 成绩趋势图（现在只有单次分数 + 雷达，没有时间序列）
-- 内置 PWA 离线支持（配合 `manifest.json` + Service Worker，可像 App 一样安装）
+### 🧱 后续可做 / Future Ideas
+
+下面这几条本版没动，留作后续迭代方向：
+
+- 练习数据一键导出 / 备份（打包 `Daily/data/` 与 `IELTS/data/`）
+- 多设备 / 多账号同步（目前绑定是每浏览器一份，换设备需重选）
+- 成绩趋势曲线（目前只有单次得分 + 雷达图，缺少时间序列）
+- 离线应用支持（做成 PWA，可像 App 一样安装使用）
 
 ---
 
@@ -156,10 +167,17 @@ npx serve -l 8000               # 有 Node.js
 
 ```text
 speaking-practice-hub/
-├── start.bat                # 🚀 本地服务启动脚本（Windows，双击运行）
+├── start.bat                # 🚀 启动脚本（Windows，双击运行）
+├── start.sh                 # 🚀 启动脚本（macOS / Linux）
+├── server.ps1               # Windows 零依赖兜底服务（无 Python/Node 时使用）
 ├── SpeakingHub.html         # 核心应用主页面（单文件 React 应用）
 ├── README.md               # 项目说明文档
-├── LICENSE                 # 开源协议文件
+├── CONTRIBUTING.md         # 贡献指南
+├── LICENSE                 # 开源协议文件（保留原作者署名）
+├── .gitignore              # 默认排除个人练习数据
+│
+├── .github/
+│   └── PULL_REQUEST_TEMPLATE.md
 │
 ├── Daily/                  # 🌿 日常英语口语模块
 │   ├── prompts.json        # 日常口语 Prompt 场景配置文件
