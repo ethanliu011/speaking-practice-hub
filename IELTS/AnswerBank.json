@@ -2720,5 +2720,630 @@
       ]
     }
   ],
-  "part3": []
+  "part3": [
+    {
+      "category_id": "p3_friendship",
+      "category_name": "Friendship & Helping Others",
+      "questions": [
+        {
+          "q_id": "p3_f1",
+          "question": "Why do you think some people find it hard to maintain friendships as they get older?",
+          "answer_text": "I think it mostly comes down to time and priorities. When people are in their twenties they are surrounded by classmates and colleagues, so friendships almost maintain themselves. Once you hit your thirties, though, everyone is juggling a career, a mortgage and maybe young kids, and suddenly meeting up requires a calendar invite. It is not that people care less; the effort just has to become deliberate.",
+          "chinese_translation": "我觉得主要归结于时间和优先级。二十多岁时身边全是同学和同事，友谊几乎是自动维持的。但一到三十多岁，每个人都在同时应付事业、房贷，可能还有小孩，突然之间见一面都得发日程邀请了。并不是人们不在乎了，而是这份经营必须变成刻意为之。",
+          "key_vocabulary": [
+            {
+              "word": "comes down to",
+              "meaning": "归根结底是；归结于。用于给出最核心的原因。",
+              "example": "Whether a relationship survives often comes down to effort rather than affection."
+            },
+            {
+              "word": "juggling",
+              "meaning": "同时应付（多件事）；原意是杂耍抛接。",
+              "example": "Most parents are juggling work, childcare and household chores at the same time."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_f2",
+          "question": "Do you think online friendships can be as meaningful as face-to-face ones?",
+          "answer_text": "They can be, but I would say it depends on the depth of the interaction. Plenty of people I know have met their closest friends in gaming communities or niche forums, and because they bonded over a shared obsession rather than mere proximity, the connection can actually be stronger. That said, I do think something is lost without physical presence; you miss the small, unplanned moments that really cement a relationship.",
+          "chinese_translation": "可以，但我觉得这取决于互动的深度。我认识的不少人是在游戏社群或小众论坛里遇到挚友的，因为他们是围绕共同热爱而建立连接，而不仅仅是因为离得近，这种关系反而可能更牢固。话虽如此，缺少了面对面相处确实会少点什么——你会错过那些真正巩固关系的小小意外时刻。",
+          "key_vocabulary": [
+            {
+              "word": "bonded over",
+              "meaning": "因（共同事物）而建立感情连接。",
+              "example": "They bonded over a shared love of obscure documentaries."
+            },
+            {
+              "word": "cement",
+              "meaning": "巩固、加固（关系）。动词，原意是水泥。",
+              "example": "Travelling together really cemented their friendship."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_f3",
+          "question": "Is it important to help strangers in modern society? Why?",
+          "answer_text": "I would argue it is more important than ever, mainly because cities have become so anonymous. People commute past hundreds of faces without registering a single one, so a small act — holding a door, giving directions, helping someone who has dropped their groceries — kind of restores a sense of community. I am not naive enough to think it solves anything structural, but it does make public space feel less hostile.",
+          "chinese_translation": "我认为这比以往任何时候都重要，主要因为城市变得太匿名了。人们通勤路过几百张脸，一张都记不住，所以一个小小的举动——扶一下门、指个路、帮捡掉落东西的人——在某种程度上重建了社区感。我还没天真到认为这能解决结构性问题的程度，但它确实让公共空间不那么冷漠。",
+          "key_vocabulary": [
+            {
+              "word": "anonymous",
+              "meaning": "匿名的；互不认识的。",
+              "example": "Big cities can feel anonymous compared with small towns."
+            },
+            {
+              "word": "hostile",
+              "meaning": "充满敌意的；令人不适的。",
+              "example": "Poor lighting makes a street feel hostile at night."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_f4",
+          "question": "How has the way people make friends changed compared with the past?",
+          "answer_text": "The biggest shift is that friendship has become a lot more intentional. Previously you were basically assigned your friends by geography — whoever lived on your street or sat next to you in class. Now people swipe through apps explicitly looking for friends, or join a running club with the stated goal of meeting others. That is more efficient, but it also adds a faintly transactional feel to something that used to just happen.",
+          "chinese_translation": "最大的变化是交朋友变得刻意多了。以前你的朋友基本是由地理位置分配的——住在同一条街上的、或者班里坐在你旁边的人。现在人们会专门刷 App 找朋友，或者带着认识人的明确目的加入跑团。这更高效，但也给一件原本自然发生的事情添上了淡淡的交易感。",
+          "key_vocabulary": [
+            {
+              "word": "intentional",
+              "meaning": "刻意的、有意为之的。",
+              "example": "Staying in touch now requires intentional effort, not just proximity."
+            },
+            {
+              "word": "transactional",
+              "meaning": "交易式的；带有功利色彩的。",
+              "example": "Networking events can feel transactional rather than genuine."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p3_fame",
+      "category_name": "Fame & Role Models",
+      "questions": [
+        {
+          "q_id": "p3_fm1",
+          "question": "Why do you think so many young people want to become influencers nowadays?",
+          "answer_text": "Honestly, I think it is because the path looks visible in a way that traditional careers do not. You can literally watch someone your own age document their life and turn it into a living, which makes it feel attainable, even if the odds are terrible. There is also the appeal of autonomy — no boss, no commute, and you are rewarded for being yourself, or at least a curated version of yourself.",
+          "chinese_translation": "老实说，我觉得是因为这条路的可视化程度是传统职业比不了的。你可以眼睁睁看着一个跟你同龄的人记录生活然后把它变成谋生手段，这会让人觉得可及，尽管概率极低。另外还有自主性的吸引力——没有老板、不用通勤，你做自己就能得到回报，至少是经过精心包装的那个自己。",
+          "key_vocabulary": [
+            {
+              "word": "attainable",
+              "meaning": "可达到的、够得着的。",
+              "example": "Social media makes success look far more attainable than it really is."
+            },
+            {
+              "word": "autonomy",
+              "meaning": "自主权；自我掌控。",
+              "example": "Freelancers value autonomy more than job security."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_fm2",
+          "question": "Do you think famous people have a responsibility to be good role models?",
+          "answer_text": "I am a bit torn on this one. On the one hand, when you have millions of young people mirroring your behaviour, wilfully acting irresponsibly does seem careless. But on the other hand, I do not think we should expect entertainers to be moral teachers — they got famous for singing or acting, not for their judgement. Mostly I think the responsibility sits less with the celebrity and more with how much weight we choose to give them.",
+          "chinese_translation": "这个我有点纠结。一方面，当数以百万计的年轻人在模仿你的行为时，故意不负责任确实显得很草率。但另一方面，我觉得不该指望艺人去当道德教师——他们是因为唱歌或演戏出名的，不是因为判断力强。总的来说，我认为责任更多不在于名人，而在于我们选择给他们多大的分量。",
+          "key_vocabulary": [
+            {
+              "word": "torn",
+              "meaning": "左右为难的、纠结的。常用 be torn between A and B。",
+              "example": "I am torn between accepting the offer and staying where I am."
+            },
+            {
+              "word": "mirror",
+              "meaning": "反映、模仿（行为）。动词。",
+              "example": "Children tend to mirror the behaviour of the adults around them."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_fm3",
+          "question": "Is fame more difficult to deal with now than it was in the past?",
+          "answer_text": "Definitely, mainly because there is no off switch anymore. Decades ago a celebrity could retreat to their house and essentially disappear for a while; now every candid photo is online within minutes and the commentary never stops. The scrutiny is also far more personal — it is not just reviewers critiquing your work, it is strangers dissecting your appearance and your family.",
+          "chinese_translation": "肯定是，主要因为现在没有「关闭开关」了。几十年前名人可以躲回家里，基本上消失一阵子；现在每张抓拍照片几分钟内就上网了，而且评论永远不会停。这种审视也更加私人化——不只是评论家在评判你的作品，而是陌生人在解剖你的外貌和家人。",
+          "key_vocabulary": [
+            {
+              "word": "retreat",
+              "meaning": "撤退、退回（私密空间）。",
+              "example": "He retreated to the countryside to escape public attention."
+            },
+            {
+              "word": "scrutiny",
+              "meaning": "审视、细察（常指公众或媒体的）。",
+              "example": "Politicians live under constant public scrutiny."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_fm4",
+          "question": "Do you think people admire celebrities for the right reasons these days?",
+          "answer_text": "Less often than we would like to admit, I reckon. A lot of admiration is aimed at lifestyle rather than craft — people follow someone because of the cars and the holidays, not because they are exceptional at anything. That said, I would not be too cynical; plenty of fans genuinely admire an artist's discipline or a sportsperson's resilience, and that kind of admiration can be genuinely motivating.",
+          "chinese_translation": "我觉得，比我们愿意承认的要少。很多崇拜指向的是生活方式而不是本事——人们关注某人是因为车子和度假，而不是因为他们在某方面特别出色。话虽如此，我也不想太愤世嫉俗；确实有很多粉丝真心佩服一个艺术家的自律或运动员的韧性，而那种崇拜是真正有激励作用的。",
+          "key_vocabulary": [
+            {
+              "word": "cynical",
+              "meaning": "愤世嫉俗的；怀疑动机的。",
+              "example": "It is easy to be cynical about celebrity charity work."
+            },
+            {
+              "word": "resilience",
+              "meaning": "韧性、抗挫折能力。",
+              "example": "Her resilience after repeated injuries impressed everyone."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p3_work",
+      "category_name": "Work & Career",
+      "questions": [
+        {
+          "q_id": "p3_w1",
+          "question": "Why do you think many people are choosing to change careers in the middle of their working lives?",
+          "answer_text": "A few things are converging, I think. Lifespans are longer, so the idea of doing one job for forty-five years just feels crushing to a lot of people. Then you have automation quietly eating away at certain roles, which pushes people to retrain before they are forced to. And honestly, the pandemic gave millions of people an unwanted pause to ask whether they actually liked what they were doing — for many the answer was no.",
+          "chinese_translation": "我觉得有几件事在同时发生。寿命变长了，所以「一份工作干四十五年」这个想法对很多人来说简直令人窒息。再加上自动化在悄悄蚕食某些岗位，迫使人们在被逼无奈之前先去重新学一门技能。老实说，疫情给了数百万人一段并不想要的暂停，让他们问自己到底喜不喜欢在做的事——对很多人来说答案是否定的。",
+          "key_vocabulary": [
+            {
+              "word": "converging",
+              "meaning": "（多种因素）汇聚、同时发生。",
+              "example": "Several trends are converging to reshape the labour market."
+            },
+            {
+              "word": "retrain",
+              "meaning": "重新培训、转岗再学习。",
+              "example": "Many factory workers had to retrain in their forties."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_w2",
+          "question": "Do you think working from home is likely to remain common in the future?",
+          "answer_text": "I would say a hybrid pattern will probably become the default rather than full remote. Employers have largely accepted that focused individual work can happen anywhere, but they have also noticed that onboarding, mentoring and the messy creative arguments are harder over video. So I suspect most companies will settle on something like two or three days in the office — enough to keep the culture, without the daily commute.",
+          "chinese_translation": "我认为混合模式很可能会成为默认选项，而不是完全远程。雇主基本已经接受了「需要专注的个人工作在哪都能做」，但他们也发现新人入职培训、带教、以及那些混乱的创意争论在线上更难进行。所以我猜大多数公司会稳定在每周去办公室两三天——足以维系文化，又不用天天通勤。",
+          "key_vocabulary": [
+            {
+              "word": "hybrid",
+              "meaning": "混合的（此处指混合办公）。",
+              "example": "Most tech firms have adopted a hybrid working model."
+            },
+            {
+              "word": "onboarding",
+              "meaning": "新员工入职引导、融入培训。",
+              "example": "Onboarding is much harder when the whole team is remote."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_w3",
+          "question": "What qualities do you think make someone successful in business?",
+          "answer_text": "Resilience would be top of my list, because almost every venture goes badly at some point and the difference is usually whether the person keeps going. Beyond that, I would say a genuine tolerance for ambiguity — being able to make decisions with incomplete information instead of waiting for certainty that never arrives. Raw intelligence matters far less than people assume.",
+          "chinese_translation": "韧性会排在我清单的第一位，因为几乎每个创业项目都会有很糟糕的时刻，而差别通常在于这个人是否撑下去。除此之外，我认为还有对模糊性的真正容忍度——能在信息不完整时做决定，而不是等一个永远不会到来的确定答案。纯粹的聪明程度远比人们以为的要不重要。",
+          "key_vocabulary": [
+            {
+              "word": "resilience",
+              "meaning": "韧性；受挫后恢复的能力。",
+              "example": "Resilience matters more than raw talent in most startups."
+            },
+            {
+              "word": "tolerance for ambiguity",
+              "meaning": "对模糊/不确定性的容忍度。",
+              "example": "Good founders have a high tolerance for ambiguity."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_w4",
+          "question": "Is it better to work for someone else or to run your own business?",
+          "answer_text": "It really depends on what you are optimising for. If you value a predictable income and the ability to switch off at six, employment is clearly the better deal, and there is no shame in that. Running your own thing can be more financially rewarding and far more autonomous, but you effectively trade a boss for a hundred clients, and the stress follows you home. I think the honest answer is that most people romanticise the second option.",
+          "chinese_translation": "这真的取决于你在优化什么。如果你看重可预期的收入和六点能下班的自由，显然打工是更好的选择，这没什么丢人的。自己做生意可能回报更高、也更自主，但你实际上是把一个老板换成了一百个客户，而且压力会跟着你回家。我认为诚实的答案是，大多数人都把第二个选项浪漫化了。",
+          "key_vocabulary": [
+            {
+              "word": "optimising for",
+              "meaning": "以……为优化目标；最看重。",
+              "example": "You need to know what you are optimising for before choosing a job."
+            },
+            {
+              "word": "romanticise",
+              "meaning": "把……浪漫化、理想化。",
+              "example": "People tend to romanticise entrepreneurship and ignore the workload."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p3_travel",
+      "category_name": "Travel & Tourism",
+      "questions": [
+        {
+          "q_id": "p3_tr1",
+          "question": "Why has international tourism grown so much in recent decades?",
+          "answer_text": "The obvious answer is that flying has become dramatically cheaper relative to incomes, and budget airlines opened up routes that used to be impossible. But I think the bigger driver is cultural — travel has shifted from being a once-in-a-lifetime luxury to something people feel entitled to every year, partly because social media constantly shows you where everyone else is going. It has become a form of currency, almost.",
+          "chinese_translation": "最明显的答案是，相对于收入而言飞行变得便宜太多了，廉航也开通了以前根本不可能的航线。但我觉得更大的驱动力是文化层面的——旅行已经从「一生一次的奢侈品」变成人们觉得每年都该有的东西，部分原因是社交媒体不断给你看别人都在去哪儿。它几乎变成了一种社交货币。",
+          "key_vocabulary": [
+            {
+              "word": "budget airlines",
+              "meaning": "廉价航空公司。",
+              "example": "Budget airlines made weekend trips across Europe affordable."
+            },
+            {
+              "word": "entitled to",
+              "meaning": "认为（自己）理应享有。",
+              "example": "Younger travellers increasingly feel entitled to a gap year."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_tr2",
+          "question": "Do you think tourism always benefits the places that are visited?",
+          "answer_text": "Not always, no. It obviously brings money in, but the benefits are rarely spread evenly — a lot of it leaks straight back to foreign-owned hotel chains and booking platforms rather than staying in the local economy. And in really popular cities you get the darker side: rents pushed up until residents cannot afford their own neighbourhoods, and historic centres turned into something closer to a theme park.",
+          "chinese_translation": "不总是。它显然带来了钱，但收益很少被均匀分配——很大一部分直接回流到外资酒店集团和预订平台，而不是留在本地经济里。而在真正热门的城市还有更阴暗的一面：房租被推高到居民住不起自己的社区，历史中心区变成更接近主题公园的东西。",
+          "key_vocabulary": [
+            {
+              "word": "spread evenly",
+              "meaning": "被均匀分配。",
+              "example": "The profits from tourism are rarely spread evenly across a city."
+            },
+            {
+              "word": "theme park",
+              "meaning": "主题公园；此处比喻过度商业化、失去原真性。",
+              "example": "Some critics say the old town now feels like a theme park."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_tr3",
+          "question": "How might travel change in the next fifty years?",
+          "answer_text": "My guess is that it will become slower and considerably more expensive, mainly because of climate pressure. Short-haul flights may well get taxed heavily or replaced by rail, and I think we will see a revival of long, single-destination trips instead of the current fashion for ticking off six countries in ten days. There is probably also going to be a lot more virtual tourism for places that physically cannot absorb more visitors.",
+          "chinese_translation": "我猜旅行会变得更慢、也明显更贵，主要是气候压力所致。短途航班很可能会被重税或铁路取代，而且我认为我们会看到「长住单一目的地」的回归，取代现在十天打卡六个国家的潮流。对于那些物理上无法承受更多游客的地方，可能还会有更多的虚拟旅游。",
+          "key_vocabulary": [
+            {
+              "word": "short-haul",
+              "meaning": "短途的（航班）。对应 long-haul 长途。",
+              "example": "Short-haul flights are the most carbon-intensive way to travel."
+            },
+            {
+              "word": "ticking off",
+              "meaning": "打卡式地逐个完成（清单）。",
+              "example": "The trip felt like ticking off a list rather than experiencing a place."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_tr4",
+          "question": "Why do some people prefer to travel alone rather than in a group?",
+          "answer_text": "Solitude changes the texture of a trip, I think. When you are alone you end up far more open to spontaneous detours and to talking with locals, because you are not constantly negotiating with someone else's itinerary. Group travel is comfortable and certainly cheaper per person, but it tends to keep you inside a bubble of people you already know.",
+          "chinese_translation": "我觉得独处会改变一趟旅行的质感。一个人的时候，你会更容易接受临时起意的绕路、也更愿意跟当地人聊天，因为你不用一直和别人的行程表谈判。跟团当然更舒服、人均也更便宜，但它往往把你困在一个「都是本来就认识的人」的泡泡里。",
+          "key_vocabulary": [
+            {
+              "word": "spontaneous detours",
+              "meaning": "临时起意的绕路/改变行程。",
+              "example": "Travelling alone allows for spontaneous detours you would never plan."
+            },
+            {
+              "word": "bubble",
+              "meaning": "（信息或社交）茧房、封闭圈。",
+              "example": "Package tours keep visitors in a bubble."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p3_technology",
+      "category_name": "Technology & Media",
+      "questions": [
+        {
+          "q_id": "p3_t1",
+          "question": "How has the internet changed the way people consume news?",
+          "answer_text": "The most obvious change is speed — people now learn about events within minutes, often from someone who happened to be filming, rather than waiting for the evening bulletin. The downside is that news has become fragmented and decontextualised: you get a fifteen-second clip with no background, and it is competing for attention against entertainment. I think many people are simultaneously better informed and more confused than they used to be.",
+          "chinese_translation": "最明显的变化是速度——人们现在几分钟内就知道发生了什么，而且往往来自刚好在拍摄的人，而不是等晚间新闻。坏处是新闻变得碎片化、脱离语境：你看到的是一段没有任何背景的十五秒视频，而且它还在和娱乐内容抢注意力。我觉得很多人同时变得消息更灵通、也更困惑了。",
+          "key_vocabulary": [
+            {
+              "word": "fragmented",
+              "meaning": "碎片化的。",
+              "example": "News consumption has become increasingly fragmented."
+            },
+            {
+              "word": "evening bulletin",
+              "meaning": "晚间新闻简报/新闻播报。",
+              "example": "Fewer people sit down to watch the evening bulletin now."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_t2",
+          "question": "Do you think people spend too much time on their phones?",
+          "answer_text": "Most do, myself included, though I would resist calling it pure addiction. The issue is that phones have quietly absorbed everything we used to do elsewhere — reading, navigating, banking, waiting — so the screen time is not all wasteful. The genuinely worrying part is not the hours, it is the fragmentation: the constant switching that leaves you feeling busy all day without having properly done anything.",
+          "chinese_translation": "大多数人是的，包括我自己，不过我不太愿意把它纯粹叫作成瘾。问题在于手机悄悄吞掉了我们以前在别处做的所有事——阅读、导航、办银行业务、打发等待时间——所以屏幕时间并不全是浪费。真正值得担心的不是时长，而是碎片化：不停地切换任务让你一整天都觉得忙，却什么也没真正做成。",
+          "key_vocabulary": [
+            {
+              "word": "absorbed",
+              "meaning": "吸收、吞并（功能）。",
+              "example": "The smartphone has absorbed the camera, the map and the wallet."
+            },
+            {
+              "word": "fragmentation",
+              "meaning": "（注意力/时间的）碎片化。",
+              "example": "Constant notifications cause serious fragmentation of attention."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_t3",
+          "question": "Will artificial intelligence replace many jobs in the future?",
+          "answer_text": "It will certainly reshape them, though I am sceptical of the more dramatic predictions. What AI is genuinely good at is the routine middle layer of knowledge work — drafting, summarising, sorting — so roles built almost entirely on that are vulnerable. But jobs involving physical unpredictability, or where the real product is trust and accountability, are much harder to automate. I suspect the common outcome is fewer people doing more, rather than mass unemployment.",
+          "chinese_translation": "它肯定会重塑这些工作，不过我对那些更夸张的预测持怀疑态度。AI 真正擅长的是知识工作中常规的中间层——起草、摘要、分类——所以几乎完全建立在这上面的岗位是脆弱的。但涉及物理环境不可预测性的工作，或者真正的产出是信任与责任的工作，就难得多地自动化。我猜更常见的结果是「更少的人做更多的事」，而不是大规模失业。",
+          "key_vocabulary": [
+            {
+              "word": "sceptical of",
+              "meaning": "对……持怀疑态度。",
+              "example": "I am sceptical of claims that robots will replace teachers entirely."
+            },
+            {
+              "word": "accountability",
+              "meaning": "问责、可追责性。",
+              "example": "Patients still want a human who carries accountability for decisions."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_t4",
+          "question": "Is it important for children to learn to use technology at a young age?",
+          "answer_text": "To a point, yes — digital literacy is now as basic as reading a map once was, and shielding children entirely just delays the problem. But I would draw a firm line between using technology and owning a connected device with unrestricted access. Learning to type or research is one thing; handing an eleven-year-old an algorithmic feed designed to maximise engagement is quite another.",
+          "chinese_translation": "在某种程度上是的——数字素养现在就像当年会看地图一样基础，把孩子完全屏蔽起来只是把问题往后推。但我会严格区分「使用技术」和「拥有一台无限制联网设备」。学会打字或查资料是一回事；把一条旨在最大化用户停留的算法推荐流交给一个十一岁的孩子，完全是另一回事。",
+          "key_vocabulary": [
+            {
+              "word": "digital literacy",
+              "meaning": "数字素养（使用与判断数字信息的能力）。",
+              "example": "Digital literacy should be taught as early as reading and writing."
+            },
+            {
+              "word": "draw a firm line",
+              "meaning": "划清界限、明确区分。",
+              "example": "I draw a firm line between supervised use and unrestricted access."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p3_environment",
+      "category_name": "Environment & Nature",
+      "questions": [
+        {
+          "q_id": "p3_e1",
+          "question": "Why do you think some people do not take environmental problems seriously?",
+          "answer_text": "Partly because the worst consequences are spatially and temporally distant — they will land somewhere else, or on the next generation, which makes them very easy to deprioritise against this month's bills. There is also a kind of learned helplessness: people hear that the situation is catastrophic, conclude that nothing they do matters, and then behave exactly as before. I think fatalism is a bigger enemy than denial these days.",
+          "chinese_translation": "部分因为最坏的后果在空间和时间上都很遥远——它们会落在别的地方，或者下一代身上，这让它们很容易就被排在这个月账单之后。还有一种习得性无助：人们听说情况已经灾难性了，就得出结论说做什么都没用，然后行为完全照旧。我觉得如今宿命论是比否认更大的敌人。",
+          "key_vocabulary": [
+            {
+              "word": "deprioritise",
+              "meaning": "降低……的优先级。",
+              "example": "Long-term risks are easily deprioritised against immediate costs."
+            },
+            {
+              "word": "fatalism",
+              "meaning": "宿命论；认为做什么都无用的心态。",
+              "example": "Fatalism stops people from acting even when action would help."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_e2",
+          "question": "Should governments or individuals take more responsibility for protecting the environment?",
+          "answer_text": "I would put the heavier burden on governments, honestly. Individual action matters, but it is structurally limited — you can cycle to work, yet you cannot personally decarbonise the grid or regulate shipping. What governments can do is shift the default so that the sustainable choice is also the easy one, and then individual behaviour follows. Putting it entirely on consumers feels like a convenient way for industries to avoid change.",
+          "chinese_translation": "老实说，我会把更重的责任放在政府身上。个人行动当然重要，但它在结构上受限——你可以骑车上班，但你无法凭一己之力让电网脱碳或监管航运。政府能做的是改变默认选项，让可持续的选择同时也是最省事的选择，然后个人行为自然会跟上。把责任全推给消费者，感觉像是产业界逃避改变的方便借口。",
+          "key_vocabulary": [
+            {
+              "word": "decarbonise",
+              "meaning": "使脱碳、减少碳排放。",
+              "example": "Decarbonising the grid is far more impactful than individual recycling."
+            },
+            {
+              "word": "shift the default",
+              "meaning": "改变默认选项（行为设计术语）。",
+              "example": "Policymakers can shift the default rather than relying on willpower."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_e3",
+          "question": "How can cities be made greener?",
+          "answer_text": "The most effective lever is probably density rather than parks, counterintuitively — compact cities where people can walk to work, school and shops cut emissions far more than adding green space to a sprawling car-dependent suburb. Beyond that, retrofitting old housing stock for energy efficiency is unglamorous but matters enormously, since buildings account for a huge share of urban carbon. Tree canopy helps too, mostly with heat.",
+          "chinese_translation": "最有效的杠杆可能是密度而不是公园，这与直觉相反——在人们可以步行上班、上学、买菜的紧凑城市里，减排效果远好于给一个依赖汽车、摊大饼式的郊区增加绿地。除此之外，对老旧住宅进行节能改造虽然不起眼，但极其重要，因为建筑占了城市碳排放的很大一块。树冠也有帮助，主要是缓解热岛。",
+          "key_vocabulary": [
+            {
+              "word": "counterintuitively",
+              "meaning": "与直觉相反地。",
+              "example": "Counterintuitively, denser cities are often greener than sprawling ones."
+            },
+            {
+              "word": "retrofitting",
+              "meaning": "对旧建筑/设施进行改造升级。",
+              "example": "Retrofitting older homes cuts energy use dramatically."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_e4",
+          "question": "Do you think people in the future will have a closer relationship with nature?",
+          "answer_text": "I am not hugely optimistic, to be honest. Urbanisation keeps accelerating and children's free roaming range has shrunk dramatically compared with a generation ago, so everyday contact with nature is declining even where green space exists. What might happen instead is a more managed relationship — nature as somewhere you visit deliberately at weekends, rather than something you simply live inside.",
+          "chinese_translation": "老实说我不太乐观。城市化在持续加速，和上一代人相比，孩子们能自由活动的范围急剧缩小，所以即便绿地存在，日常与自然的接触也在下降。更可能发生的是一种更「被管理」的关系——自然变成一个你周末特意去拜访的地方，而不是你本来就生活其中的东西。",
+          "key_vocabulary": [
+            {
+              "word": "urbanisation",
+              "meaning": "城市化。",
+              "example": "Rapid urbanisation has reduced contact with the natural world."
+            },
+            {
+              "word": "roaming range",
+              "meaning": "（儿童）可自由活动的范围。",
+              "example": "Children's roaming range has shrunk dramatically since the 1990s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p3_education",
+      "category_name": "Education & Learning",
+      "questions": [
+        {
+          "q_id": "p3_ed1",
+          "question": "How has education changed in your country over the last twenty years?",
+          "answer_text": "The clearest shift is from memorisation towards application. When I was at school, success basically meant reproducing the right facts in an exam; now there is much more emphasis on projects, group work and explaining your reasoning. I would also say the monopoly of the teacher has broken down — a motivated student can now learn almost anything from free material online, which changes what a classroom is actually for.",
+          "chinese_translation": "最明显的变化是从记忆转向应用。我上学那会儿，成功基本意味着在考试里复述出正确的知识点；现在则更强调项目、小组作业和解释你的推理过程。我还想说，教师的「垄断」已经被打破了——一个有动力的学生现在几乎可以从网上免费材料里学到任何东西，这改变了课堂真正的用途。",
+          "key_vocabulary": [
+            {
+              "word": "memorisation",
+              "meaning": "背诵、记忆（侧重于机械记忆）。",
+              "example": "The system still rewards memorisation over understanding."
+            },
+            {
+              "word": "monopoly",
+              "meaning": "垄断；独占地位。",
+              "example": "Teachers no longer have a monopoly on knowledge."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_ed2",
+          "question": "Do you think exams are the best way to assess a student's ability?",
+          "answer_text": "They are reliable but quite narrow. Exams measure how well you perform under time pressure in a specific format, which is a real skill, but it is not the same as understanding, and it certainly does not capture persistence, creativity or the ability to work with others. I would keep them as one signal among several — coursework, presentations, practical work — rather than letting a single score define a young person.",
+          "chinese_translation": "它们很可靠但相当狭隘。考试衡量的是你在特定形式、有时间压力下的发挥，这确实是一种能力，但它不等于理解，也肯定无法体现坚持、创造力或与他人合作的能力。我会把它保留为若干信号之一——课程作业、演示、实操——而不是让一个分数定义一个年轻人。",
+          "key_vocabulary": [
+            {
+              "word": "time pressure",
+              "meaning": "时间压力。",
+              "example": "Some students collapse under time pressure despite knowing the material."
+            },
+            {
+              "word": "persistence",
+              "meaning": "坚持、锲而不舍。",
+              "example": "Persistence predicts success better than exam scores."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_ed3",
+          "question": "Should children be taught to use AI tools in schools?",
+          "answer_text": "Yes, but framed as literacy rather than as a shortcut. The reality is that these tools are not going away, so the useful skill is knowing how to interrogate an answer, spot when it is confidently wrong, and cite it honestly. What schools genuinely need to protect is the struggle of learning itself — if AI removes all the difficulty, it removes the learning along with it.",
+          "chinese_translation": "应该，但要把它定位成一种素养而不是捷径。现实是这些工具不会消失，所以真正有用的技能是知道如何质疑一个答案、发现它何时「自信地错了」，并且诚实地注明来源。学校真正需要保护的是学习本身的挣扎——如果 AI 消除了所有困难，它也就把学习一并消除了。",
+          "key_vocabulary": [
+            {
+              "word": "interrogate",
+              "meaning": "质疑、反复追问（此处指审视 AI 答案）。",
+              "example": "Students must learn to interrogate an answer rather than trust it."
+            },
+            {
+              "word": "confidently wrong",
+              "meaning": "自信地给出错误答案（AI 幻觉的典型特征）。",
+              "example": "Chatbots are often confidently wrong about obscure facts."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_ed4",
+          "question": "What is the value of learning a second language?",
+          "answer_text": "Beyond the obvious practical benefits, I think the real value is cognitive humility. Once you have wrestled with a second language, you understand that your first one is not the natural order of the world — it is just one arbitrary system among many, and that tends to make people less rigid about other differences too. It is hard to measure that in an exam, but it is arguably the most lasting effect.",
+          "chinese_translation": "除了显而易见的实用好处，我认为真正的价值是认知上的谦逊。一旦你跟第二门语言较过劲，你就会明白母语并不是世界的自然秩序——它只是众多任意系统中的一个，而这往往也会让人对其他差异不那么僵化。这一点很难在考试里衡量，但它可以说是最持久的影响。",
+          "key_vocabulary": [
+            {
+              "word": "cognitive humility",
+              "meaning": "认知谦逊（承认自己认知局限的态度）。",
+              "example": "Learning another language builds cognitive humility."
+            },
+            {
+              "word": "wrestled with",
+              "meaning": "与……较劲、费力应对。",
+              "example": "Anyone who has wrestled with English phrasal verbs knows the feeling."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "p3_creativity",
+      "category_name": "Creativity & Leisure",
+      "questions": [
+        {
+          "q_id": "p3_c1",
+          "question": "Why do you think people have less free time now than in the past?",
+          "answer_text": "It is partly real and partly perceived. The real part is that work has become psychologically unbounded — emails follow you home, so the boundary between on and off has dissolved even if contracted hours have not risen. The perceived part is that leisure now competes with an enormous amount of content, so even when we do have three free hours, it often feels like it evaporated rather than being spent.",
+          "chinese_translation": "这有一半是真的，一半是感觉上的。真实的部分在于工作变得心理上无边界——邮件跟着你回家，所以「上班」和「下班」的界限已经溶解了，即使合同工时并没有增加。感觉上的部分在于，休闲现在要和海量的内容竞争，所以即便真有三个小时的空，它也常常像是蒸发了，而不是被花掉了。",
+          "key_vocabulary": [
+            {
+              "word": "unbounded",
+              "meaning": "无边界的、不受限制的。",
+              "example": "Remote work has made the working day effectively unbounded."
+            },
+            {
+              "word": "evaporated",
+              "meaning": "蒸发了；不知不觉消失了。",
+              "example": "Two hours of screen time simply evaporated."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_c2",
+          "question": "Do you think hobbies are important for adults?",
+          "answer_text": "Very much so, mainly because work rarely gives people a sense of visible progress anymore. A lot of modern jobs are diffuse — you answer messages, you attend meetings, and at the end of the day there is nothing tangible you made. A hobby like woodworking, baking or playing an instrument restores that: you can see and hold the result. I think that is genuinely protective against burnout.",
+          "chinese_translation": "非常重要，主要是因为工作现在很少能给人可见的进展感。很多现代工作是弥散的——你回消息、开会，一天结束时没有任何你做出来的实体东西。像木工、烘焙或演奏乐器这样的爱好能把这种感觉找回来：你能看见、也能摸到成果。我认为这确实能真正防止职业倦怠。",
+          "key_vocabulary": [
+            {
+              "word": "diffuse",
+              "meaning": "弥散的、边界模糊不清的。",
+              "example": "Office work is increasingly diffuse and hard to measure."
+            },
+            {
+              "word": "tangible",
+              "meaning": "有形的、可触摸的；实实在在的。",
+              "example": "A tangible result at the end of the day is deeply satisfying."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_c3",
+          "question": "Is creativity something people are born with, or can it be developed?",
+          "answer_text": "Mostly developed, I would argue. There is clearly variation in temperament, but what we call creativity is usually the product of deep domain knowledge plus the willingness to produce a large volume of bad work before something good appears. The people who seem effortlessly creative have generally just spent far longer in their field than it appears from the outside.",
+          "chinese_translation": "我认为主要是后天培养的。人的天性确实有差异，但我们称之为创造力的东西，通常是深厚的领域知识加上「愿意在好作品出现之前大量产出烂作品」。那些看起来毫不费力就有创意的人，通常只是在这个领域里待的时间远比外界看到的要长得多。",
+          "key_vocabulary": [
+            {
+              "word": "temperament",
+              "meaning": "气质、天性。",
+              "example": "Temperament plays a role, but practice plays a bigger one."
+            },
+            {
+              "word": "domain knowledge",
+              "meaning": "领域知识、专业积累。",
+              "example": "Creativity rarely appears without deep domain knowledge."
+            }
+          ]
+        },
+        {
+          "q_id": "p3_c4",
+          "question": "How might people's leisure activities change in the future?",
+          "answer_text": "I suspect we will see a backlash against purely passive consumption. Streaming and scrolling are starting to feel slightly empty to a lot of people, and there is already a visible return to hands-on things — baking, repair, gardening, board games. If AI takes over more of the routine digital work, I think time will shift towards activities that are deliberately inefficient and physical.",
+          "chinese_translation": "我猜我们会看到对纯粹被动消费的反弹。刷剧和无尽滑动对很多人来说开始显得有点空洞，而且已经明显能看到人们回归动手的事情——烘焙、修理、园艺、桌游。如果 AI 接管了更多常规的数字工作，我认为时间会转向那些刻意「低效」且需要身体参与的活动。",
+          "key_vocabulary": [
+            {
+              "word": "backlash",
+              "meaning": "（对某种趋势的）反弹、强烈抵制。",
+              "example": "There has been a backlash against mindless scrolling."
+            },
+            {
+              "word": "passive consumption",
+              "meaning": "被动消费（只看不做）。",
+              "example": "Streaming encourages passive consumption rather than participation."
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

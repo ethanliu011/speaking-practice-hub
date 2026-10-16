@@ -63,6 +63,50 @@
 
     const EMPTY_PROMPTS = { system_tools: { analysis_prompt: { title: "未加载", content: "请先绑定工作区" } }, scenarios_hub: [] };
 
+    // 环境检测：file:// 协议或非 Chromium 内核浏览器无法使用 File System Access API
+    const ENV_UNSUPPORTED = (() => {
+      const isFileProtocol = window.location.protocol === 'file:';
+      const hasPicker = typeof window.showDirectoryPicker === 'function';
+      return isFileProtocol || !hasPicker;
+    })();
+
+    // 持久化 FileSystemHandle 到 IndexedDB，让「日常口语 / 雅思口语」的绑定能在刷新后自动恢复
+    // FileSystemHandle 是结构化可克隆的，Chrome/Edge 原生支持 IDB 存储；不需用户重新确认权限。
+    const IDB_NAME = 'speaking-practice-hub';
+    const IDB_STORE = 'workspaces';
+
+    const openIdb = () => new Promise((resolve, reject) => {
+      if (typeof indexedDB === 'undefined') { reject(new Error('IDB_UNAVAILABLE')); return; }
+      const req = indexedDB.open(IDB_NAME, 1);
+      req.onupgradeneeded = () => {
+        const db = req.result;
+        if (!db.objectStoreNames.contains(IDB_STORE)) db.createObjectStore(IDB_STORE);
+      };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+
+    const idbGet = (key) => openIdb().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction(IDB_STORE, 'readonly');
+      const req = tx.objectStore(IDB_STORE).get(key);
+      req.onsuccess = () => resolve(req.result || null);
+      req.onerror = () => reject(req.error);
+    }));
+
+    const idbSet = (key, value) => openIdb().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction(IDB_STORE, 'readwrite');
+      tx.objectStore(IDB_STORE).put(value, key);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    }));
+
+    const idbDelete = (key) => openIdb().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction(IDB_STORE, 'readwrite');
+      tx.objectStore(IDB_STORE).delete(key);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    }));
+
     // Icons
     const IconFolder = () => <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-1.22-1.8A2 2 0 0 0 7.53 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>;
     const IconFolderLarge = () => <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-1.22-1.8A2 2 0 0 0 7.53 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>;
@@ -655,6 +699,7 @@
       
       const [selectedPart1Topics, setSelectedPart1Topics] = useState([]);
       const [selectedPart2Stories, setSelectedPart2Stories] = useState([]);
+      const [selectedPart3Topics, setSelectedPart3Topics] = useState([]);
 
       useEffect(() => {
         if (answerBank.part1) setSelectedPart1Topics(answerBank.part1.map(c => c.category_name));
@@ -663,6 +708,10 @@
       useEffect(() => {
         if (answerBank.part2_story_bank) setSelectedPart2Stories(answerBank.part2_story_bank.map(s => s.story_title));
       }, [answerBank.part2_story_bank]);
+
+      useEffect(() => {
+        if (answerBank.part3 && answerBank.part3.length > 0) setSelectedPart3Topics(answerBank.part3.map(c => c.category_name));
+      }, [answerBank.part3]);
 
       const renderPart1 = () => {
         if (!answerBank.part1) return <p className="text-forest-400 text-xs">暂无 Part 1 数据</p>;
@@ -749,8 +798,35 @@
       };
 
       const renderPart3 = () => {
-        if (!answerBank.part3) return <div className="text-center py-8 text-forest-400 font-medium text-xs">Part 3 题库构建中...</div>;
-        return <p className="text-xs">渲染 Part 3 逻辑</p>;
+        if (!answerBank.part3 || answerBank.part3.length === 0) {
+          return <div className="text-center py-8 text-forest-400 font-medium text-xs">Part 3 题库构建中...</div>;
+        }
+        const allTopics = answerBank.part3.map(c => c.category_name);
+        const filteredCategories = answerBank.part3.filter(c => selectedPart3Topics.includes(c.category_name));
+
+        return (
+          <>
+            <MultiSelector options={allTopics} selected={selectedPart3Topics} onChange={setSelectedPart3Topics} label="Abstract Topics" />
+            {filteredCategories.length === 0 && <p className="text-forest-400 text-xs text-center py-8">没有选中的话题，请在上方筛选</p>}
+
+            {filteredCategories.map((category, idx) => (
+              <div key={idx} className="mb-4 bg-white border border-forest-100 p-4 rounded-2xl shadow-sm animate-fade-in-up">
+                <div className="flex items-center justify-between mb-3 pb-1.5 border-b border-forest-50">
+                  <h4 className="font-bold text-sm md:text-base text-forest-900 flex items-center gap-2">
+                    <span className="bg-lavender-50 text-lavender-800 px-2 py-0.5 rounded-md text-[11px] font-bold">Topic</span> {category.category_name}
+                  </h4>
+                  <span className="text-[11px] text-forest-400 font-semibold">{category.questions.length} 题</span>
+                </div>
+
+                <div className={part1ViewMode === 'grid' ? "grid grid-cols-1 md:grid-cols-2 gap-3 items-start" : "space-y-2.5"}>
+                  {category.questions.map((q, qIdx) => (
+                    <QuestionCard key={q.q_id || qIdx} question={q} index={qIdx} viewMode={part1ViewMode} expandAll={expandAll} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </>
+        );
       };
 
       return (
@@ -762,7 +838,7 @@
               <button onClick={() => setActivePart('part3')} className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${activePart === 'part3' ? 'bg-white text-forest-900 shadow' : 'text-forest-500 hover:text-forest-800'}`}>Part 3</button>
             </div>
 
-            {activePart === 'part1' && (
+            {(activePart === 'part1' || activePart === 'part3') && (
               <div className="flex items-center gap-2">
                 <div className="flex bg-white border border-forest-100 p-0.5 rounded-lg text-xs shadow-sm">
                   <button onClick={() => setPart1ViewMode('grid')} className={`px-2 py-1 rounded-md font-medium transition-all flex items-center gap-1 ${part1ViewMode === 'grid' ? 'bg-forest-800 text-white shadow-xs' : 'text-forest-600 hover:bg-forest-50'}`} title="网格视图 (多题并行)"><IconGrid /> 网格</button>
@@ -775,7 +851,7 @@
             )}
           </div>
           
-          <div className="pb-8 max-w-6xl mx-auto">
+          <div className="pb-8 max-w-7xl">
             {activePart === 'part1' && renderPart1()}
             {activePart === 'part2' && renderPart2()}
             {activePart === 'part3' && renderPart3()}
@@ -784,23 +860,26 @@
       );
     };
 
-    const generateMonthOptions = () => {
-      const options = [];
-      const startYear = 2026;
-      const startMonth = 8;
-      const endYear = 2027;
-      const endMonth = 12;
+    // 当前自然月（YYYY-MM）
+    const currentMonthKey = () => {
+      const d = new Date();
+      return `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, '0')}`;
+    };
 
-      for (let y = startYear; y <= endYear; y++) {
-        const mStart = (y === startYear) ? startMonth : 1;
-        const mEnd = (y === endYear) ? endMonth : 12;
-        for (let m = mStart; m <= mEnd; m++) {
-          const val = `${y}-${m.toString().padStart(2, '0')}`;
-          const label = `${y}年 ${m.toString().padStart(2, '0')}月`;
-          options.push({ val, label });
-        }
-      }
-      return options;
+    // 月份下拉项：由已有打卡数据动态推导，并始终包含「当月」与「当前选中日期所在月」
+    const generateMonthOptions = (pData, selectedDate) => {
+      const monthSet = new Set(
+        Object.keys(pData || {})
+          .map(d => String(d).slice(0, 7))
+          .filter(m => /^\d{4}-\d{2}$/.test(m))
+      );
+      monthSet.add(currentMonthKey());
+      if (selectedDate) monthSet.add(String(selectedDate).slice(0, 7));
+
+      return Array.from(monthSet).sort().map(val => {
+        const [y, m] = val.split('-');
+        return { val, label: `${y}年 ${m}月` };
+      });
     };
 
     const getCalendarGrid = (year, monthNum, pData) => {
@@ -833,22 +912,32 @@
     const PracticeDashboard = ({ practiceData, selectedDate, setSelectedDate }) => {
       const [activeSessionIdx, setActiveSessionIdx] = useState(0);
       const [viewMode, setViewMode] = useState('full');
-      const [currentMonthStr, setCurrentMonthStr] = useState("2026-08");
+      const [currentMonthStr, setCurrentMonthStr] = useState(() => selectedDate ? String(selectedDate).slice(0, 7) : currentMonthKey());
+      // 用户手动切换过月份后，就不再被 selectedDate 变化自动拉回
+      const [monthPinned, setMonthPinned] = useState(false);
 
       useEffect(() => { 
         setActiveSessionIdx(0); 
         setViewMode('full');
-      }, [selectedDate]);
+        if (!monthPinned && selectedDate) {
+          const m = String(selectedDate).slice(0, 7);
+          setCurrentMonthStr(prev => (prev === m ? prev : m));
+        }
+      }, [selectedDate, monthPinned]);
 
-      const [year, monthNum] = currentMonthStr.split('-').map(Number);
-      const monthOptions = generateMonthOptions();
+      const monthOptions = generateMonthOptions(practiceData, selectedDate);
+      const activeMonthStr = monthOptions.some(o => o.val === currentMonthStr)
+        ? currentMonthStr
+        : monthOptions[monthOptions.length - 1].val;
+
+      const [year, monthNum] = activeMonthStr.split('-').map(Number);
       const calendarGrid = getCalendarGrid(year, monthNum, practiceData);
 
       const currentDayPractices = practiceData[selectedDate] || [];
       const currentData = currentDayPractices[activeSessionIdx];
       const quickVersionMap = currentData?.quick_version ? currentData.quick_version.reduce((acc, curr) => { acc[curr.id] = curr; return acc; }, {}) : {};
 
-      const monthlyCheckInDays = Object.keys(practiceData).filter(d => d.startsWith(currentMonthStr)).length;
+      const monthlyCheckInDays = Object.keys(practiceData).filter(d => d.startsWith(activeMonthStr)).length;
 
       return (
         <div className="grid lg:grid-cols-[240px_1fr] gap-4 animate-fade-in-up items-start">
@@ -857,8 +946,8 @@
               <div className="flex items-center gap-1">
                 <IconCalendar />
                 <select 
-                  value={currentMonthStr} 
-                  onChange={(e) => setCurrentMonthStr(e.target.value)}
+                  value={activeMonthStr} 
+                  onChange={(e) => { setMonthPinned(true); setCurrentMonthStr(e.target.value); }}
                   className="bg-forest-50 border border-forest-100 text-forest-900 text-xs font-bold rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-forest-600 cursor-pointer"
                 >
                   {monthOptions.map(opt => (
@@ -1082,12 +1171,55 @@
       const [ieltsTab, setIeltsTab] = useState('input');
       const [ieltsOutputTab, setIeltsOutputTab] = useState('prompts');
       
-      const [workspaceHandle, setWorkspaceHandle] = useState(null);
+      // 每个模块各自持有独立的工作区句柄，切换模块互不影响、不会失效
+      const [workspaceHandles, setWorkspaceHandles] = useState({ daily: null, ielts: null });
+      const workspaceHandle = workspaceHandles[mainModule];
+      const moduleLabel = mainModule === 'daily' ? '日常口语' : '雅思口语';
+
+      // 只更新「当前模块」的句柄，其余模块保持原样
+      const setWorkspaceHandle = (handleOrUpdater) => {
+        setWorkspaceHandles(prev => ({
+          ...prev,
+          [mainModule]: typeof handleOrUpdater === 'function' ? handleOrUpdater(prev[mainModule]) : handleOrUpdater
+        }));
+      };
+
       const [dailyData, setDailyData] = useState({ prompts: EMPTY_PROMPTS, practiceData: {}, selectedDate: "" });
       const [ieltsData, setIeltsData] = useState({ answerBank: {}, prompts: EMPTY_PROMPTS, practiceData: {}, selectedDate: "" });
       
       const [toastMsg, setToastMsg] = useState('');
       const [isLoading, setIsLoading] = useState(false);
+
+      // 页面加载时自动从 IndexedDB 恢复已持久化的工作区绑定
+      useEffect(() => {
+        (async () => {
+          const restored = [];
+          for (const mod of ['daily', 'ielts']) {
+            let handle = null;
+            try { handle = await idbGet(`workspace:${mod}`); } catch (e) { continue; }
+            if (!handle) continue;
+            try {
+              // 已被持久化过的句柄，浏览器通常直接返回 'granted'，无需用户再次确认
+              const perm = await handle.queryPermission({ mode: 'read' });
+              if (perm === 'granted') {
+                setWorkspaceHandles(prev => prev[mod] ? prev : { ...prev, [mod]: handle });
+                await loadDataFromHandle(handle, mod);
+                restored.push(mod === 'daily' ? '日常口语' : '雅思口语');
+              } else {
+                // 权限被吊销或句柄失效 → 清掉该条记录，避免下次再尝试
+                try { await idbDelete(`workspace:${mod}`); } catch {}
+              }
+            } catch (e) {
+              console.warn(`恢复 ${mod} 工作区失败`, e);
+              try { await idbDelete(`workspace:${mod}`); } catch {}
+            }
+          }
+          if (restored.length > 0) {
+            showToast(`已自动恢复工作区绑定: ${restored.join('、')}`);
+          }
+        })();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, []);
 
       const showToast = (msg) => {
         setToastMsg(msg);
@@ -1104,11 +1236,22 @@
       };
 
       const bindWorkspace = async () => {
+        if (ENV_UNSUPPORTED) {
+          alert(
+            "当前环境无法读取本地文件夹。\n\n" +
+            "解决方法：双击项目根目录的 start.bat 启动本地服务，\n" +
+            "然后在 Chrome / Edge 中打开 http://127.0.0.1:8000/SpeakingHub.html\n\n" +
+            "（也可手动在项目根目录执行：python -m http.server 8000）"
+          );
+          return;
+        }
         try {
           const dirHandle = await window.showDirectoryPicker({ mode: 'read' });
           setWorkspaceHandle(dirHandle);
           await loadDataFromHandle(dirHandle, mainModule);
-          showToast(`[${mainModule === 'daily' ? '日常口语' : '雅思口语'}] 工作区绑定成功!`);
+          // 持久化：让刷新页面后能自动恢复
+          try { await idbSet(`workspace:${mainModule}`, dirHandle); } catch (e) { console.warn('持久化工作区失败', e); }
+          showToast(`[${moduleLabel}] 工作区绑定成功，已记忆`);
         } catch (error) {
           console.log("用户取消了选择或出现错误:", error);
         }
@@ -1188,18 +1331,29 @@
         }
       };
 
+      // 切换模块不再清空工作区绑定，两个模块的绑定各自长期有效
       const handleModuleSwitch = (mod) => {
         setMainModule(mod);
-        setWorkspaceHandle(null);
+      };
+
+      const unbindWorkspace = () => {
+        setWorkspaceHandles(prev => ({ ...prev, [mainModule]: null }));
+        // 同时清掉持久化记录，下次刷新不会再恢复
+        idbDelete(`workspace:${mainModule}`).catch(() => {});
+        showToast(`已解除[${moduleLabel}]工作区绑定`);
       };
 
       const EmptyStateWorkspace = () => (
         <div className="flex flex-col items-center justify-center py-16 md:py-24 bg-white rounded-3xl border border-forest-100 border-dashed animate-fade-in-up mt-4">
           <div className="text-forest-200 mb-3"><IconFolderLarge /></div>
-          <h2 className="text-base font-bold text-forest-900 mb-1">未绑定工作区</h2>
-          <p className="text-xs text-forest-400 mb-5 max-w-xs text-center">请先点击绑定对应的工作区文件夹。</p>
+          <h2 className="text-base font-bold text-forest-900 mb-1">{moduleLabel} · 未绑定工作区</h2>
+          <p className="text-xs text-forest-400 mb-5 max-w-xs text-center">
+            {ENV_UNSUPPORTED
+              ? '当前以 file:// 打开，请先运行 start.bat，再访问 http://127.0.0.1:8000/SpeakingHub.html'
+              : `请绑定${moduleLabel}对应的文件夹（日常口语 → Daily/，雅思口语 → IELTS/）。`}
+          </p>
           <button onClick={bindWorkspace} className="bg-forest-800 hover:bg-forest-900 text-white px-5 py-2.5 rounded-full text-xs font-bold shadow-sm transition-all flex items-center gap-1.5">
-             <IconFolder /> 绑定工作区
+             <IconFolder /> 绑定{moduleLabel}工作区
           </button>
         </div>
       );
@@ -1207,6 +1361,18 @@
       return (
         <div className="max-w-7xl mx-auto space-y-4 pb-8">
           <Toast message={toastMsg} visible={!!toastMsg} />
+
+          {ENV_UNSUPPORTED && (
+            <div className="bg-sand-50 border border-sand-600 rounded-2xl p-4 flex flex-col md:flex-row items-start gap-3 animate-fade-in-up">
+              <span className="text-xl leading-none mt-0.5">⚠️</span>
+              <div className="text-xs leading-relaxed text-sand-800">
+                <p className="font-bold mb-1">当前页面以 <code className="bg-white px-1 rounded border border-sand-500/30">file://</code> 方式打开（或浏览器不支持本地文件夹读取），无法绑定工作区。</p>
+                <p>请双击项目根目录的 <code className="bg-white px-1 rounded border border-sand-500/30 font-bold">start.bat</code> 启动本地服务，再访问：</p>
+                <p className="mt-1 font-bold text-forest-800">http://127.0.0.1:8000/SpeakingHub.html</p>
+                <p className="mt-1 text-sand-800/80">手动方式：在项目根目录执行 <code className="bg-white px-1 rounded border border-sand-500/30">python -m http.server 8000</code> 或 <code className="bg-white px-1 rounded border border-sand-500/30">npx serve</code>，并使用 Chrome / Edge 浏览器。</p>
+              </div>
+            </div>
+          )}
 
           <header className="flex flex-col md:flex-row justify-between items-center bg-white border border-forest-100 py-2 px-4 rounded-full shadow-sm gap-3 sticky top-2 z-40">
             <div className="flex items-center gap-4">
@@ -1216,21 +1382,30 @@
               </div>
               
               <div className="flex bg-mint-50 p-0.5 rounded-full text-xs font-bold border border-mint-100">
-                <button onClick={() => handleModuleSwitch('daily')} className={`px-4 py-1.5 rounded-full transition-all ${mainModule === 'daily' ? 'bg-forest-800 shadow text-white' : 'text-forest-600 hover:text-forest-800'}`}>日常口语</button>
-                <button onClick={() => handleModuleSwitch('ielts')} className={`px-4 py-1.5 rounded-full transition-all ${mainModule === 'ielts' ? 'bg-forest-800 shadow text-white' : 'text-forest-600 hover:text-forest-800'}`}>雅思口语</button>
+                <button onClick={() => handleModuleSwitch('daily')} className={`px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5 ${mainModule === 'daily' ? 'bg-forest-800 shadow text-white' : 'text-forest-600 hover:text-forest-800'}`}>
+                  日常口语
+                  {workspaceHandles.daily && <span title="已绑定工作区" className={`inline-block w-1.5 h-1.5 rounded-full ${mainModule === 'daily' ? 'bg-mint-200' : 'bg-forest-600'}`}></span>}
+                </button>
+                <button onClick={() => handleModuleSwitch('ielts')} className={`px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5 ${mainModule === 'ielts' ? 'bg-forest-800 shadow text-white' : 'text-forest-600 hover:text-forest-800'}`}>
+                  雅思口语
+                  {workspaceHandles.ielts && <span title="已绑定工作区" className={`inline-block w-1.5 h-1.5 rounded-full ${mainModule === 'ielts' ? 'bg-mint-200' : 'bg-forest-600'}`}></span>}
+                </button>
               </div>
             </div>
 
             <div className="flex items-center gap-2 pr-1">
               {!workspaceHandle ? (
                 <button onClick={bindWorkspace} className="flex items-center gap-1.5 bg-forest-800 hover:bg-forest-900 text-white px-4 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm">
-                  <IconFolder /> 绑定工作区
+                  <IconFolder /> 绑定{moduleLabel}工作区
                 </button>
               ) : (
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-bold text-forest-600 bg-forest-50 px-3 py-1.5 rounded-full border border-forest-100">📂 {workspaceHandle.name}</span>
+                  <span title={`${moduleLabel}当前绑定的文件夹`} className="text-[11px] font-bold text-forest-600 bg-forest-50 px-3 py-1.5 rounded-full border border-forest-100">📂 {moduleLabel} · {workspaceHandle.name}</span>
                   <button onClick={refreshWorkspace} disabled={isLoading} className="flex items-center gap-1 bg-mint-100 hover:bg-mint-200 text-forest-900 px-3 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm disabled:opacity-50">
                     <IconRefresh /> {isLoading ? '加载中...' : '刷新'}
+                  </button>
+                  <button onClick={unbindWorkspace} title={`解除${moduleLabel}的绑定，可重新选择其他文件夹（不影响另一个模块）`} className="flex items-center gap-1 bg-white hover:bg-sand-50 text-sand-800 border border-sand-500/30 px-2.5 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm">
+                    <IconX /> 解绑
                   </button>
                 </div>
               )}
