@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-25",
+  "task_type": "task2",
+  "word_count": 268,
+  "metrics": {
+    "overall_score": 6.5,
+    "task_response": 6.5,
+    "coherence_cohesion": 6.5,
+    "lexical_resource": 7.0,
+    "grammatical_range_accuracy": 6.0
+  },
+  "summary": {
+    "evaluation": "本文立场清晰、论证层次分明，能够回应题目所问并给出平衡结论。词汇方面有意识地使用了 render something obsolete、spontaneous interaction 等较高级搭配。主要失分点集中在主谓一致与个别句式多样性上，语法维度可再提升 0.5-1.0 分。",
+    "key_improvements": [
+      "注意集合名词（staff / team / government）作主语时的主谓一致，视语境决定单复数。",
+      "主体段可再增加一个具体例证，使论证更充分，有助 Task Response 提分。",
+      "适当使用分词状语或倒装结构，提升句式多样性（Grammatical Range）。"
+    ]
+  },
+  "quick_version": [
+    {
+      "id": "err_1",
+      "original": "junior staff in particular benefits from observing experienced colleagues at close quarters.",
+      "corrected": "junior staff in particular benefit from observing experienced colleagues at close quarters.",
+      "native_upgrade": "junior staff, in particular, stand to benefit from observing seasoned colleagues at close quarters.",
+      "explanation": "staff 为集合名词，此处强调「员工们」这一复数概念，谓语应用 benefit 而非 benefits。若强调整体则可用单数，但需全文保持一致。"
+    }
+  ],
+  "essay": "It is sometimes argued that remote working will eventually render traditional offices obsolete. While I accept that remote arrangements have become far more widespread, I do not believe they will wholly replace office-based work, for reasons relating to collaboration and employee development.\n\nThere is no doubt that remote working offers substantial advantages. Employees save considerable time and money by avoiding daily commutes, and many report higher levels of concentration when completing individual tasks. Furthermore, companies can reduce overheads significantly by maintaining smaller premises.\n\nNevertheless, I would argue that physical workplaces fulfil functions that video conferencing cannot replicate. Complex problem-solving often depends on spontaneous interaction, and junior staff in particular [[err_1|benefits from observing experienced colleagues at close quarters]].\n\nIn conclusion, although remote working will continue to expand, I believe offices will survive in a reduced and more specialised form rather than disappearing altogether."
+}

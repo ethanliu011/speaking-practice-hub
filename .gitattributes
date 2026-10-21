@@ -13,6 +13,8 @@
 
 # 其他文本文件统一 LF
 *.json text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
 *.md   text eol=lf
 *.html text eol=lf
 *.js   text eol=lf

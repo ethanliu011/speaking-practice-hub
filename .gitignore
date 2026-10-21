@@ -1,7 +1,8 @@
-# 个人练习数据（口语原文 / 纠错记录 / 打卡记录）
+# 个人练习数据（口语逐字稿 / 作文原文 / 纠错记录 / 打卡记录）
 # 默认不提交到公开仓库；如需保留示例，把文件名改成 *example*.json 即可
 Daily/data/*.json
 IELTS/data/*.json
+Writing/data/*.json
 !**/*example*.json
 !**/.gitkeep
 

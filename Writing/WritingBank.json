@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-10-21",
+  "note": "题库骨架。task1 / task2 均为题目数组，字段结构与 IELTS/AnswerBank.json 的题目保持一致（q_id / question / answer_text / chinese_translation / key_vocabulary），因此可直接复用页面上的题目卡片组件。往数组里追加题目即可自动显示在「输入练习」看板，并可在提示词中心勾选注入。",
+  "task1": [
+    {
+      "q_id": "w1_001",
+      "question": "The bar chart below shows the percentage of households with internet access in four countries in 2000 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "answer_text": "The bar chart compares the proportion of homes with internet access in four countries across a twenty-year period from 2000 to 2020. Overall, internet penetration rose substantially in every country shown, although the gap between the highest and lowest narrowed considerably.\n\nIn 2000, Country A was the clear leader, with roughly 60% of households connected, whereas Countries C and D languished below 10%. By contrast, Country B occupied a middle position at around 30%.\n\nBy 2020, the picture had changed dramatically. Country A had climbed to just over 90%, maintaining its lead, but Country B had closed much of the gap, reaching approximately 80%. Most strikingly, Countries C and D experienced exponential growth, both surpassing 60% — a more than sixfold increase from their 2000 levels.\n\nIn conclusion, while all four countries saw marked improvement, the most significant trend was the rapid catch-up of the initially least-connected nations.",
+      "chinese_translation": "该柱状图对比了四个国家在 2000 至 2020 这二十年间的家庭互联网普及率。总体而言，所有国家的互联网渗透率都大幅上升，但最高与最低之间的差距显著缩小。\n\n2000 年，A 国明显领先，约 60% 的家庭已联网，而 C 国和 D 国则低于 10%。相比之下，B 国处于中间位置，约为 30%。\n\n到 2020 年，情况发生了巨变。A 国升至略高于 90%，保持领先，但 B 国已大幅缩小差距，达到约 80%。最引人注目的是，C 国和 D 国经历了指数级增长，均超过 60%——相比 2000 年增长了六倍以上。\n\n总之，尽管四国均有显著改善，最显著的趋势是起初联网率最低国家的快速追赶。",
+      "key_vocabulary": [
+        {
+          "word": "internet penetration",
+          "meaning": "互联网普及率；指某地区接入互联网的人口或家庭比例。",
+          "example": "Internet penetration has risen sharply across developing regions over the past decade."
+        },
+        {
+          "word": "languish",
+          "meaning": "停滞不前，长期处于低迷状态（常用于数据类描述）。",
+          "example": "Rural broadband speeds have languished well below the national average."
+        },
+        {
+          "word": "exponential growth",
+          "meaning": "指数级增长；形容增长速度极快。",
+          "example": "The country witnessed exponential growth in mobile subscriptions."
+        },
+        {
+          "word": "close the gap",
+          "meaning": "缩小差距；Task 1 中描述两数据趋近时的高频搭配。",
+          "example": "Cheaper devices helped close the gap between urban and rural users."
+        }
+      ]
+    }
+  ],
+  "task2": [
+    {
+      "q_id": "w2_001",
+      "question": "Some people believe that remote working will completely replace office-based work in the future. To what extent do you agree or disagree?",
+      "answer_text": "It is sometimes argued that remote working will eventually render traditional offices obsolete. While I accept that remote arrangements have become far more widespread, I do not believe they will wholly replace office-based work, for reasons relating to collaboration and employee development.\n\nThere is no doubt that remote working offers substantial advantages. Employees save considerable time and money by avoiding daily commutes, and many report higher levels of concentration when completing individual tasks. Furthermore, companies can reduce overheads significantly by maintaining smaller premises. These benefits explain why numerous organisations have adopted hybrid policies since 2020.\n\nNevertheless, I would argue that physical workplaces fulfil functions that video conferencing cannot replicate. Complex problem-solving often depends on spontaneous interaction, and junior staff in particular benefit from observing experienced colleagues at close quarters. In addition, many employees struggle to maintain a healthy boundary between work and home life when their office is only a few steps from their bed, which can lead to burnout over time.\n\nIn conclusion, although remote working will continue to expand, I believe offices will survive in a reduced and more specialised form rather than disappearing altogether.",
+      "chinese_translation": "有人认为远程办公最终会让传统办公室变得多余。虽然我承认远程办公已变得普遍得多，但我认为它不会完全取代办公室工作，原因涉及协作与员工成长两方面。\n\n毫无疑问，远程办公有明显优势。员工通过免去每日通勤节省了大量时间与金钱，许多人在完成独立任务时也表示专注度更高。此外，企业可以通过维持更小的办公场所显著降低管理费用。这些好处解释了为何众多公司在 2020 年后采用了混合办公政策。\n\n然而，我认为实体工作场所承担着视频会议无法复制的功能。复杂问题的解决往往依赖即时互动，而初级员工尤其受益于近距离观察资深同事。此外，当办公室离床只有几步之遥时，许多员工难以维持工作与家庭生活的健康界限，长此以往可能导致职业倦怠。\n\n总之，尽管远程办公会继续扩展，我认为办公室将以规模更小、职能更专精的形式存续，而非彻底消失。",
+      "key_vocabulary": [
+        {
+          "word": "render something obsolete",
+          "meaning": "使某物过时/被淘汰；Task 2 开头引出话题的高级表达。",
+          "example": "Smartphones have rendered standalone cameras largely obsolete for casual users."
+        },
+        {
+          "word": "spontaneous interaction",
+          "meaning": "自发的、非计划性的互动；论证办公室价值的常用论点。",
+          "example": "Spontaneous interaction in the hallway often generates the best ideas."
+        },
+        {
+          "word": "at close quarters",
+          "meaning": "近距离地、近距离接触地。",
+          "example": "Trainees learn fastest when they observe experts at close quarters."
+        },
+        {
+          "word": "burnout",
+          "meaning": "职业倦怠；因长期压力导致的身心透支。",
+          "example": "Without clear boundaries, flexible schedules can ironically increase the risk of burnout."
+        },
+        {
+          "word": "in a reduced form",
+          "meaning": "以缩减后的形式；用于给出平衡结论而非绝对判断。",
+          "example": "I predict that print media will survive, but in a greatly reduced form."
+        }
+      ]
+    }
+  ]
+}

@@ -63,6 +63,67 @@
 
     const EMPTY_PROMPTS = { system_tools: { analysis_prompt: { title: "未加载", content: "请先绑定工作区" } }, scenarios_hub: [] };
 
+    // ============ 模块注册表（配置驱动）============
+    // 新增一个模块只需在此处加一项，模块按钮、工作区绑定、数据加载、
+    // Tab 渲染、IndexedDB 恢复等逻辑会自动适配，无需再改其他分支判断。
+    const MODULES = {
+      daily: {
+        key: 'daily',
+        label: '日常口语',
+        promptFile: 'prompts.json',
+        bankFile: null,              // 无题库
+        hasInputBoard: false,        // 无「输入练习」看板
+        // 一级 Tab：id 用于状态机，label 用于展示
+        primaryTabs: [
+          { id: 'prompts',  label: '提示词中心' },
+          { id: 'practice', label: '复盘看板' },
+        ],
+        // 二级 Tab（仅 hasInputBoard 的模块在 output 下使用）
+        secondaryTabs: [
+          { id: 'prompts',  label: '提示词中心' },
+          { id: 'practice', label: '复盘看板' },
+        ],
+        wordCountTarget: null,       // 无字数要求
+      },
+      ielts: {
+        key: 'ielts',
+        label: '雅思口语',
+        promptFile: 'ielts_prompts.json',
+        bankFile: 'AnswerBank.json',
+        hasInputBoard: true,
+        primaryTabs: [
+          { id: 'input',  label: '输入练习 (AnswerBank)' },
+          { id: 'output', label: '输出练习 (Output)' },
+        ],
+        secondaryTabs: [
+          { id: 'prompts',  label: '提示词中心' },
+          { id: 'practice', label: '复盘看板' },
+        ],
+        wordCountTarget: null,
+      },
+      writing: {
+        key: 'writing',
+        label: '雅思写作',
+        promptFile: 'writing_prompts.json',
+        bankFile: 'WritingBank.json',
+        hasInputBoard: true,
+        primaryTabs: [
+          { id: 'input',  label: '输入练习 (WritingBank)' },
+          { id: 'output', label: '输出练习 (Output)' },
+        ],
+        secondaryTabs: [
+          { id: 'prompts',  label: '提示词中心' },
+          { id: 'practice', label: '复盘看板' },
+        ],
+        // 雅思写作官方字数要求：Task 1 不少于 150 词，Task 2 不少于 250 词
+        wordCountTarget: { task1: 150, task2: 250 },
+      },
+    };
+    const MODULE_KEYS = Object.keys(MODULES);
+    const DEFAULT_TAB = Object.fromEntries(
+      MODULE_KEYS.map(k => [k, { primary: MODULES[k].primaryTabs[0].id, secondary: MODULES[k].secondaryTabs[0].id }])
+    );
+
     // 环境检测：file:// 协议或非 Chromium 内核浏览器无法使用 File System Access API
     const ENV_UNSUPPORTED = (() => {
       const isFileProtocol = window.location.protocol === 'file:';
@@ -453,21 +514,24 @@
       );
     };
 
-    const TranscriptViewer = ({ transcript, quickVersionMap }) => {
-      const renderAnnotatedText = (text) => {
-        const regex = /\[\[(err_\d+)\|([^\]]+)\]\]/g;
-        const parts = [];
-        let lastIndex = 0;
-        let match;
-        while ((match = regex.exec(text)) !== null) {
-          if (match.index > lastIndex) parts.push(text.substring(lastIndex, match.index));
-          parts.push(<ErrorHighlighter key={match[1]+lastIndex} errId={match[1]} wrongText={match[2]} errInfo={quickVersionMap[match[1]]} />);
-          lastIndex = regex.lastIndex;
-        }
-        if (lastIndex < text.length) parts.push(text.substring(lastIndex));
-        return parts;
-      };
+    // 纠错标注解析：把 [[err_1|错句原文]] 解析成可点击的高亮块
+    // 口语「逐字稿」与写作「作文正文」共用同一套标注语法
+    const buildAnnotatedText = (text, quickVersionMap) => {
+      const regex = /\[\[(err_\d+)\|([^\]]+)\]\]/g;
+      const parts = [];
+      let lastIndex = 0;
+      let match;
+      while ((match = regex.exec(text)) !== null) {
+        if (match.index > lastIndex) parts.push(text.substring(lastIndex, match.index));
+        parts.push(<ErrorHighlighter key={match[1]+lastIndex} errId={match[1]} wrongText={match[2]} errInfo={quickVersionMap[match[1]]} />);
+        lastIndex = regex.lastIndex;
+      }
+      if (lastIndex < text.length) parts.push(text.substring(lastIndex));
+      return parts;
+    };
 
+    // 口语：对话气泡形式展示逐字稿
+    const TranscriptViewer = ({ transcript, quickVersionMap }) => {
       return (
         <div className="space-y-3 pb-6">
           {transcript.map((item, idx) => (
@@ -476,10 +540,68 @@
                 {item.role === 'User' ? 'You' : 'AI Coach'}
               </span>
               <div className={`p-3 md:p-4 rounded-2xl text-xs md:text-sm leading-relaxed max-w-[92%] md:max-w-[85%] ${item.role === 'User' ? 'bg-forest-100 text-forest-900 rounded-tr-none' : 'bg-white border border-forest-100 text-forest-800 rounded-tl-none shadow-sm'}`}>
-                {renderAnnotatedText(item.text)}
+                {buildAnnotatedText(item.text, quickVersionMap)}
               </div>
             </div>
           ))}
+        </div>
+      );
+    };
+
+    // 写作：段落式排版展示作文正文（Task 2 通常 250+ 词，气泡形式不适用）
+    const EssayViewer = ({ essay, quickVersionMap, wordCount, targetWords }) => {
+      // 兼容三种输入：整篇字符串（按空行分段）、字符串数组、
+      // 以及口语结构的 full_transcript（[{role, text}]，取 User 段落）
+      const paragraphs = (() => {
+        if (typeof essay === 'string') {
+          return essay.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
+        }
+        if (Array.isArray(essay)) {
+          return essay
+            .map(e => {
+              if (typeof e === 'string') return e;
+              if (e && typeof e === 'object') return e.text || '';
+              return '';
+            })
+            .map(p => p.trim())
+            .filter(Boolean);
+        }
+        return [];
+      })();
+
+      const hasTarget = typeof targetWords === 'number' && targetWords > 0;
+      const count = typeof wordCount === 'number'
+        ? wordCount
+        : paragraphs.join(' ').trim().split(/\s+/).filter(Boolean).length;
+      const reached = hasTarget ? count >= targetWords : null;
+
+      return (
+        <div className="pb-6">
+          {(hasTarget || typeof wordCount === 'number') && (
+            <div className="flex items-center gap-2 mb-3 px-1">
+              <span className="text-[10px] font-bold text-forest-400 uppercase tracking-wider">Word Count</span>
+              <span className={`text-xs font-black ${reached === false ? 'text-sand-800' : 'text-forest-800'}`}>{count}</span>
+              {hasTarget && (
+                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
+                  reached
+                    ? 'bg-mint-50 text-forest-800 border-mint-200'
+                    : 'bg-sand-50 text-sand-800 border-sand-500/40'
+                }`}>
+                  {reached ? `✓ 达标（要求 ≥ ${targetWords}）` : `⚠ 不足（要求 ≥ ${targetWords}，还差 ${targetWords - count} 词）`}
+                </span>
+              )}
+            </div>
+          )}
+
+          <div className="bg-white border border-forest-100 rounded-2xl p-4 md:p-6 shadow-sm space-y-3">
+            {paragraphs.length === 0 ? (
+              <p className="text-xs text-forest-400 text-center py-4">暂无作文内容</p>
+            ) : paragraphs.map((p, idx) => (
+              <p key={idx} className="text-xs md:text-sm leading-relaxed text-forest-900 whitespace-pre-wrap">
+                {buildAnnotatedText(p, quickVersionMap)}
+              </p>
+            ))}
+          </div>
         </div>
       );
     };
@@ -517,9 +639,12 @@
       const [selP1, setSelP1] = useState([]);
       const [selP2, setSelP2] = useState([]);
       const [selP3, setSelP3] = useState([]);
+      const [selW1, setSelW1] = useState([]);
+      const [selW2, setSelW2] = useState([]);
 
       // 判定卡片属性
       const isIelts = moduleType === 'ielts';
+      const isWriting = moduleType === 'writing';
       const isPart1 = item.title.includes('Part 1');
       const isPart2 = item.title.includes('Part 2');
       const isPart3 = item.title.includes('Part 3');
@@ -528,6 +653,12 @@
       const needP1 = isIelts && (isPart1 || isFull);
       const needP2 = isIelts && (isPart2 || isFull);
       const needP3 = isIelts && (isPart3 || isFull);
+
+      // 写作：Task 1（图表描述）/ Task 2（议论文）
+      const isTask1 = item.title.includes('Task 1');
+      const isTask2 = item.title.includes('Task 2');
+      const needW1 = isWriting && (isTask1 || isFull);
+      const needW2 = isWriting && (isTask2 || isFull);
 
       const p1Options = answerBank?.part1?.map(c => c.category_name) || [];
       
@@ -553,6 +684,10 @@
       const p2Options = allP2Topics.map(t => typeof t === 'object' ? t.title : t);
 
       const p3Options = answerBank?.part3?.map(c => c.category_name) || [];
+
+      // 写作题库：task1 / task2 均为题目数组，直接取题面文本
+      const w1Options = (Array.isArray(answerBank?.task1) ? answerBank.task1 : []).map(q => q.question).filter(Boolean);
+      const w2Options = (Array.isArray(answerBank?.task2) ? answerBank.task2 : []).map(q => q.question).filter(Boolean);
 
       // 动态生成最终 Prompt
       let finalPrompt = item.prompt_text;
@@ -613,6 +748,28 @@
         }
       }
 
+      // 注入写作 Task 1（图表描述题目）
+      if (needW1 && finalPrompt.includes('${task1_prompt}')) {
+        if (selW1.length > 0) {
+          let str = "SELECTED TASK 1 PROMPT:\n";
+          selW1.forEach(q => { str += `- ${q}\n`; });
+          finalPrompt = finalPrompt.replace('${task1_prompt}', str);
+        } else {
+          finalPrompt = finalPrompt.replace('${task1_prompt}', '[NO TASK 1 PROMPT SELECTED - Please select a prompt from the UI above]');
+        }
+      }
+
+      // 注入写作 Task 2（议论文题目）
+      if (needW2 && finalPrompt.includes('${task2_prompt}')) {
+        if (selW2.length > 0) {
+          let str = "SELECTED TASK 2 PROMPT:\n";
+          selW2.forEach(q => { str += `- ${q}\n`; });
+          finalPrompt = finalPrompt.replace('${task2_prompt}', str);
+        } else {
+          finalPrompt = finalPrompt.replace('${task2_prompt}', '[NO TASK 2 PROMPT SELECTED - Please select a prompt from the UI above]');
+        }
+      }
+
       return (
         <div onClick={() => setIsExpanded(!isExpanded)} className="group bg-white border border-forest-100 hover:border-mint-200 p-3.5 rounded-2xl transition-all cursor-pointer flex flex-col shadow-sm hover:shadow-md self-start">
           <div className="flex justify-between items-start mb-2">
@@ -632,12 +789,25 @@
             {item.tags?.map(tag => <span key={tag} className="bg-forest-50 border border-forest-100 text-forest-600 px-1.5 py-0.5 rounded text-[10px] font-semibold">{tag}</span>)}
           </div>
 
-          {/* 雅思特供题目注入控制台 */}
+          {/* 雅思口语：题目注入控制台 */}
           {isExpanded && isIelts && (needP1 || needP2 || needP3) && (
             <div className="mb-3 p-3 bg-mint-50/50 rounded-xl border border-mint-100 space-y-3 cursor-default" onClick={e => e.stopPropagation()}>
               {needP1 && p1Options.length > 0 && <PromptMiniSelector label="Part 1 Topics" options={p1Options} selected={selP1} onChange={setSelP1} />}
               {needP2 && p2Options.length > 0 && <PromptMiniSelector label="Part 2 Topics (Cue Cards)" options={p2Options} selected={selP2} onChange={setSelP2} />}
               {needP3 && p3Options.length > 0 && <PromptMiniSelector label="Part 3 Topics" options={p3Options} selected={selP3} onChange={setSelP3} />}
+            </div>
+          )}
+
+          {/* 雅思写作：题目注入控制台 */}
+          {isExpanded && isWriting && (needW1 || needW2) && (
+            <div className="mb-3 p-3 bg-lavender-50/50 rounded-xl border border-lavender-100 space-y-3 cursor-default" onClick={e => e.stopPropagation()}>
+              {needW1 && w1Options.length > 0 && <PromptMiniSelector label="Task 1 Prompts (图表描述)" options={w1Options} selected={selW1} onChange={setSelW1} />}
+              {needW2 && w2Options.length > 0 && <PromptMiniSelector label="Task 2 Prompts (议论文)" options={w2Options} selected={selW2} onChange={setSelW2} />}
+              {((needW1 && w1Options.length === 0) || (needW2 && w2Options.length === 0)) && (
+                <p className="text-[10px] text-lavender-800/80 leading-relaxed">
+                  题库暂无题目，可先复制 Prompt 后手动把题目发给 AI；或往 <code className="bg-white px-1 rounded">Writing/WritingBank.json</code> 补充题目。
+                </p>
+              )}
             </div>
           )}
 
@@ -860,6 +1030,61 @@
       );
     };
 
+    // 雅思写作输入看板：Task 1（图表描述）/ Task 2（议论文）
+    // 题目结构与口语题库保持一致（question / answer_text / chinese_translation / key_vocabulary），
+    // 因此可直接复用 QuestionCard，无需另写卡片组件。
+    const WritingInputBoard = ({ bank }) => {
+      const [activeTask, setActiveTask] = useState('task2');
+      const [expandAll, setExpandAll] = useState(true);
+
+      const task1Items = Array.isArray(bank?.task1) ? bank.task1 : [];
+      const task2Items = Array.isArray(bank?.task2) ? bank.task2 : [];
+      const isTask1 = activeTask === 'task1';
+      const items = isTask1 ? task1Items : task2Items;
+      const target = MODULES.writing.wordCountTarget[activeTask];
+
+      return (
+        <div className="animate-fade-in-up">
+          <div className="flex items-center justify-between mb-4 sticky top-14 bg-[#F8F9FA]/90 backdrop-blur-md py-2 z-30 flex-wrap gap-2">
+            <div className="flex bg-forest-50 p-1 rounded-xl border border-forest-100 shadow-sm">
+              <button onClick={() => setActiveTask('task1')} className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${activeTask === 'task1' ? 'bg-white text-forest-900 shadow' : 'text-forest-500 hover:text-forest-800'}`}>Task 1 · 图表描述</button>
+              <button onClick={() => setActiveTask('task2')} className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${activeTask === 'task2' ? 'bg-white text-forest-900 shadow' : 'text-forest-500 hover:text-forest-800'}`}>Task 2 · 议论文</button>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-bold text-forest-600 bg-white border border-forest-100 px-3 py-1.5 rounded-lg shadow-sm">
+                {isTask1 ? 'Task Achievement' : 'Task Response'} 评分 · 官方要求 ≥ {target} 词
+              </span>
+              {items.length > 0 && (
+                <button onClick={() => setExpandAll(!expandAll)} className="text-xs font-bold text-forest-600 bg-white border border-forest-100 px-3 py-1.5 rounded-lg shadow-sm hover:bg-forest-50 transition-all">
+                  {expandAll ? '折叠全部' : '展开全部'}
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div className="pb-8 max-w-7xl">
+            {items.length === 0 ? (
+              <div className="text-center py-12 bg-white border border-forest-100 rounded-2xl shadow-sm">
+                <p className="font-bold text-forest-500 text-sm">题库骨架已就位，内容待补充</p>
+                <p className="mt-2 text-xs text-forest-400 leading-relaxed">
+                  往 <code className="bg-forest-50 px-1.5 py-0.5 rounded border border-forest-100">Writing/WritingBank.json</code> 的
+                  <code className="bg-forest-50 px-1.5 py-0.5 rounded border border-forest-100 mx-1">{activeTask}</code>
+                  数组里添加题目即可自动显示
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-start">
+                {items.map((q, idx) => (
+                  <QuestionCard key={q.q_id || idx} question={q} index={idx} viewMode="grid" expandAll={expandAll} />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    };
+
     // 当前自然月（YYYY-MM）
     const currentMonthKey = () => {
       const d = new Date();
@@ -909,7 +1134,7 @@
       return grid;
     };
 
-    const PracticeDashboard = ({ practiceData, selectedDate, setSelectedDate }) => {
+    const PracticeDashboard = ({ practiceData, selectedDate, setSelectedDate, moduleType = 'daily' }) => {
       const [activeSessionIdx, setActiveSessionIdx] = useState(0);
       const [viewMode, setViewMode] = useState('full');
       const [currentMonthStr, setCurrentMonthStr] = useState(() => selectedDate ? String(selectedDate).slice(0, 7) : currentMonthKey());
@@ -1030,7 +1255,7 @@
                         {Object.entries(currentData.metrics).filter(([k]) => k !== 'overall_score').map(([key, val]) => (
                           <div key={key} className="w-[45%]">
                             <div className="flex justify-between text-[10px] font-semibold text-forest-600 mb-0.5">
-                              <span className="capitalize">{key.replace('_', ' ')}</span>
+                              <span className="capitalize">{key.replace(/_/g, ' ')}</span>
                               <span>{val}</span>
                             </div>
                             <div className="h-1.5 w-full bg-forest-50 rounded-full overflow-hidden">
@@ -1064,7 +1289,18 @@
                       </div>
                     </div>
 
-                    {viewMode === 'full' && <TranscriptViewer transcript={currentData.full_transcript} quickVersionMap={quickVersionMap} />}
+                    {viewMode === 'full' && (
+                      moduleType === 'writing'
+                        ? <EssayViewer
+                            essay={currentData.essay || currentData.full_transcript}
+                            quickVersionMap={quickVersionMap}
+                            wordCount={currentData.word_count}
+                            targetWords={currentData.task_type && MODULES.writing.wordCountTarget
+                              ? MODULES.writing.wordCountTarget[currentData.task_type]
+                              : null}
+                          />
+                        : <TranscriptViewer transcript={currentData.full_transcript} quickVersionMap={quickVersionMap} />
+                    )}
                     
                     {viewMode === 'quick' && (
                       <div className="space-y-4 pb-6">
@@ -1167,14 +1403,23 @@
 
     function App() {
       const [mainModule, setMainModule] = useState('daily');
-      const [dailyTab, setDailyTab] = useState('prompts'); 
-      const [ieltsTab, setIeltsTab] = useState('input');
-      const [ieltsOutputTab, setIeltsOutputTab] = useState('prompts');
-      
+      const moduleCfg = MODULES[mainModule];
+
+      // 每个模块的 Tab 状态（一级 / 二级），由 MODULES 配置自动初始化
+      const [moduleTabs, setModuleTabs] = useState(() => Object.fromEntries(
+        MODULE_KEYS.map(k => [k, { ...DEFAULT_TAB[k] }])
+      ));
+      const primaryTab = moduleTabs[mainModule].primary;
+      const secondaryTab = moduleTabs[mainModule].secondary;
+      const setPrimaryTab = (v) => setModuleTabs(prev => ({ ...prev, [mainModule]: { ...prev[mainModule], primary: v } }));
+      const setSecondaryTab = (v) => setModuleTabs(prev => ({ ...prev, [mainModule]: { ...prev[mainModule], secondary: v } }));
+
       // 每个模块各自持有独立的工作区句柄，切换模块互不影响、不会失效
-      const [workspaceHandles, setWorkspaceHandles] = useState({ daily: null, ielts: null });
+      const [workspaceHandles, setWorkspaceHandles] = useState(() =>
+        Object.fromEntries(MODULE_KEYS.map(k => [k, null]))
+      );
       const workspaceHandle = workspaceHandles[mainModule];
-      const moduleLabel = mainModule === 'daily' ? '日常口语' : '雅思口语';
+      const moduleLabel = moduleCfg.label;
 
       // 只更新「当前模块」的句柄，其余模块保持原样
       const setWorkspaceHandle = (handleOrUpdater) => {
@@ -1184,8 +1429,21 @@
         }));
       };
 
-      const [dailyData, setDailyData] = useState({ prompts: EMPTY_PROMPTS, practiceData: {}, selectedDate: "" });
-      const [ieltsData, setIeltsData] = useState({ answerBank: {}, prompts: EMPTY_PROMPTS, practiceData: {}, selectedDate: "" });
+      // 所有模块的数据统一存放：{ [模块key]: { prompts, answerBank, practiceData, selectedDate } }
+      const [moduleData, setModuleData] = useState(() =>
+        Object.fromEntries(MODULE_KEYS.map(k => [k, {
+          prompts: EMPTY_PROMPTS, answerBank: {}, practiceData: {}, selectedDate: ""
+        }]))
+      );
+      const currentData = moduleData[mainModule];
+
+      // 更新指定模块的数据切片
+      const updateModuleData = (mod, updater) => {
+        setModuleData(prev => ({
+          ...prev,
+          [mod]: typeof updater === 'function' ? updater(prev[mod]) : { ...prev[mod], ...updater }
+        }));
+      };
       
       const [toastMsg, setToastMsg] = useState('');
       const [isLoading, setIsLoading] = useState(false);
@@ -1194,7 +1452,7 @@
       useEffect(() => {
         (async () => {
           const restored = [];
-          for (const mod of ['daily', 'ielts']) {
+          for (const mod of MODULE_KEYS) {
             let handle = null;
             try { handle = await idbGet(`workspace:${mod}`); } catch (e) { continue; }
             if (!handle) continue;
@@ -1204,7 +1462,7 @@
               if (perm === 'granted') {
                 setWorkspaceHandles(prev => prev[mod] ? prev : { ...prev, [mod]: handle });
                 await loadDataFromHandle(handle, mod);
-                restored.push(mod === 'daily' ? '日常口语' : '雅思口语');
+                restored.push(MODULES[mod].label);
               } else {
                 // 权限被吊销或句柄失效 → 清掉该条记录，避免下次再尝试
                 try { await idbDelete(`workspace:${mod}`); } catch {}
@@ -1266,10 +1524,12 @@
       };
 
       const loadDataFromHandle = async (handle, moduleType) => {
+        const cfg = MODULES[moduleType];
+        if (!cfg) return;
+
         let loadedPrompts = EMPTY_PROMPTS;
         try {
-          const promptFileName = moduleType === 'ielts' ? 'ielts_prompts.json' : 'prompts.json';
-          const promptFileHandle = await handle.getFileHandle(promptFileName);
+          const promptFileHandle = await handle.getFileHandle(cfg.promptFile);
           const file = await promptFileHandle.getFile();
           const text = await file.text();
           loadedPrompts = JSON.parse(text);
@@ -1305,30 +1565,23 @@
           
         } catch (e) { console.warn("未找到 data 文件夹或读取失败"); }
 
-        if (moduleType === 'ielts') {
-          let loadedAnswerBank = {};
+        // 题库文件：由配置决定，未配置的模块（如日常口语）跳过
+        let loadedBank = {};
+        if (cfg.bankFile) {
           try {
-            const abHandle = await handle.getFileHandle('AnswerBank.json');
-            const file = await abHandle.getFile();
-            const text = await file.text();
-            loadedAnswerBank = JSON.parse(text);
-          } catch (e) { console.warn("未找到 AnswerBank.json"); }
-
-          setIeltsData(prev => ({
-            ...prev,
-            answerBank: loadedAnswerBank,
-            prompts: loadedPrompts,
-            practiceData: newPracticeData,
-            selectedDate: prev.selectedDate && newPracticeData[prev.selectedDate] ? prev.selectedDate : latestDate
-          }));
-        } else {
-          setDailyData(prev => ({
-            ...prev,
-            prompts: loadedPrompts,
-            practiceData: newPracticeData,
-            selectedDate: prev.selectedDate && newPracticeData[prev.selectedDate] ? prev.selectedDate : latestDate
-          }));
+            const bankHandle = await handle.getFileHandle(cfg.bankFile);
+            const file = await bankHandle.getFile();
+            loadedBank = JSON.parse(await file.text());
+          } catch (e) { console.warn(`未找到 ${cfg.bankFile}`); }
         }
+
+        updateModuleData(moduleType, prev => ({
+          ...prev,
+          answerBank: loadedBank,
+          prompts: loadedPrompts,
+          practiceData: newPracticeData,
+          selectedDate: prev.selectedDate && newPracticeData[prev.selectedDate] ? prev.selectedDate : latestDate
+        }));
       };
 
       // 切换模块不再清空工作区绑定，两个模块的绑定各自长期有效
@@ -1382,14 +1635,12 @@
               </div>
               
               <div className="flex bg-mint-50 p-0.5 rounded-full text-xs font-bold border border-mint-100">
-                <button onClick={() => handleModuleSwitch('daily')} className={`px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5 ${mainModule === 'daily' ? 'bg-forest-800 shadow text-white' : 'text-forest-600 hover:text-forest-800'}`}>
-                  日常口语
-                  {workspaceHandles.daily && <span title="已绑定工作区" className={`inline-block w-1.5 h-1.5 rounded-full ${mainModule === 'daily' ? 'bg-mint-200' : 'bg-forest-600'}`}></span>}
-                </button>
-                <button onClick={() => handleModuleSwitch('ielts')} className={`px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5 ${mainModule === 'ielts' ? 'bg-forest-800 shadow text-white' : 'text-forest-600 hover:text-forest-800'}`}>
-                  雅思口语
-                  {workspaceHandles.ielts && <span title="已绑定工作区" className={`inline-block w-1.5 h-1.5 rounded-full ${mainModule === 'ielts' ? 'bg-mint-200' : 'bg-forest-600'}`}></span>}
-                </button>
+                {MODULE_KEYS.map(mod => (
+                  <button key={mod} onClick={() => handleModuleSwitch(mod)} className={`px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5 ${mainModule === mod ? 'bg-forest-800 shadow text-white' : 'text-forest-600 hover:text-forest-800'}`}>
+                    {MODULES[mod].label}
+                    {workspaceHandles[mod] && <span title="已绑定工作区" className={`inline-block w-1.5 h-1.5 rounded-full ${mainModule === mod ? 'bg-mint-200' : 'bg-forest-600'}`}></span>}
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -1412,60 +1663,61 @@
             </div>
           </header>
 
-          {mainModule === 'daily' && (
-            workspaceHandle ? (
-              <div className="space-y-4 animate-fade-in-up">
-                <div className="flex justify-center mb-2">
-                  <div className="flex bg-white p-0.5 rounded-full text-xs font-medium border border-forest-100 shadow-sm">
-                    <button onClick={() => setDailyTab('prompts')} className={`px-5 py-1.5 rounded-full transition-all ${dailyTab === 'prompts' ? 'bg-forest-50 text-forest-900 font-bold' : 'text-forest-500 hover:text-forest-800'}`}>提示词中心</button>
-                    <button onClick={() => setDailyTab('practice')} className={`px-5 py-1.5 rounded-full transition-all ${dailyTab === 'practice' ? 'bg-forest-50 text-forest-900 font-bold' : 'text-forest-500 hover:text-forest-800'}`}>复盘看板</button>
-                  </div>
+          {workspaceHandle ? (
+            <div className="space-y-4 animate-fade-in-up">
+              {/* 一级 Tab：由 MODULES 配置驱动 */}
+              <div className="flex justify-center mb-2">
+                <div className="flex bg-white p-0.5 rounded-full text-xs font-medium border border-forest-100 shadow-sm">
+                  {moduleCfg.primaryTabs.map(t => (
+                    <button key={t.id} onClick={() => setPrimaryTab(t.id)} className={`px-5 py-1.5 rounded-full transition-all ${primaryTab === t.id ? 'bg-forest-50 text-forest-900 font-bold' : 'text-forest-500 hover:text-forest-800'}`}>{t.label}</button>
+                  ))}
                 </div>
-
-                {dailyTab === 'prompts' && <PromptHub prompts={dailyData.prompts} copyToClipboard={copyToClipboard} moduleType="daily" answerBank={null} />}
-                {dailyTab === 'practice' && (
-                  <PracticeDashboard 
-                    practiceData={dailyData.practiceData} 
-                    selectedDate={dailyData.selectedDate} 
-                    setSelectedDate={(date) => setDailyData(prev => ({...prev, selectedDate: date}))} 
-                  />
-                )}
               </div>
-            ) : <EmptyStateWorkspace />
-          )}
 
-          {mainModule === 'ielts' && (
-            workspaceHandle ? (
-              <div className="space-y-4 animate-fade-in-up">
-                <div className="flex justify-center mb-2">
-                  <div className="flex bg-white p-0.5 rounded-full text-xs font-medium border border-forest-100 shadow-sm">
-                    <button onClick={() => setIeltsTab('input')} className={`px-5 py-1.5 rounded-full transition-all ${ieltsTab === 'input' ? 'bg-forest-50 text-forest-900 font-bold' : 'text-forest-500 hover:text-forest-800'}`}>输入练习 (AnswerBank)</button>
-                    <button onClick={() => setIeltsTab('output')} className={`px-5 py-1.5 rounded-full transition-all ${ieltsTab === 'output' ? 'bg-forest-50 text-forest-900 font-bold' : 'text-forest-500 hover:text-forest-800'}`}>输出练习 (Output)</button>
+              {/* 无「输入练习」看板的模块（日常口语）：一级 Tab 直接对应内容区 */}
+              {!moduleCfg.hasInputBoard && primaryTab === 'prompts' && (
+                <PromptHub prompts={currentData.prompts} copyToClipboard={copyToClipboard} moduleType={mainModule} answerBank={null} />
+              )}
+              {!moduleCfg.hasInputBoard && primaryTab === 'practice' && (
+                <PracticeDashboard
+                  moduleType={mainModule}
+                  practiceData={currentData.practiceData}
+                  selectedDate={currentData.selectedDate}
+                  setSelectedDate={(date) => updateModuleData(mainModule, prev => ({ ...prev, selectedDate: date }))}
+                />
+              )}
+
+              {/* 有「输入练习」看板的模块（雅思口语 / 雅思写作） */}
+              {moduleCfg.hasInputBoard && primaryTab === 'input' && (
+                mainModule === 'writing'
+                  ? <WritingInputBoard bank={currentData.answerBank} />
+                  : <IeltsInputBoard answerBank={currentData.answerBank} />
+              )}
+
+              {moduleCfg.hasInputBoard && primaryTab === 'output' && (
+                <div className="space-y-4 animate-fade-in-up">
+                  {/* 二级 Tab：由 MODULES 配置驱动 */}
+                  <div className="flex bg-forest-50 p-0.5 rounded-lg text-xs font-medium border border-forest-100 max-w-fit mb-3">
+                    {moduleCfg.secondaryTabs.map(t => (
+                      <button key={t.id} onClick={() => setSecondaryTab(t.id)} className={`px-4 py-1 rounded-md transition-all ${secondaryTab === t.id ? 'bg-white shadow-xs text-forest-900 font-bold' : 'text-forest-600 hover:text-forest-800'}`}>{t.label}</button>
+                    ))}
                   </div>
+
+                  {secondaryTab === 'prompts' && (
+                    <PromptHub prompts={currentData.prompts} copyToClipboard={copyToClipboard} moduleType={mainModule} answerBank={currentData.answerBank} />
+                  )}
+                  {secondaryTab === 'practice' && (
+                    <PracticeDashboard
+                      moduleType={mainModule}
+                      practiceData={currentData.practiceData}
+                      selectedDate={currentData.selectedDate}
+                      setSelectedDate={(date) => updateModuleData(mainModule, prev => ({ ...prev, selectedDate: date }))}
+                    />
+                  )}
                 </div>
-
-                {ieltsTab === 'input' && <IeltsInputBoard answerBank={ieltsData.answerBank} />}
-                
-                {ieltsTab === 'output' && (
-                  <div className="space-y-4 animate-fade-in-up">
-                    <div className="flex bg-forest-50 p-0.5 rounded-lg text-xs font-medium border border-forest-100 max-w-fit mb-3">
-                      <button onClick={() => setIeltsOutputTab('prompts')} className={`px-4 py-1 rounded-md transition-all ${ieltsOutputTab === 'prompts' ? 'bg-white shadow-xs text-forest-900 font-bold' : 'text-forest-600 hover:text-forest-800'}`}>提示词中心</button>
-                      <button onClick={() => setIeltsOutputTab('practice')} className={`px-4 py-1 rounded-md transition-all ${ieltsOutputTab === 'practice' ? 'bg-white shadow-xs text-forest-900 font-bold' : 'text-forest-600 hover:text-forest-800'}`}>复盘看板</button>
-                    </div>
-
-                    {ieltsOutputTab === 'prompts' && <PromptHub prompts={ieltsData.prompts} copyToClipboard={copyToClipboard} moduleType="ielts" answerBank={ieltsData.answerBank} />}
-                    {ieltsOutputTab === 'practice' && (
-                      <PracticeDashboard 
-                        practiceData={ieltsData.practiceData} 
-                        selectedDate={ieltsData.selectedDate} 
-                        setSelectedDate={(date) => setIeltsData(prev => ({...prev, selectedDate: date}))} 
-                      />
-                    )}
-                  </div>
-                )}
-              </div>
-            ) : <EmptyStateWorkspace />
-          )}
+              )}
+            </div>
+          ) : <EmptyStateWorkspace />}
         </div>
       );
     }
